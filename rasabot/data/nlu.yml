@@ -1,11 +1,6 @@
 version: "2.0"
 
-nlu:
-- intent: tfg
-  examples: |
-    - how is your final work dregree?
-    - what about the TFG?
-  
+nlu: 
   - intent: greet
   examples: |
     - hey

@@ -8,8 +8,7 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - tfg
-
+  
 responses:
   utter_greet:
   - text: "Hey! How are you?"
@@ -30,8 +29,6 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
-  utter_tfg:
-  - text: "not bad jaja"
 
 session_config:
   session_expiration_time: 60
