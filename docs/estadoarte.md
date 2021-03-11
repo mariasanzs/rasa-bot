@@ -1,6 +1,7 @@
 # Estado del arte
 ## Sistemas conversacionales y uso de RASA
 
+// Introducción
 En el mundo de la tecnologia ...
 
 Los sistemas conversacionales están a la orden del día, estos nos permiten conducir una conversación, ya sea de forma hablada o escrita, con un sistema automático capaz de emular a un ser humano a través del uso de tecnologías del lenguaje especializadas en la compleja comprensión del mismo.
@@ -16,8 +17,10 @@ Gartner incluye chatbots, Inteligencia Artificial (IA) y Asistentes Virtuales de
 
 Podemos encontrar una gran variedad de herramientas a la hora de crear nuestro asistente conversacional, desde aquellas ofrecidas por grandes plataformas como Google o Amazon ( Dialogflow y Amazon Lex respectivamente) hasta frameworks de código abierto como Open Dialog o Rasa.
 
-Aunque todas estas herramientas ofrecen grandes ventajas
+// Más plataformas que debería mencionar:
+chatfuel, IBMwatson, LUIS,  Microsoft Bot Framework
 
+Aunque todas estas herramientas ofrecen grandes ventajas
 
 Como ya habíamos comentado anteriormente, Rasa es una plataforma open-source para la creación y desarrollo de chatbots de forma local y en Python.
 
