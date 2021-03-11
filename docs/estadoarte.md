@@ -21,4 +21,6 @@ Como ya habíamos comentado anteriormente, Rasa es una plataforma open-source pa
 Además existe una versión conocida como Rasa X 
  ---> explicar rasa x
 
+ Mencionar que una importante ventaja del uso de Rasa es la amplia y colaborativa comunidad que posee, que facilita la resolución rápida de dudas a través de su [foro](https://forum.rasa.com)
+
  Puedes encontrar más información sobre Rasa y como usarla [aquí]
