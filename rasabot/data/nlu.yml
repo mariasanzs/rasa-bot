@@ -1,92 +1,90 @@
 version: "2.0"
 
 nlu: 
-  - intent: greet
+- intent: saludar
   examples: |
+    - hola
     - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - holi
+    - buenas
+    - buenos días
+    - buenas tardes 
+    - buenas noches
+    - holi holita
 
-- intent: goodbye
+- intent: despedir
   examples: |
-    - good afternoon
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - adios!
+    - hasta luego
+    - nos vemos
+    - adios
+    - hasta pronto
 
-- intent: affirm
+- intent: afirmar
   examples: |
     - yes
     - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - si
+    - s
+    - me parece bien
+    - correcto
 
-- intent: deny
+- intent: negar
   examples: |
     - no
     - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - jamás
+    - no creo
+    - no lo veo
+    - en verdad no
+    - creo que no
 
-- intent: mood_great
+- intent: mood_genial
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - perfecto
+    - genial
+    - increible
+    - fantastico
+    - de locos
+    - fenomenal
+    - estoy muy bien
+    - estoy genial
+    - perfectamente
+    - super bien
+    - sorprendentemente bien
+    - de maravilla
+    - muy feliz
+    - mejor que nunca
 
-- intent: mood_unhappy
+- intent: mood_triste
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - mal
+    - regular
+    - no muy bien
+    - un poco regu
+    - podria estar mejor la verdad
+    - un poco decepcionada
+    - me encuentro mal
+    - decepcionada
+    - triste
+    - muy triste la verdad
+    - me gustaría estar mejor la verdad
+    - agobiada
+    - estresada
+    - cansada
+    - con ansiedad
+    - deprimida
 
-- intent: bot_challenge
+- intent: contacto
+  examples: | 
+    - mi email es example@example.com
+    - mi correo es example@example.com
+    - por fa mandamelo a example@example.com
+    - este es mi email example@example.com
+
+- intent: agradecer
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - gracias por preguntar
+    - gracias
+    - muchas gracias
+    - te agradezco que me ayudes

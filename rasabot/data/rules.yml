@@ -2,12 +2,12 @@ version: "2.0"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Decir adios siempre que te digan adios
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - intent: despedir
+  - action: utter_despedir
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Responder cuando te dan las gracias
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: agradecer
+  - action: utter_agradecer

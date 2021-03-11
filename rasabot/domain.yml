@@ -1,35 +1,52 @@
-version: "2.0"
-
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  
-responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+intents:
+- saludar:
+    use_entities: true
+- despedir:
+    use_entities: true
+- afirmar:
+    use_entities: true
+- negar:
+    use_entities: true
+- mood_genial:
+    use_entities: true
+- mood_triste:
+    use_entities: true
+- contacto:
+    use_entities: true
+- agradecer:
+    use_entities: true
+responses:
+  utter_saludar:
+  - text: Hola! Como te encuentras hoy?
+  - text: Hola! Como estás?
+  - text: Hola amiga! Que tal te encuentras?
+  - text: Me alegro de verte! Como te sientes?
+  utter_animar:
+  - text: Todo va a salir genial no te preocupes
+  - text: Tu puedes con esto, no te vengas abajo
+  utter_te_ha_servido:
+  - text: ¿Estás mejor ahora?
+  - text: ¿Te sientes mejor?
+  - text: ¿Te ha venido bien?
+  utter_feliz:
+  - text: Me alegro mucho de que estés bien!
+  - text: 'Fantástico, me alegro mucho :) '
+  utter_despedir:
+  - text: Adiós :)
+  - text: Hasta pronto!
+  - text: Adiós!, espero que te haya gustado hablar conmigo
+  utter_preguntar_email:
+  - text: Dime tu correo por favor
+  - text: ¿Me podrías decir tu correo?
+  utter_responder_email:
+  - text: Perfecto!, {email} apuntado
+  utter_agradecer:
+  - text: Gracias a ti
+  - text: De nada
+  - text: No tienes que agradecermelo, para eso estoy aquí.
+  utter_ofrecer_ayuda:
+  - text: ¿Necesitas algo?
+  - text: ¿Quieres que te ayude en algo?

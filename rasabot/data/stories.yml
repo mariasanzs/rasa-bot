@@ -2,29 +2,17 @@ version: "2.0"
 
 stories:
 
-- story: happy path
+- story: happy bienvenida
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: saludar
+  - action: utter_saludar
+  - intent: mood_genial
+  - action: utter_feliz
+  - action: utter_ofrecer_ayuda
 
-- story: sad path 1
+- story: sad bienvenida
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - intent: saludar
+  - action: utter_saludar
+  - intent: mood_triste
+  - action: utter_valorar_problema
