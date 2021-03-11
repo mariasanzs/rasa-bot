@@ -9,3 +9,5 @@
 - [Repositorio de un chatbot de rasa sobre una pokedex](https://github.com/RasaHQ/pokedex-demo), es un ejemplo útil sobre como realizar actions en el asistente
 
 - [Repositorio de un asistente de rasa para el seguimiento de tu estado de salud](https://github.com/RasaHQ/wellness-check-bot)
+
+- [Tabla de comparación de diferentes chatbots](https://docs.google.com/spreadsheets/d/1RgG-dRS42EHlG7QdJOTg2ZO587KutTTPeUfyxVKoIn8/edit#gid=0)
