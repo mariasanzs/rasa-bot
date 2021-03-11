@@ -20,3 +20,5 @@ Como ya habíamos comentado anteriormente, Rasa es una plataforma open-source pa
 
 Además existe una versión conocida como Rasa X 
  ---> explicar rasa x
+
+ Puedes encontrar más información sobre Rasa y como usarla [aquí]
