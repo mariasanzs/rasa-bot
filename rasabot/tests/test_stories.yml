@@ -1,14 +1,32 @@
 #### This file contains tests to evaluate that your bot behaves as expected.
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
+version: "2.0"
 stories:
-- story: consulta de horario 
+- story: Story from Conversation ID 4987756adc07417e8a91228a58691ce1
   steps:
-  - user: |
-      holi
-    intent: saludar
+  - intent: saludar
+    user: |-
+      hola
   - action: utter_saludar
-  - user: |
-      quiero saber mi horario
-    intent: consultar_horario
-  - action: utter_consultar_horario
+  - intent: mood_genial
+    user: |-
+      bien
+  - action: utter_feliz
+  - action: utter_preguntar
+  - intent: chitchat/ask_quien_eres
+    user: |-
+      quien eres
+  - action: utter_chitchat
+  - intent: chitchat/ask_actuacion
+    user: |-
+      ómo debe actuar una embarazada en caso de sospecha de COVID-19?
+  - action: utter_chitchat
+  - intent: chitchat/ask_transmitir_bebe
+    user: |-
+      en caso de estar embarazada, ¿se puede transmitir el virus al bebé?
+  - action: utter_chitchat
+  - intent: chitchat/ask_transmitir_bebe
+    user: |-
+      en caso de estar encinta, ¿se puede transmitir el virus al pequeño?
+  - action: utter_chitchat

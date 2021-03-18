@@ -1,6 +1,5 @@
 version: "2.0"
-
-nlu: 
+nlu:
 - intent: saludar
   examples: |
     - hola
@@ -8,10 +7,12 @@ nlu:
     - holi
     - buenas
     - buenos días
-    - buenas tardes 
+    - buenas tardes
     - buenas noches
     - holi holita
-
+    - hol
+    - holi holiwita
+    - holis
 - intent: despedir
   examples: |
     - adios!
@@ -19,7 +20,6 @@ nlu:
     - nos vemos
     - adios
     - hasta pronto
-
 - intent: afirmar
   examples: |
     - yes
@@ -28,7 +28,6 @@ nlu:
     - s
     - me parece bien
     - correcto
-
 - intent: negar
   examples: |
     - no
@@ -38,7 +37,6 @@ nlu:
     - no lo veo
     - en verdad no
     - creo que no
-
 - intent: mood_genial
   examples: |
     - perfecto
@@ -55,7 +53,8 @@ nlu:
     - de maravilla
     - muy feliz
     - mejor que nunca
-
+    - bien
+    - bienkl
 - intent: mood_triste
   examples: |
     - mal
@@ -74,17 +73,76 @@ nlu:
     - cansada
     - con ansiedad
     - deprimida
-
-- intent: contacto
-  examples: | 
-    - mi email es example@example.com
-    - mi correo es example@example.com
-    - por fa mandamelo a example@example.com
-    - este es mi email example@example.com
-
+    - podria estar mejor
+    - no muy bien la verdad
+    - mu mal
 - intent: agradecer
   examples: |
     - gracias por preguntar
     - gracias
     - muchas gracias
     - te agradezco que me ayudes
+- intent: preguntar
+  examples: |
+    - puedo hacerte una pregunta?
+    - preguntar?
+    - tengo muchas dudas
+- intent: pedir_consejo
+  examples: |
+    - /pedir_consejo{"problema": "miedo"}
+    - /pedir_consejo{"problema": "estres"}
+    - /pedir_consejo{"problema": "incompresion"}
+    - /pedir_consejo{"problema": "otro"}
+- intent: chitchat/ask_transmitir_bebe
+  examples: |
+    - en caso de estar embarazada, ¿se puede transmitir el virus al bebé?
+- intent: chitchat/ask_actuacion
+  examples: |
+    - cómo debe actuar una embarazada en caso de sospecha de COVID-19?
+- intent: chitchat/ask_quien_eres
+  examples: |
+    - quien eres?
+    - eres un bot?
+    - eres real?
+    - eres una maquina?
+- intent: chitchat
+  examples: |
+    - en caso de estar encinta, ¿se puede transmitir el virus al pequeño?
+    - ómo debe actuar una embarazada en caso de sospecha de COVID-19?
+    - quien eres
+    - cómo debe actuar una encinta en caso de sospecha de COVID-19?
+    - cómo debe actuar una mujer encinta en caso de sospecha de COVID-19?
+    - cómo debe actuar una mujer embarazada en caso de sospecha de COVID-19?
+- synonym: embarazada
+  examples: |
+    - encinta
+    - en cinta
+    - gravida
+    - gestante
+    - gestando
+    - preñada
+    - estado de buena esperanza
+    - esperando un bebé
+    - esperando un hijo
+    - tener un hijo
+    - tener un bebe
+- synonym: COVID-19
+  examples: |
+    - covid
+    - covid 19
+    - corona
+    - coronavirus
+    - SARS-CoV
+    - SARS-CoV-2
+- synonym: bebe
+  examples: |
+    - hijo
+    - hija
+    - criatura
+    - feto
+    - nene
+    - lactante
+    - chiquitín
+    - niño
+    - niña
+    - infante

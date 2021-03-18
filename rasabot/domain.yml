@@ -1,3 +1,6 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
@@ -18,6 +21,36 @@ intents:
     use_entities: true
 - agradecer:
     use_entities: true
+- faq/ask_pregunta:
+    use_entities: true
+- preguntar:
+    use_entities: true
+- chitchat:
+    use_entities: true
+- pedir_consejo:
+    use_entities: true
+entities:
+- problema
+- nombre
+- meses
+slots:
+  problema:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  nombre:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  meses:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    max_value: 9.5
+    min_value: 0.0
 responses:
   utter_saludar:
   - text: Hola! Como te encuentras hoy?
@@ -38,15 +71,41 @@ responses:
   - text: Adiós :)
   - text: Hasta pronto!
   - text: Adiós!, espero que te haya gustado hablar conmigo
-  utter_preguntar_email:
-  - text: Dime tu correo por favor
-  - text: ¿Me podrías decir tu correo?
   utter_responder_email:
   - text: Perfecto!, {email} apuntado
   utter_agradecer:
   - text: Gracias a ti
   - text: De nada
   - text: No tienes que agradecermelo, para eso estoy aquí.
-  utter_ofrecer_ayuda:
-  - text: ¿Necesitas algo?
-  - text: ¿Quieres que te ayude en algo?
+  utter_preguntar:
+  - text: No dudes en preguntarme lo que quieras
+  - text: Puedes hacerme preguntas cuando quieras
+  - text: Si tienes dudas preguntame
+  utter_valorar_situacion:
+  - buttons:
+    - payload: '/pedir_consejo{"problema": "miedo"}'
+      title: Tengo miedo por el parto
+    - payload: '/pedir_consejo{"problema": "estres"}'
+      title: Estoy estresada por la situación
+    - payload: '/pedir_consejo{"problema": "incomprension"}'
+      title: No me siento comprendida
+    - payload: '/pedir_consejo{"problema": "otro"}'
+      title: otra
+    text: ¡Y eso?, lo siento mucho... ¿Que situacion se adapta mas a tu problema?
+  utter_chitchat/ask_quien_eres:
+  - text: Soy un bot, creado por María Sanz para su proyecto fin de grado en Ingeniería informática
+  utter_chitchat/ask_transmitir_bebe:
+  - text: No te preocupes, según un estudio de The Lancet que comprobaba si existe riesgo de transmisión de covid-19 al bebé durante el embarazo, no hay ningún riesgo de que contraigan la enfermedad
+  utter_chitchat/ask_actuacion:
+  - text: El protocolo debe de ser el mismo que para la población en general. Cubrir la boca y la nariz con la cara interna del codo al toser o estornudar y lavarse las manos enseguida. Evitar compartir comida, utensilios u otros objetos sin limpiarlos debidamente. Evitar el contacto cercano con personas que tengan síntomas respiratorios.
+actions:
+- action_dar_consejo
+forms:
+  embarazada_form:
+    meses:
+    - entity: meses
+      type: from_entity
+    nombre:
+    - entity: nombre
+      type: from_entity
+e2e_actions: []

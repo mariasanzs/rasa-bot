@@ -2,6 +2,11 @@ version: "2.0"
 
 rules:
 
+- rule: Saludar siempre que se te salude
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+
 - rule: Decir adios siempre que te digan adios
   steps:
   - intent: despedir
@@ -11,3 +16,29 @@ rules:
   steps:
   - intent: agradecer
   - action: utter_agradecer
+  
+- rule: responder al chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+
+#- rule: Activar formulario
+#   steps:
+#   - intent: pedir_consejo
+#   - action: embarazada_form
+#   - active_loop: embarazada_form
+# - rule: Submit form
+#   condition:
+#   # Condition that form is active.
+#   - active_loop: embarazada_form
+#   steps:
+#   # Form is deactivated
+#   - action: embarazada_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   # The actions we want to run when the form is submitted.
+#   - action: utter_despedir
+
+
+
