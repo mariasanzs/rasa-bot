@@ -22,23 +22,25 @@ rules:
   - intent: chitchat
   - action: utter_chitchat
 
-#- rule: Activar formulario
-#   steps:
-#   - intent: pedir_consejo
-#   - action: embarazada_form
-#   - active_loop: embarazada_form
-# - rule: Submit form
-#   condition:
-#   # Condition that form is active.
-#   - active_loop: embarazada_form
-#   steps:
-#   # Form is deactivated
-#   - action: embarazada_form
-#   - active_loop: null
-#   - slot_was_set:
-#     - requested_slot: null
-#   # The actions we want to run when the form is submitted.
-#   - action: utter_despedir
+- rule: Activar formulario
+  steps:
+   - intent: pedir_nombres
+   - action: name_form
+   - active_loop: name_form
+
+- rule: Submit form
+  condition:
+  # Condition that form is active.
+  - active_loop: name_form
+  steps:
+  # Form is deactivated
+  - action: name_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: utter_submit
+  - action: utter_slots_values
 
 
 

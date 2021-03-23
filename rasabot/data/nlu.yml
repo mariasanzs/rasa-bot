@@ -87,6 +87,12 @@ nlu:
     - puedo hacerte una pregunta?
     - preguntar?
     - tengo muchas dudas
+- intent: pedir_nombre
+  examples: |
+    - este es mi nombre 
+    - dar nombre
+    - quiero darte mi nombre
+    - te he dicho como me llamo?
 - intent: pedir_consejo
   examples: |
     - /pedir_consejo{"problema": "miedo"}

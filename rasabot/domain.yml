@@ -29,10 +29,10 @@ intents:
     use_entities: true
 - pedir_consejo:
     use_entities: true
+- pedir_nombre:
+    use_entities: true
 entities:
 - problema
-- nombre
-- meses
 slots:
   problema:
     type: rasa.shared.core.slots.TextSlot
@@ -44,13 +44,16 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: true
-  meses:
-    type: rasa.shared.core.slots.FloatSlot
+  apellidos:
+    type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
     influence_conversation: true
-    max_value: 9.5
-    min_value: 0.0
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
 responses:
   utter_saludar:
   - text: Hola! Como te encuentras hoy?
@@ -81,6 +84,13 @@ responses:
   - text: No dudes en preguntarme lo que quieras
   - text: Puedes hacerme preguntas cuando quieras
   - text: Si tienes dudas preguntame
+  utter_preguntar_nombre:
+  - text: me podrías decir tu nombre?
+  - text: cual es tu nombre de pila?
+  utter_submit:
+  - text: Vale, muchas gracias
+  utter_slots_values:
+  - text: Vale, me acordaré de que eres {nombre} {apellidos}.
   utter_valorar_situacion:
   - buttons:
     - payload: '/pedir_consejo{"problema": "miedo"}'
@@ -100,12 +110,13 @@ responses:
   - text: El protocolo debe de ser el mismo que para la población en general. Cubrir la boca y la nariz con la cara interna del codo al toser o estornudar y lavarse las manos enseguida. Evitar compartir comida, utensilios u otros objetos sin limpiarlos debidamente. Evitar el contacto cercano con personas que tengan síntomas respiratorios.
 actions:
 - action_dar_consejo
+- utter_slots_values
+- utter_submit
+- action_ask_apellidos
 forms:
-  embarazada_form:
-    meses:
-    - entity: meses
-      type: from_entity
+  name_form:
+    apellidos:
+    - type: from_text
     nombre:
-    - entity: nombre
-      type: from_entity
+    - type: from_text
 e2e_actions: []

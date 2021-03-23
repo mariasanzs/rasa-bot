@@ -36,17 +36,13 @@ class ActionDarConsejo(Action):
             dispatcher.utter_message(text="Hablando tranquilamente se entienden las cosas. Hablar y expresar los sentimientos con los demás es siempre lo mejor.")
         return []
 
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
+class ActionPreguntarApellido(Action):
+    def name(self) -> Text:
+        return "action_ask_last_name"
+
+    def run(
+        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
+    ) -> List[EventType]:
+        first_name = tracker.get_slot("first_name")
+        dispatcher.utter_message(text=f"So {first_name}, what is your last name?")
+        return []        return []
