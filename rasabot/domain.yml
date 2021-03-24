@@ -31,6 +31,8 @@ intents:
     use_entities: true
 - pedir_nombre:
     use_entities: true
+- pedir_nombres:
+    use_entities: true
 entities:
 - problema
 slots:
@@ -111,8 +113,7 @@ responses:
 actions:
 - action_dar_consejo
 - utter_slots_values
-- utter_submit
-- action_ask_apellidos
+- action_submit
 forms:
   name_form:
     apellidos:

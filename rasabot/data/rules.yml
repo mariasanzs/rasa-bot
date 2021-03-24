@@ -24,7 +24,7 @@ rules:
 
 - rule: Activar formulario
   steps:
-   - intent: pedir_nombres
+   - intent: pedir_nombre
    - action: name_form
    - active_loop: name_form
 
@@ -39,7 +39,7 @@ rules:
   - slot_was_set:
     - requested_slot: null
   # The actions we want to run when the form is submitted.
-  - action: utter_submit
+  - action: action_submit
   - action: utter_slots_values
 
 

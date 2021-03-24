@@ -13,6 +13,7 @@ nlu:
     - hol
     - holi holiwita
     - holis
+    - HOLA
 - intent: despedir
   examples: |
     - adios!
@@ -20,6 +21,7 @@ nlu:
     - nos vemos
     - adios
     - hasta pronto
+    - adioss
 - intent: afirmar
   examples: |
     - yes
@@ -76,6 +78,7 @@ nlu:
     - podria estar mejor
     - no muy bien la verdad
     - mu mal
+    - muy mal
 - intent: agradecer
   examples: |
     - gracias por preguntar
@@ -89,7 +92,7 @@ nlu:
     - tengo muchas dudas
 - intent: pedir_nombre
   examples: |
-    - este es mi nombre 
+    - este es mi nombre
     - dar nombre
     - quiero darte mi nombre
     - te he dicho como me llamo?
@@ -111,6 +114,7 @@ nlu:
     - eres un bot?
     - eres real?
     - eres una maquina?
+    - wuien eres
 - intent: chitchat
   examples: |
     - en caso de estar encinta, ¿se puede transmitir el virus al pequeño?
@@ -119,6 +123,7 @@ nlu:
     - cómo debe actuar una encinta en caso de sospecha de COVID-19?
     - cómo debe actuar una mujer encinta en caso de sospecha de COVID-19?
     - cómo debe actuar una mujer embarazada en caso de sospecha de COVID-19?
+    - en caso de estar encinta, ¿se puede transmitir el virus al niño?
 - synonym: embarazada
   examples: |
     - encinta

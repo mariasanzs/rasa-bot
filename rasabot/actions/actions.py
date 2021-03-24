@@ -10,12 +10,14 @@
 import json
 from pathlib import Path
 from typing import Any, Text, Dict, List
+from database_connectivity import DataUpdate
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.forms import FormAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.knowledge_base.storage import InMemoryKnowledgeBase
 from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
+from rasa_sdk.events import EventType
 
 
 class ActionDarConsejo(Action):
@@ -36,13 +38,24 @@ class ActionDarConsejo(Action):
             dispatcher.utter_message(text="Hablando tranquilamente se entienden las cosas. Hablar y expresar los sentimientos con los demás es siempre lo mejor.")
         return []
 
-class ActionPreguntarApellido(Action):
-    def name(self) -> Text:
-        return "action_ask_last_name"
+# class ActionPreguntarApellido(Action):
+#     def name(self) -> Text:
+#         return "action_ask_last_name"
 
-    def run(
-        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
-    ) -> List[EventType]:
-        first_name = tracker.get_slot("first_name")
-        dispatcher.utter_message(text=f"So {first_name}, what is your last name?")
-        return []        return []
+#     def run(
+#         self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
+#     ) -> List[EventType]:
+#         first_name = tracker.get_slot("first_name")
+#         dispatcher.utter_message(text=f"So {first_name}, what is your last name?")
+#         return []
+
+class ActionSubmit(Action):
+    def name(self) -> Text:
+        return "action_submit"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+       #dispatcher.utter_message(text="Vale, me acordaré de que tu nombre es {0} y tus apellidos {1}".format(
+       #    tracker.get_slot("nombre"), tracker.get_slot("apellidos")))
+       DataUpdate(tracker.get_slot('nombre'),tracker.get_slot('apellidos'))
+       dispatcher.utter_message("Tus datos han sido guardados. Gracias")
+       return []

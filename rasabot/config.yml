@@ -49,6 +49,7 @@ policies:
 #     max_history: 5
 #     epochs: 100
 #     constrain_similarities: true
+  - name: FormPolicy
   - name: RulePolicy
   - name: "FallbackPolicy"
     # min confidence needed to accept an NLU prediction
