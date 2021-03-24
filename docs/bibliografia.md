@@ -11,3 +11,9 @@
 - [Repositorio de un asistente de rasa para el seguimiento de tu estado de salud](https://github.com/RasaHQ/wellness-check-bot)
 
 - [Tabla de comparación de diferentes chatbots](https://docs.google.com/spreadsheets/d/1RgG-dRS42EHlG7QdJOTg2ZO587KutTTPeUfyxVKoIn8/edit#gid=0)
+
+-----nuevo
+
+- [Python MySQL Create Database](https://www.w3schools.com/python/python_mysql_create_db.asp)
+
+- [Rasa Form Examples](https://github.com/RasaHQ/rasa-form-examples)
