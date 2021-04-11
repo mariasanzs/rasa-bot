@@ -114,18 +114,7 @@ responses:
   utter_chitchat/normas_internas:
   - text: Las normas internas del programa son la confidencialidad de lo que se expone en el grupo, ser puntual, asistir siempre a las sesiones, participar de forma activa y con respeto, y realizar las tareas para casa.
   utter_chitchat/estres:
-  - text: "El estrés nos afecta a todos y necesitamos
-  de él para poder adaptarnos a los cambios constantes que se producen en nuestra
-  vida. Es un estado que experimentamos cuando hay un desajuste entre lo que una
-  situación nos pide y la percepción que tenemos de nuestra capacidad para afrontarla.
-  Lo que nos provoca estrés no es la realidad, sino la forma en la que nuestra mente la
-  interpreta. Ya que una situación estresante depende de cómo la interpretemos, la
-  clave está en contar con unas buenas estrategias para que las situaciones estresantes
-  no nos hagan pasarlo tan mal y así evitar las consecuencias negativas que el estrés
-  tiene en nuestra salud. La superación del estrés es una habilidad que podemos
-  aprender. Y uno de los objetivos de este programa es desarrollar estrategias para
-  entenderlo, identificarlo y aprender habilidades y destrezas para un buen
-  afrontamiento del mismo."
+  - text: El estrés nos afecta a todos y necesitamos de él para poder adaptarnos a los cambios constantes que se producen en nuestra vida. Es un estado que experimentamos cuando hay un desajuste entre lo que una situación nos pide y la percepción que tenemos de nuestra capacidad para afrontarla. Lo que nos provoca estrés no es la realidad, sino la forma en la que nuestra mente la interpreta. Ya que una situación estresante depende de cómo la interpretemos, la clave está en contar con unas buenas estrategias para que las situaciones estresantes no nos hagan pasarlo tan mal y así evitar las consecuencias negativas que el estrés tiene en nuestra salud. La superación del estrés es una habilidad que podemos aprender. Y uno de los objetivos de este programa es desarrollar estrategias para entenderlo, identificarlo y aprender habilidades y destrezas para un buen afrontamiento del mismo.
 actions:
 - action_dar_consejo
 - utter_slots_values

@@ -138,6 +138,16 @@ nlu:
     - Que expectativas deberia de tener de estas sesiones
     - Que objetivos busca el programa?
     - cuales son los objetivos del programa
+- intent: chitchat/normas_internas
+  examples: |
+    - Dime las normas internas
+    - Cuales son las normas del programa
+    - Que normas internas hay
+- intent: chitchat/estres
+  examples: |
+    - Que es es el estres 
+    - Definicion de estres
+    - Que se considera estres 
 - synonym: embarazada
   examples: |
     - encinta
