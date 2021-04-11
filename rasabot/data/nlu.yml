@@ -14,6 +14,7 @@ nlu:
     - holi holiwita
     - holis
     - HOLA
+    - Hola
 - intent: despedir
   examples: |
     - adios!
@@ -96,34 +97,47 @@ nlu:
     - dar nombre
     - quiero darte mi nombre
     - te he dicho como me llamo?
+    - queiro darte mi nombre
 - intent: pedir_consejo
   examples: |
     - /pedir_consejo{"problema": "miedo"}
     - /pedir_consejo{"problema": "estres"}
     - /pedir_consejo{"problema": "incompresion"}
     - /pedir_consejo{"problema": "otro"}
-- intent: chitchat/ask_transmitir_bebe
-  examples: |
-    - en caso de estar embarazada, ¿se puede transmitir el virus al bebé?
-- intent: chitchat/ask_actuacion
-  examples: |
-    - cómo debe actuar una embarazada en caso de sospecha de COVID-19?
 - intent: chitchat/ask_quien_eres
   examples: |
-    - quien eres?
-    - eres un bot?
-    - eres real?
-    - eres una maquina?
-    - wuien eres
-- intent: chitchat
-  examples: |
-    - en caso de estar encinta, ¿se puede transmitir el virus al pequeño?
-    - ómo debe actuar una embarazada en caso de sospecha de COVID-19?
+    - ¿quien eres?
+    - ¿eres un bot?
+    - ¿eres real?
+    - ¿eres una maquina?
+    - eres un bot
     - quien eres
-    - cómo debe actuar una encinta en caso de sospecha de COVID-19?
-    - cómo debe actuar una mujer encinta en caso de sospecha de COVID-19?
-    - cómo debe actuar una mujer embarazada en caso de sospecha de COVID-19?
-    - en caso de estar encinta, ¿se puede transmitir el virus al niño?
+    - wuien eres
+- intent: chitchat/autorregistro
+  examples: |
+    - ¿En qué consiste en el autorregistro?
+    - ¿Donde puedo hacer mi autorregistro?
+    - ¿Qué es el autorregistro?
+    - Que es autorregistro
+    - ¿Cómo puedo hacer el autorregistro?
+    - que es un autorregistro
+- intent: chitchat/duracion_sesion
+  examples: |
+    - Cuanto dura cada sesión?
+    - Cual es la duracion de las terapias
+    - Cuanto tiempo dura cada clase
+    - Dime la duracion de las sesiones
+    - cuanto dura el progrma
+    - cuanto dura el programa
+    - cuanto dura cada sesion
+- intent: chitchat/objetivo_programa
+  examples: |
+    - Cuáles son los objetivos del programa?
+    - Introduceme el programa
+    - De que va este programa
+    - Que expectativas deberia de tener de estas sesiones
+    - Que objetivos busca el programa?
+    - cuales son los objetivos del programa
 - synonym: embarazada
   examples: |
     - encinta

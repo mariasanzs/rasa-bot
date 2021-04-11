@@ -17,16 +17,3 @@ stories:
   - intent: chitchat/ask_quien_eres
     user: |-
       quien eres
-  - action: utter_chitchat
-  - intent: chitchat/ask_actuacion
-    user: |-
-      ómo debe actuar una embarazada en caso de sospecha de COVID-19?
-  - action: utter_chitchat
-  - intent: chitchat/ask_transmitir_bebe
-    user: |-
-      en caso de estar embarazada, ¿se puede transmitir el virus al bebé?
-  - action: utter_chitchat
-  - intent: chitchat/ask_transmitir_bebe
-    user: |-
-      en caso de estar encinta, ¿se puede transmitir el virus al pequeño?
-  - action: utter_chitchat

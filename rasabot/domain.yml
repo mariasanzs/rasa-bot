@@ -21,8 +21,6 @@ intents:
     use_entities: true
 - agradecer:
     use_entities: true
-- faq/ask_pregunta:
-    use_entities: true
 - preguntar:
     use_entities: true
 - chitchat:
@@ -105,11 +103,29 @@ responses:
       title: otra
     text: ¡Y eso?, lo siento mucho... ¿Que situacion se adapta mas a tu problema?
   utter_chitchat/ask_quien_eres:
-  - text: Soy un bot, creado por María Sanz para su proyecto fin de grado en Ingeniería informática
-  utter_chitchat/ask_transmitir_bebe:
-  - text: No te preocupes, según un estudio de The Lancet que comprobaba si existe riesgo de transmisión de covid-19 al bebé durante el embarazo, no hay ningún riesgo de que contraigan la enfermedad
-  utter_chitchat/ask_actuacion:
-  - text: El protocolo debe de ser el mismo que para la población en general. Cubrir la boca y la nariz con la cara interna del codo al toser o estornudar y lavarse las manos enseguida. Evitar compartir comida, utensilios u otros objetos sin limpiarlos debidamente. Evitar el contacto cercano con personas que tengan síntomas respiratorios.
+  - text: Soy un bot, creado por María Sanz para su proyecto fin de grado en Ingeniería informática que da apoyo a terapias para mujeres embarazadas.
+  utter_chitchat/autorregistro:
+  - text: Los autorregistros son una técnica que se usa en las terapias psicológicas y en ellos expresamos nuestros pensamientos, sentimientos, comportamientos o manifestaciones de tal manera que podamos aprender a observarnos de forma objetiva e intentemos modificar aquellas cosas que nos perjudican. A lo largo de las sesiones iremos realizándolos con el objetivo de mejorar.
+  utter_chitchat/duracion_sesion:
+  - text: Normalmente las sesiones duran alrededor de 1 hora y media
+  - text: Las sesiones son de aproximadamente 1 hora y media.
+  utter_chitchat/objetivo_programa:
+  - text: 'En general, lo que se intenta conseguir es tener un mayor control de nuestras respuestas sobre aquellas situaciones o acontecimientos que nos generan estrés, pero más concretamente se pretende aprender es: - Técnicas para desactivar de nuestra rutina - Identificar, debatir y cambiar nuestros saltos irracionales o sesgos de pensamiento. - A discriminar entre conductas asertivas, pasivas y agresivas - A pedir ayuda y a decir no - A pedir cambios de conducta Y muchas más cosas'
+  utter_chitchat/normas_internas:
+  - text: Las normas internas del programa son la confidencialidad de lo que se expone en el grupo, ser puntual, asistir siempre a las sesiones, participar de forma activa y con respeto, y realizar las tareas para casa.
+  utter_chitchat/estres:
+  - text: "El estrés nos afecta a todos y necesitamos
+  de él para poder adaptarnos a los cambios constantes que se producen en nuestra
+  vida. Es un estado que experimentamos cuando hay un desajuste entre lo que una
+  situación nos pide y la percepción que tenemos de nuestra capacidad para afrontarla.
+  Lo que nos provoca estrés no es la realidad, sino la forma en la que nuestra mente la
+  interpreta. Ya que una situación estresante depende de cómo la interpretemos, la
+  clave está en contar con unas buenas estrategias para que las situaciones estresantes
+  no nos hagan pasarlo tan mal y así evitar las consecuencias negativas que el estrés
+  tiene en nuestra salud. La superación del estrés es una habilidad que podemos
+  aprender. Y uno de los objetivos de este programa es desarrollar estrategias para
+  entenderlo, identificarlo y aprender habilidades y destrezas para un buen
+  afrontamiento del mismo."
 actions:
 - action_dar_consejo
 - utter_slots_values
