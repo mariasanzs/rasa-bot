@@ -23,9 +23,13 @@ intents:
     use_entities: true
 - preguntar:
     use_entities: true
+- seleccionar_tecnica:
+    use_entities: true
 - chitchat:
     use_entities: true
 - pedir_consejo:
+    use_entities: true
+- pedir_relajacion:
     use_entities: true
 - pedir_nombre:
     use_entities: true
@@ -33,8 +37,19 @@ intents:
     use_entities: true
 entities:
 - problema
+- tecnica
 slots:
   problema:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  feedback:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  tecnica:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
@@ -61,12 +76,16 @@ responses:
   - text: Hola amiga! Que tal te encuentras?
   - text: Me alegro de verte! Como te sientes?
   utter_animar:
-  - text: Todo va a salir genial no te preocupes
-  - text: Tu puedes con esto, no te vengas abajo
+  - text: Lo siento ..., todo va a salir genial no te preocupes. Puedes pedirme lo que quieras
+  - text: Vaya... tu puedes con esto, no te vengas abajo. Puedes pedirme lo que quieras
   utter_te_ha_servido:
   - text: ¿Estás mejor ahora?
   - text: ¿Te sientes mejor?
   - text: ¿Te ha venido bien?
+  utter_feedback:
+  - text: ¿Todo bien por ahora?
+  - text: ¿Vas bien?
+  - text: ¿Continuamos?
   utter_feliz:
   - text: Me alegro mucho de que estés bien!
   - text: 'Fantástico, me alegro mucho :) '
@@ -89,6 +108,10 @@ responses:
   - text: cual es tu nombre de pila?
   utter_submit:
   - text: Vale, muchas gracias
+  utter_ready:
+  - text: Perfecto!, ¿Estás preparada?
+  - text: Vale, ¿comenzamos?
+  - text: ¿Empezamos ya?
   utter_slots_values:
   - text: Vale, me acordaré de que eres {nombre} {apellidos}.
   utter_valorar_situacion:
@@ -102,6 +125,13 @@ responses:
     - payload: '/pedir_consejo{"problema": "otro"}'
       title: otra
     text: ¡Y eso?, lo siento mucho... ¿Que situacion se adapta mas a tu problema?
+  utter_elegir_tecnica:
+  - buttons:
+    - payload: '/seleccionar_tecnica{"tecnica": "diafragmatica"}'
+      title: Técnica de respiración diafragmática
+    - payload: '/seleccionar_tecnica{"tecnica": "imaginacion"}'
+      title: Técnica de imaginación temática.
+    text: Genial!, cual quieres hacer?
   utter_chitchat/ask_quien_eres:
   - text: Soy un bot, creado por María Sanz para su proyecto fin de grado en Ingeniería informática que da apoyo a terapias para mujeres embarazadas.
   utter_chitchat/autorregistro:
@@ -115,8 +145,13 @@ responses:
   - text: Las normas internas del programa son la confidencialidad de lo que se expone en el grupo, ser puntual, asistir siempre a las sesiones, participar de forma activa y con respeto, y realizar las tareas para casa.
   utter_chitchat/estres:
   - text: El estrés nos afecta a todos y necesitamos de él para poder adaptarnos a los cambios constantes que se producen en nuestra vida. Es un estado que experimentamos cuando hay un desajuste entre lo que una situación nos pide y la percepción que tenemos de nuestra capacidad para afrontarla. Lo que nos provoca estrés no es la realidad, sino la forma en la que nuestra mente la interpreta. Ya que una situación estresante depende de cómo la interpretemos, la clave está en contar con unas buenas estrategias para que las situaciones estresantes no nos hagan pasarlo tan mal y así evitar las consecuencias negativas que el estrés tiene en nuestra salud. La superación del estrés es una habilidad que podemos aprender. Y uno de los objetivos de este programa es desarrollar estrategias para entenderlo, identificarlo y aprender habilidades y destrezas para un buen afrontamiento del mismo.
+  utter_chitchat/diafragmatica:
+  - text: Todavía no se lo que es la respiración diafragmática
+  utter_chitchat/tematica:
+  - text: La imaginación temática consiste en unas técnicas que intentan dirigir y focalizar nuestros pensamientos en imágenes agradables y relajantes de tal forma que relajemos también nuestro cuerpo.
 actions:
 - action_dar_consejo
+- action_iniciar_relajacion
 - utter_slots_values
 - action_submit
 forms:

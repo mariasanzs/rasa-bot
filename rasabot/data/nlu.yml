@@ -29,6 +29,8 @@ nlu:
     - y
     - si
     - s
+    - vale
+    - ok
     - me parece bien
     - correcto
 - intent: negar
@@ -56,8 +58,13 @@ nlu:
     - de maravilla
     - muy feliz
     - mejor que nunca
-    - bien
     - bienkl
+- intent: chitchat/diafragmatica
+  examples: |
+    - bien
+    - definicion de la respiración diafragmatica
+    - que es la respiracion diafragmatica
+    - definicion de respiracion diafragmtica
 - intent: mood_triste
   examples: |
     - mal
@@ -104,6 +111,20 @@ nlu:
     - /pedir_consejo{"problema": "estres"}
     - /pedir_consejo{"problema": "incompresion"}
     - /pedir_consejo{"problema": "otro"}
+- intent: seleccionar_tecnica
+  examples: |
+    - /seleccionar_tecnica{"tecnica": "diafragmatica"}
+    - /seleccionar_tecnica{"tecnica": "imaginacion"}
+- intent: pedir_relajacion
+  examples: |
+    - Me gustaría relajarme un poco
+    - Quiero hacer la tecnica de relajacion
+    - quiero relajarme
+    - Iniciar relajacion
+    - Realizar ejercicio de relajacion
+    - Me gustaria relajarme un poco
+    - quiero relajarme un poco
+    - me gustaria relajarme un poco
 - intent: chitchat/ask_quien_eres
   examples: |
     - ¿quien eres?
@@ -143,11 +164,15 @@ nlu:
     - Dime las normas internas
     - Cuales son las normas del programa
     - Que normas internas hay
+    - cuales son las normas internas
 - intent: chitchat/estres
   examples: |
-    - Que es es el estres 
-    - Definicion de estres
-    - Que se considera estres 
+    - definicion de estres
+    - que es el estres
+- intent: chitchat/tematica
+  examples: |
+    - definicion de la imaginacion tematica
+    - que es la imaginacion tematica
 - synonym: embarazada
   examples: |
     - encinta
@@ -169,15 +194,16 @@ nlu:
     - coronavirus
     - SARS-CoV
     - SARS-CoV-2
-- synonym: bebe
+- synonym: relajar
   examples: |
-    - hijo
-    - hija
-    - criatura
-    - feto
-    - nene
-    - lactante
-    - chiquitín
-    - niño
-    - niña
-    - infante
+    - relajarse
+    - relajacion
+    - tecnica de relajacion
+    - relax
+    - ejercicio de relajacion
+    - tecnica de relax
+    - tecnica de respiracion
+- synonym: definicion de
+  examples: |
+    - que es
+    - en que consiste

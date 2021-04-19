@@ -17,7 +17,7 @@ rules:
   - intent: agradecer
   - action: utter_agradecer
   
-- rule: responder al chitchat
+- rule: respond to chitchat
   steps:
   - intent: chitchat
   - action: utter_chitchat

@@ -24,3 +24,29 @@ stories:
     - problema: miedo
     - problema: incomprension
   - action: action_dar_consejo
+
+- story: Tecnica relajacion
+  steps:
+  - intent: pedir_relajacion
+  - action: utter_elegir_tecnica
+  - intent: seleccionar_tecnica
+    entities:
+    - tecnica: diafragmatica
+    - tecnica: imaginacion
+  - slot_was_set:
+    - tecnica: diafragmatica
+    - tecnica: imaginacion
+  - action: utter_ready
+  - intent: afirmar
+  - slot_was_set:
+    - tecnica: diafragmatica
+    - tecnica: imaginacion
+  - action: action_iniciar_relajacion
+  - action: utter_feedback
+  - intent: afirmar
+  - slot_was_set:
+    - tecnica: diafragmatica
+    - tecnica: imaginacion 
+    - feedback: ok
+  - action: action_iniciar_relajacion
+  

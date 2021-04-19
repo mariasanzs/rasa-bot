@@ -8,6 +8,7 @@
 # This is a simple example for a custom action which utters "Hello World!"
 
 import json
+import time
 from pathlib import Path
 from typing import Any, Text, Dict, List
 from database_connectivity import DataUpdate
@@ -36,6 +37,37 @@ class ActionDarConsejo(Action):
             dispatcher.utter_message(text="los dolores van y vienen, te da tiempo a recuperarte y desaparecen mágicamente en cuanto te ponen a tu hijo en los brazos")
         if problem_incomprension:
             dispatcher.utter_message(text="Hablando tranquilamente se entienden las cosas. Hablar y expresar los sentimientos con los demás es siempre lo mejor.")
+        return []
+
+class ActionIniciarRelajacion(Action):
+
+    def name(self) -> Text:
+        return "action_iniciar_relajacion"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        diaphragmatic_breathing = tracker.get_slot('tecnica') == 'diafragmatica'
+        guided_imagery = tracker.get_slot('tecnica') == 'imaginacion'
+        feedback = tracker.get_slot('feedback')
+
+        if diaphragmatic_breathing:
+            if feedback == 'ok':
+                dispatcher.utter_message(text="de locos")
+            else:
+                dispatcher.utter_message(text="Afloja cualquier ropa que te apriete")
+                time.sleep(5)
+                dispatcher.utter_message(text="Coloca los pies ligeramente separados. Apoya una mano sobre el abdomen y la otra sobre el pecho. Toma aire por la nariz y expúlsalo por la boca")
+                dispatcher.utter_message(text="Si tienes algún tipo de problema nasal, puedes tomar el aire por la boca")
+                time.sleep(5)
+        if guided_imagery:
+            if feedback == 'ok':
+                dispatcher.utter_message(text="de locos")
+            else:
+                dispatcher.utter_message(text="Ponte lo más comoda posible")
+                time.sleep(5)
+                dispatcher.utter_message(text="Sientate a gusto")
+                time.sleep(10)
+                dispatcher.utter_message(text="Reposa cómodamente tus brazos sobre tu regazo")
+                time.sleep(5)
         return []
 
 # class ActionPreguntarApellido(Action):
