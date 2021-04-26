@@ -47,6 +47,5 @@ stories:
   - slot_was_set:
     - tecnica: diafragmatica
     - tecnica: imaginacion 
-    - feedback: ok
-  - action: action_iniciar_relajacion
+  - action: action_relajacion
   

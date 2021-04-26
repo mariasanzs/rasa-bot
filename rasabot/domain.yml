@@ -31,6 +31,8 @@ intents:
     use_entities: true
 - pedir_relajacion:
     use_entities: true
+- pedir_video:
+    use_entities: true
 - pedir_nombre:
     use_entities: true
 - pedir_nombres:
@@ -38,6 +40,7 @@ intents:
 entities:
 - problema
 - tecnica
+- feedback
 slots:
   problema:
     type: rasa.shared.core.slots.TextSlot
@@ -108,6 +111,10 @@ responses:
   - text: cual es tu nombre de pila?
   utter_submit:
   - text: Vale, muchas gracias
+  utter_video:
+  - text: Aquí tienes un vídeo sobre técnicas de relajación
+    attachment: { "type":"video", "payload":{ "src": "https://www.youtube.com/embed/N-5HNQCXyZM" } }
+
   utter_ready:
   - text: Perfecto!, ¿Estás preparada?
   - text: Vale, ¿comenzamos?
@@ -152,6 +159,7 @@ responses:
 actions:
 - action_dar_consejo
 - action_iniciar_relajacion
+- action_relajacion
 - utter_slots_values
 - action_submit
 forms:

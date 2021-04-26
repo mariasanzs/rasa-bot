@@ -50,25 +50,40 @@ class ActionIniciarRelajacion(Action):
         feedback = tracker.get_slot('feedback')
 
         if diaphragmatic_breathing:
-            if feedback == 'ok':
-                dispatcher.utter_message(text="de locos")
-            else:
-                dispatcher.utter_message(text="Afloja cualquier ropa que te apriete")
-                time.sleep(5)
-                dispatcher.utter_message(text="Coloca los pies ligeramente separados. Apoya una mano sobre el abdomen y la otra sobre el pecho. Toma aire por la nariz y expúlsalo por la boca")
-                dispatcher.utter_message(text="Si tienes algún tipo de problema nasal, puedes tomar el aire por la boca")
-                time.sleep(5)
+            dispatcher.utter_message(text="Afloja cualquier ropa que te apriete")
+            time.sleep(20)
+            dispatcher.utter_message(text="Coloca los pies ligeramente separados. Apoya una mano sobre el abdomen y la otra sobre el pecho. Toma aire por la nariz y expúlsalo por la boca")
+            dispatcher.utter_message(text="Si tienes algún tipo de problema nasal, puedes tomar el aire por la boca")
         if guided_imagery:
-            if feedback == 'ok':
-                dispatcher.utter_message(text="de locos")
-            else:
-                dispatcher.utter_message(text="Ponte lo más comoda posible")
-                time.sleep(5)
-                dispatcher.utter_message(text="Sientate a gusto")
-                time.sleep(10)
-                dispatcher.utter_message(text="Reposa cómodamente tus brazos sobre tu regazo")
-                time.sleep(5)
+            dispatcher.utter_message(text="Ponte lo más comoda posible")
+            dispatcher.utter_message(text="Sientate a gusto")
+            dispatcher.utter_message(text="Reposa cómodamente tus brazos sobre tu regazo")
         return []
+
+class ActionRelajacion(Action):
+
+    def name(self) -> Text:
+        return "action_relajacion"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        diaphragmatic_breathing = tracker.get_slot('tecnica') == 'diafragmatica'
+        guided_imagery = tracker.get_slot('tecnica') == 'imaginacion'
+        feedback = tracker.get_slot('feedback')
+
+        if diaphragmatic_breathing:
+            dispatcher.utter_message(text="Afloja cualquier ropa que te apriete")
+            time.sleep(20)
+            dispatcher.utter_message(text="Coloca los pies ligeramente separados. Apoya una mano sobre el abdomen y la otra sobre el pecho. Toma aire por la nariz y expúlsalo por la boca")
+            dispatcher.utter_message(text="Si tienes algún tipo de problema nasal, puedes tomar el aire por la boca")
+        if guided_imagery:
+            dispatcher.utter_message(text="Ponte lo más comoda posible")
+            dispatcher.utter_message(text="Sientate a gusto")
+            dispatcher.utter_message(text="Reposa cómodamente tus brazos sobre tu regazo")
+        return []
+
+    
+
+
 
 # class ActionPreguntarApellido(Action):
 #     def name(self) -> Text:

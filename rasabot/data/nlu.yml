@@ -115,6 +115,12 @@ nlu:
   examples: |
     - /seleccionar_tecnica{"tecnica": "diafragmatica"}
     - /seleccionar_tecnica{"tecnica": "imaginacion"}
+- intent: pedir_video
+  examples: |
+    - podrías ponerme el video de relajacion
+    - ponme el video de relajacion
+    - cual era el link del video
+    - reproduce el video
 - intent: pedir_relajacion
   examples: |
     - Me gustaría relajarme un poco
@@ -125,6 +131,9 @@ nlu:
     - Me gustaria relajarme un poco
     - quiero relajarme un poco
     - me gustaria relajarme un poco
+    - me apetece relajaarme un poco
+    - me apetece relajarme un poco
+    - me apetece relajarme
 - intent: chitchat/ask_quien_eres
   examples: |
     - ¿quien eres?
