@@ -112,9 +112,12 @@ responses:
   utter_submit:
   - text: Vale, muchas gracias
   utter_video:
-  - text: Aquí tienes un vídeo sobre técnicas de relajación
-    attachment: { "type":"video", "payload":{ "src": "https://www.youtube.com/embed/N-5HNQCXyZM" } }
-
+  - attachment:
+      payload:
+        title: "Técnicas de relajación"
+        src: https://www.youtube.com/embed/N-5HNQCXyZM
+      type: video
+    text: Aquí tienes un vídeo sobre técnicas de relajación
   utter_ready:
   - text: Perfecto!, ¿Estás preparada?
   - text: Vale, ¿comenzamos?

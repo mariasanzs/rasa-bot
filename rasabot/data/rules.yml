@@ -22,6 +22,11 @@ rules:
   - intent: chitchat
   - action: utter_chitchat
 
+- rule: show video
+  steps:
+  - intent: pedir_video
+  - action: utter_video
+
 - rule: Activar formulario
   steps:
    - intent: pedir_nombre
