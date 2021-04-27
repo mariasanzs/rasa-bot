@@ -114,8 +114,8 @@ responses:
   utter_video:
   - attachment:
       payload:
-        title: "Técnicas de relajación"
         src: https://www.youtube.com/embed/N-5HNQCXyZM
+        title: Técnicas de relajación
       type: video
     text: Aquí tienes un vídeo sobre técnicas de relajación
   utter_ready:
