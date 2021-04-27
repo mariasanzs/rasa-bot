@@ -59,12 +59,6 @@ nlu:
     - muy feliz
     - mejor que nunca
     - bienkl
-- intent: chitchat/diafragmatica
-  examples: |
-    - bien
-    - definicion de la respiración diafragmatica
-    - que es la respiracion diafragmatica
-    - definicion de respiracion diafragmtica
 - intent: mood_triste
   examples: |
     - mal
@@ -182,6 +176,32 @@ nlu:
   examples: |
     - definicion de la imaginacion tematica
     - que es la imaginacion tematica
+- intent: chitchat/diafragmatica
+  examples: |
+    - bien
+    - definicion de la respiración diafragmatica
+    - que es la respiracion diafragmatica
+    - definicion de respiracion diafragmtica
+- intent: chitchat/emocion_moderada
+  examples: |
+    - definicion de emocion moderada
+- intent: chitchat/emocion_negativa
+  examples: |
+    - definicion de emociones negativas
+    - definicion de emociones intensas negativas
+- intent: chitchat/pensamientos
+  examples: |
+    - que tipos de pensamientos hay
+    - como pueden ser los pensamientos 
+- intent: chitchat/pensamiento_racional
+  examples: |
+    - definicion de pensamiento racional
+- intent: chitchat/pensamiento_irracional
+  examples: |
+    - definicion de pensamiento irracionional
+- intent: chitchat/trampas_pensamiento
+  examples: |
+    - definicion de trampas del pensamiento
 - synonym: embarazada
   examples: |
     - encinta
@@ -216,3 +236,8 @@ nlu:
   examples: |
     - que es
     - en que consiste
+    - que son
+    - explicacion
+    - que eran 
+    - que era
+    - en que consisten

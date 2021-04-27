@@ -159,6 +159,16 @@ responses:
   - text: Todavía no se lo que es la respiración diafragmática
   utter_chitchat/tematica:
   - text: La imaginación temática consiste en unas técnicas que intentan dirigir y focalizar nuestros pensamientos en imágenes agradables y relajantes de tal forma que relajemos también nuestro cuerpo.
+  utter_chitchat/emocion_moderada:
+  - text: Todavía no se lo que es la respiración diafragmática
+  utter_chitchat/emocion_negativa:
+  - text: Todavía no se lo que es la respiración diafragmática
+  utter_chitchat/pensamiento_racional:
+  - text: Todavía no se lo que es la respiración diafragmática
+  utter_chitchat/pensamiento_irracional:
+  - text: Todavía no se lo que es la respiración diafragmática
+  utter_chitchat/pensamientos:
+  - text: Todavía no se lo que es la respiración diafragmática
 actions:
 - action_dar_consejo
 - action_iniciar_relajacion
