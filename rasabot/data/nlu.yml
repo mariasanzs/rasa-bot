@@ -59,6 +59,7 @@ nlu:
     - muy feliz
     - mejor que nunca
     - bienkl
+    - bien
 - intent: mood_triste
   examples: |
     - mal
@@ -178,7 +179,6 @@ nlu:
     - que es la imaginacion tematica
 - intent: chitchat/diafragmatica
   examples: |
-    - bien
     - definicion de la respiración diafragmatica
     - que es la respiracion diafragmatica
     - definicion de respiracion diafragmtica
@@ -192,7 +192,7 @@ nlu:
 - intent: chitchat/pensamientos
   examples: |
     - que tipos de pensamientos hay
-    - como pueden ser los pensamientos 
+    - como pueden ser los pensamientos
 - intent: chitchat/pensamiento_racional
   examples: |
     - definicion de pensamiento racional
@@ -238,6 +238,6 @@ nlu:
     - en que consiste
     - que son
     - explicacion
-    - que eran 
+    - que eran
     - que era
     - en que consisten
