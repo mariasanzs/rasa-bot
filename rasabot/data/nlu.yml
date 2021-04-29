@@ -199,13 +199,25 @@ nlu:
     - definicion de pensamiento racional
 - intent: chitchat/pensamiento_irracional
   examples: |
-    - definicion de pensamiento irracionional
+    - definicion de pensamiento irracional
+    - definicion de pensamientos no razonables
 - intent: chitchat/trampas_pensamiento
   examples: |
     - definicion de trampas del pensamiento
 - intent: chitchat/creencias_irracionales
   examples: |
     - definicion de creencias irracionales
+    - definicion de creencias no razonables
+    - definicion de creencias de necesidad
+    - definicion de creencias de demanda
+- intent: chitchat/analisis
+  examples: |
+    - como debemos de analizar nuestros pensamientos
+    - formas de analizar los pensamientos
+    - en que consiste el análisis de pensamientos
+    - que es el análisis
+    - que es la reestructuración cognitiva
+    - como conseguir la reestructuración cognitiva
 - synonym: embarazada
   examples: |
     - encinta
