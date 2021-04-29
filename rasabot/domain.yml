@@ -156,19 +156,20 @@ responses:
   utter_chitchat/estres:
   - text: El estrés nos afecta a todos y necesitamos de él para poder adaptarnos a los cambios constantes que se producen en nuestra vida. Es un estado que experimentamos cuando hay un desajuste entre lo que una situación nos pide y la percepción que tenemos de nuestra capacidad para afrontarla. Lo que nos provoca estrés no es la realidad, sino la forma en la que nuestra mente la interpreta. Ya que una situación estresante depende de cómo la interpretemos, la clave está en contar con unas buenas estrategias para que las situaciones estresantes no nos hagan pasarlo tan mal y así evitar las consecuencias negativas que el estrés tiene en nuestra salud. La superación del estrés es una habilidad que podemos aprender. Y uno de los objetivos de este programa es desarrollar estrategias para entenderlo, identificarlo y aprender habilidades y destrezas para un buen afrontamiento del mismo.
   utter_chitchat/diafragmatica:
-  - text: Todavía no se lo que es la respiración diafragmática
+  - text: La respiración es muy importante a la hora de mantener la calma ya que a través de las respiraciones del estómago podemos reducir el número de inspiraciones por minuto consiguiendo así sentirse más relajado. Practicarla es muy sencillo, solo tienes que decirme que te apetece relajarte y nos pondremos con ello.
   utter_chitchat/tematica:
-  - text: La imaginación temática consiste en unas técnicas que intentan dirigir y focalizar nuestros pensamientos en imágenes agradables y relajantes de tal forma que relajemos también nuestro cuerpo.
-  utter_chitchat/emocion_moderada:
-  - text: Todavía no se lo que es la respiración diafragmática
-  utter_chitchat/emocion_negativa:
-  - text: Todavía no se lo que es la respiración diafragmática
+  - image: https://i.pinimg.com/564x/4d/67/e4/4d67e4a2d3554b473c79ec131d0162bb.jpg
+    text: La imaginación temática consiste en unas técnicas que intentan dirigir y focalizar nuestros pensamientos en imágenes agradables y relajantes de tal forma que relajemos también nuestro cuerpo. Un ejemplo puede ser esta imagen.
+  utter_chitchat/emociones:
+  - text: Podemos tener emociones negativas, pero también positivas, por ello no debemos de intentar eliminarlas, sino identificarlas. Podemos tener emociones negativas que sean moderadas, como un simple enfado, u otras muy intensas, estas últimas no nos hacen ningún bien.
   utter_chitchat/pensamiento_racional:
-  - text: Todavía no se lo que es la respiración diafragmática
+  - text: Un pensamiento racional es aquel que tiene lógica y es realista, y que por ello lleva consigo emociones moderadas. Un ejemplo podría ser, "Los problemas en compañía siempre se afrontan mejor"
   utter_chitchat/pensamiento_irracional:
-  - text: Todavía no se lo que es la respiración diafragmática
+  - text: Un pensamiento irracional es aquel que carece de razón, y que se expresan con exigencia o necesidad. Debemos evitarlos porque no nos hacen ningún bien. Ejemplo, "Nunca llegaré a ser alguien importante"
   utter_chitchat/pensamientos:
-  - text: Todavía no se lo que es la respiración diafragmática
+  - text: Nuestros pensamientos o creencias pueden ser racionales o irraciones, si quieres saber un poco mas de cada uno de ellos preguntame.
+  utter_chitchat/trampas_pensamiento:
+  - text: Bien como dice la propia palabra, las "trampas" son pensamientos negativos que incurren en nuestra mente y que nos perjudican. Algunas de estas trampas podrían ser tomar decisiones precipitadas, ser pesimista o los pensamientos extremos (todo o nada) 
 actions:
 - action_dar_consejo
 - action_iniciar_relajacion

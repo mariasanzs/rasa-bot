@@ -2,32 +2,32 @@ version: "2.0"
 
 rules:
 
-- rule: Saludar siempre que se te salude
+- rule: Say hello whenever they say hello
   steps:
   - intent: saludar
   - action: utter_saludar
 
-- rule: Decir adios siempre que te digan adios
+- rule: Say goodbye whenever they say goodbye
   steps:
   - intent: despedir
   - action: utter_despedir
 
-- rule: Responder cuando te dan las gracias
+- rule: Be grateful when they thank you
   steps:
   - intent: agradecer
   - action: utter_agradecer
   
-- rule: respond to chitchat
+- rule: Respond to chitchat
   steps:
   - intent: chitchat
   - action: utter_chitchat
 
-- rule: show video
+- rule: Show video
   steps:
   - intent: pedir_video
   - action: utter_video
 
-- rule: Activar formulario
+- rule: Activate form
   steps:
    - intent: pedir_nombre
    - action: name_form

@@ -60,6 +60,7 @@ nlu:
     - mejor que nunca
     - bienkl
     - bien
+    - Bien
 - intent: mood_triste
   examples: |
     - mal
@@ -126,7 +127,6 @@ nlu:
     - Me gustaria relajarme un poco
     - quiero relajarme un poco
     - me gustaria relajarme un poco
-    - me apetece relajaarme un poco
     - me apetece relajarme un poco
     - me apetece relajarme
 - intent: chitchat/ask_quien_eres
@@ -182,11 +182,12 @@ nlu:
     - definicion de la respiración diafragmatica
     - que es la respiracion diafragmatica
     - definicion de respiracion diafragmtica
-- intent: chitchat/emocion_moderada
+    - definición de respiracion diafragmatica
+- intent: chitchat/emociones
   examples: |
+    - que tipo de emociones hay
+    - que emociones podemos encontrar
     - definicion de emocion moderada
-- intent: chitchat/emocion_negativa
-  examples: |
     - definicion de emociones negativas
     - definicion de emociones intensas negativas
 - intent: chitchat/pensamientos
@@ -202,6 +203,9 @@ nlu:
 - intent: chitchat/trampas_pensamiento
   examples: |
     - definicion de trampas del pensamiento
+- intent: chitchat/creencias_irracionales
+  examples: |
+    - definicion de creencias irracionales
 - synonym: embarazada
   examples: |
     - encinta
