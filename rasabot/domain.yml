@@ -174,6 +174,15 @@ responses:
   - text: Las creencias irracionales se basan en la creencia de deber tener todo (amor, dinero, éxito, confort o justicia) y normalmente se centran o bien en como debo ser, o en como deben ser los demas o como quiero que sea el mundo. Ejemplos de esto es pensar que las personas que no se llevan bien contigo son malas personas, buscar la aprobación de todo el mundo o ser una persona egoísta
   utter_chitchat/analisis:
   - text: Cuando detectamos un pensamiento irracional debemos de cuestionarnos a lo que sentimos a través del análisis, identificando cuales son esas creencias erróneas, reflexionando sobre si verdaderamente es realista lo que estamos diciendo y si nos está aportando algo positivo el tener ese pensamiento. Cuando nos enfrentamos a este tipo de problemas también es importante ver las cosas desde otra perspectiva pensando que consejo me daría a mi misma. Así conseguiremos pensamientos alternativos mucho más adaptativo.
+  utter_chitchat/autoinstrucciones:
+  - text: Las autoinstrucciones son esas órdenes que nos hacemos a nostros mismos, y es importante plantearnoslas siempre de manera positiva para que sean muchos más útiles y efectivas, un ejemplo es "Vale, voy a empezar con las tareas" 
+  utter_chitchat/experiencia_estres:
+  - text: Las etapas del estrés están divididas en 4 etapas diferentes. Primero nos anticipamos a una circunstancia que nos va a estresar "Seguro que me voy a equivocar", para evitarlo debemos de tener mensajes positivos como "No me sirve de nada estar preocupada", tras esto, debemos de confrontando el problema pensando que es un malestar pasajero "Para mañana todo habrá pasado" , también es importante que en los momentos que más tensas nos sintamos, mantengamos la calma, "Bueno, voy a intentar relajarme". Por último deberemos autorreformarnos, sintiéndonos orgullosas de nuestro esfuerzo "Al final lo conseguí".
+  - text: Podemos dividir estas etapas siguiendo la norma SPIR, "S" de tomar conciencia de las SENSACIONES de estrés que aparecen, "P" tomar PENSAMIENTO de las conversaciones que tenemos con nostros mismos, "I" sustituyendo nuestros pensamientos negativos por autoINSTRUCCIONES positivas, "R" autorREFORZÁNDONOS por nuestro esfuerzo
+  utter_chitchat/administracion_tiempo:
+  - text: Tener demasiadas tareas al mismo tiempo nos puede generar preocupaciones, tensión y presión. Para evitarlo debemos de aprender a distribuir nuestro tiempo delegando responsabilidades, atreviéndose a pedir ayuda si la necesitamos, sabiendo decir NO cuando nos vemos capaces de asimilar una tarea y aprendiendo a organizarnos de forma eficiente en nuestras tareas siendo conscientes de las prioridades de estas.
+  utter_chitchat/organizarme:
+  - text: Es muy fácil! Primero debes ver que tareas tienes que hacer, y una vez las sepas todas ve asigándoles una prioridad empezando por las más importantes. Un consejo que te doy es que utilices calendarios. Un ratito para organizarse siempre viene bien!
 actions:
 - action_dar_consejo
 - action_iniciar_relajacion

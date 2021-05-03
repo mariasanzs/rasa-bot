@@ -218,6 +218,31 @@ nlu:
     - que es el análisis
     - que es la reestructuración cognitiva
     - como conseguir la reestructuración cognitiva
+- intent: chitchat/autoinstrucciones
+  examples: |
+    - definición de autoinstrucción
+    - definición de auto-instrucciones
+    - como funciona el entrenamiento de las autoinstrucciones
+    - en que consiste el entrenamiento de las autoinstrucciones
+- intent: chitchat/experiencia_estres
+  examples: |
+    - como es la experiencia del estres
+    - que etapas tiene el estres
+    - de que etapas se compone el estres
+    - como puedo afrontar una situación de estres
+- intent: chitchat/administrar_tiempo
+  examples: |
+    - como puedo administrar mi tiempo
+    - no se como organizar mi tiempo
+    - tengo demasiadas tareas en el mismo tiempo
+    - como distribuyo mi tiempo
+    - como organizo mis tareas al mismo tiempo
+- intent: chitchat/organizarme
+  examples: |
+    - ayudame a organizar mi dia
+    - como puedo organizar mis tareas
+    - necesito organizar mis tareas
+    - como programo mi dia
 - synonym: embarazada
   examples: |
     - encinta
