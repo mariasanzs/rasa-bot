@@ -37,16 +37,36 @@ intents:
     use_entities: true
 - pedir_nombres:
     use_entities: true
+- pedir_feedback:
+    use_entities: true
+- pedir_repeticion:
+    use_entities: true
+- continuar:
+    use_entities: true
+- seleccionar_imagen:
+    use_entities: true
 entities:
 - problema
 - tecnica
 - feedback
+- repeticiones
+- imagen
 slots:
   problema:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
     influence_conversation: true
+  imagen:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  repeticiones:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: 0
+    auto_fill: true
+    influence_conversation: false
   feedback:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
@@ -86,8 +106,20 @@ responses:
   - text: ¿Te sientes mejor?
   - text: ¿Te ha venido bien?
   utter_feedback:
-  - text: ¿Todo bien por ahora?
-  - text: ¿Vas bien?
+  - buttons:
+    - payload: '/pedir_feedback{"feedback": "ok"}'
+      title: Si, vamos a seguir
+    - payload: '/pedir_feedback{"feedback": "no"}'
+      title: No, quiero parar
+    text: ¿Todo bien por ahora?
+  utter_continuar:
+  - buttons:
+    - payload: '/continuar{"feedback": "continuar"}'
+      title: Sigamos
+    text: Continuamos cuando estés lista
+  utter_siguiente_paso:
+  - text: ¿Seguimos?
+  - text: ¿Estás lista para seguir?
   - text: ¿Continuamos?
   utter_feliz:
   - text: Me alegro mucho de que estés bien!
@@ -118,6 +150,13 @@ responses:
         title: Técnicas de relajación
       type: video
     text: Aquí tienes un vídeo sobre técnicas de relajación
+  utter_recording:
+  - attachment:
+      payload:
+        src: ./muneca.wav
+        title: grabacion
+      type: video
+    text: Aquí tienes una musica para escuchar mientras sigues este paso
   utter_ready:
   - text: Perfecto!, ¿Estás preparada?
   - text: Vale, ¿comenzamos?
@@ -142,6 +181,24 @@ responses:
     - payload: '/seleccionar_tecnica{"tecnica": "imaginacion"}'
       title: Técnica de imaginación temática.
     text: Genial!, cual quieres hacer?
+  utter_elegir_imagen:
+  - buttons:
+    - payload: '/seleccionar_imagen{"imagen": "playa"}'
+      title: Playa solitaria
+    - payload: '/seleccionar_imagen{"imagen": "montana"}'
+      title: Montañas nevadas
+    - payload: '/seleccionar_imagen{"imagen": "prado"}'
+      title: Prado repleto de flores
+    - payload: '/seleccionar_imagen{"imagen": "lago"}'
+      title: Lago sereno
+    text: Imaginate una escena que te relaje. Puedes elegir alguna de estas.
+  utter_repetir:
+  - buttons:
+    - payload: '/pedir_repeticion{"feedback": "repeticion"}'
+      title: Sí, repetir
+    - payload: '/pedir_repeticion{"feedback": "repeticion2"}'
+      title: No, siguiente paso.
+    text: ¿Notas como se va yendo la tensión? LLevas {repeticiones} veces ¿Repetir?
   utter_chitchat/ask_quien_eres:
   - text: Soy un bot, creado por María Sanz para su proyecto fin de grado en Ingeniería informática que da apoyo a terapias para mujeres embarazadas.
   utter_chitchat/autorregistro:
@@ -183,12 +240,49 @@ responses:
   - text: Tener demasiadas tareas al mismo tiempo nos puede generar preocupaciones, tensión y presión. Para evitarlo debemos de aprender a distribuir nuestro tiempo delegando responsabilidades, atreviéndose a pedir ayuda si la necesitamos, sabiendo decir NO cuando nos vemos capaces de asimilar una tarea y aprendiendo a organizarnos de forma eficiente en nuestras tareas siendo conscientes de las prioridades de estas.
   utter_chitchat/organizarme:
   - text: Es muy fácil! Primero debes ver que tareas tienes que hacer, y una vez las sepas todas ve asigándoles una prioridad empezando por las más importantes. Un consejo que te doy es que utilices calendarios. Un ratito para organizarse siempre viene bien!
+  utter_chitchat/asertivo:
+  - text: Tenemos un comportamiento asertivo cuando expresamos como nos sentimos de forma sincera sin eso implicar que ofendamos o vulneremos los derechos de los demás.
+  utter_chitchat/inhibido:
+  - text: Cuando una persona es pasiva o está inhibida no expresa como se siente ni se defiende ante circunstancias. Ser una persona pasiva nos puede perjudicar y producirnos mucha ansiedad ya que a veces dejamos de pensar en nosotros mismos para preocuparnos por los demás. Siempre debemos de procurar ser personas asertivas, si quieres saber más preguntame como es una persona asertiva.
+  utter_chitchat/agresivo:
+  - text: Cuando una persona se está comportando de forma agresiva, pierde totalmente su respeto por los demás y como pueden sentirse estos. Ser una persona agresiva implica en parte ser una persona sin empatía y este comportamiento puede dañar y generar actitudes de rechazo a los demás. Debemos aspirar a formar parte de un entorno asertivo, si quieres saber más sobre la asertividad preguntame que es el comportamiento asertivo.
+  utter_chitchat/derechos_asertivos:
+  - image: https://i.pinimg.com/originals/4f/85/ea/4f85ea4f8277d5c683805daf27da0d56.jpg
+    text: Los derechos asertivos son aquellos que tenemos por el hecho de ser personas y que todos nos merecemos. Te pongo algunos de ellos.
+  utter_chitchat/ira:
+  - text: El estrés a veces hace que nos irritemos, eso a veces genera que culpemos a los demás de los que nos pasa, seamos injustos y descarguemos nuestros sentimientos de forma dañina en los demás. Para controlar esos sentimientos lo mejor que podemos hacer es aplicar alguna de las técnicas de relajación o autoinstrucciones nada más darnos cuenta de lo que estamos sintiendo. Puedes probar alguna técnica de relajación diciendo algo como 'Me apetece relajarme un poco'.
+  utter_chitchat/no:
+  - text: Decir no es uno de los derechos asertivos y a veces no lo hacemos por miedo a herir u ofender a alguien. Sin embargo debemos de aprender a hacerlo por nuestro propio beneficio personal. La teoría es fácil, simplemente decir 'no', y si se ve apropiado dar una justificación, aunque en la práctica puede ser mas complejo. Puedes conocer algunas procedimientos como el del 'disco rayado' o el del 'banco de niebla' simplemente preguntándome por alguno de ellos.
+  utter_chitchat/disco_rayado:
+  - text: El procedimiento del disco rayado nos ayuda a decir no sin tener que dar una extensa explicación repitiendo tranquila y ciclicamente lo que pensamos siempre desde una perspectiva serena y sin ceder a chantajes o manipulaciones.
+  utter_chitchat/banco_niebla:
+  - text: El procedimiento del banco de niebla nos permite decir no evitando ceder a cualquier tipo de manipulación y haciendo frente a las críticas. Para llevar acabo esta técnica debemos de reconocer la parte de verdad de lo que dice la otra persona, partir de 'principios' o 'hechos' que todo el mundo acepta para razonar tus argumentos e intentar no dar argumentos absolutos, recuerda que todo no es blanco o negro.
+  utter_chitchat/cambio_conducta:
+  - text: Cuando necesitamos pedirle a alguien un cambio de conducta lo mejor que podemos hacer es contar todo de nuestra perspectiva, contando como nos sentimos y explicando lo que queremos cambiar, por qué y a que alternativa, siempre intentando tambien empatizar con la otra persona, siendo agradecido y poniendo de tu parte para que esa persona se sienta motivada al cambio.
+  utter_chitchat/felicidad:
+  - text: La felicidad es algo que busca uno mismo, porque sale de nosotros y depende de nuestra actitud, porque es eso, una actitud. Los factores externos no condicionan tu felicidad.
+  utter_chitchat/como_feliz:
+  - text: Para ser feliz lo más importante es tomarse la vida con humor, saber reirse de uno mismo y de sus problemas ayuda a exteriorizar nuestros sentimientos y verlo todo con más perspectiva y de una forma más positiva. Puedes pedirme formas de ver la vida con humor. ¡Fuera dramas!.
+  utter_chitchat/sentido_humor:
+  - text: Intenta ver el lado bueno de las cosas y sacar alguna risa de aquellos problemas por los que pasamos. Tomarnos las cosas con ironía o quitarle importancia a nuestros problemas nos ayudará a ser más felices y estar de buen humor
+  utter_chitchat/amargada:
+  - text: A veces tenemos actitudes que nos amargan poco a poco la vida, como sobrecargarnos de problemas que no nos corresponden, no saber perdonarnos, darle demasiadas vueltas a las cosas o autocastigarnos evitando momentos que nos pueden hacer feliz.
 actions:
 - action_dar_consejo
 - action_iniciar_relajacion
 - action_relajacion
+- action_diaphragmatic
+- action_guided
+- action_modo
 - utter_slots_values
 - action_submit
+- action_repeticion
+- action_end_diaph
+- action_first_paused
+- action_second_paused
+- action_third_paused
+- action_4_paused
+- action_end_guided
 forms:
   name_form:
     apellidos:
