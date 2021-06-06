@@ -25,6 +25,7 @@ pipeline:
 #     threshold: 0.3
 #     ambiguity_threshold: 0.1
   - name: "SpacyNLP"
+    model: "es_core_news_md"
   - name: "SpacyTokenizer"
   - name: "SpacyFeaturizer"
   - name: "DIETClassifier"

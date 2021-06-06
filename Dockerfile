@@ -1,6 +1,6 @@
 FROM rasa/rasa:latest
 
-COPY app /app
+COPY rasa-bot /app
 COPY server.sh /app/server.sh
 
 USER root
