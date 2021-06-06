@@ -107,16 +107,33 @@ nlu:
     - /pedir_consejo{"problema": "estres"}
     - /pedir_consejo{"problema": "incompresion"}
     - /pedir_consejo{"problema": "otro"}
+- intent: pedir_feedback
+  examples: |
+    - /pedir_feedback{"feedback": "ok"}
+    - /pedir_feedback{"feedback": "no"}
+- intent: continuar
+  examples: |
+    - /continuar{"feedback": "continuar"}
+- intent: pedir_repeticion
+  examples: |
+    - /pedir_repeticion{"feedback": "repeticion"}
 - intent: seleccionar_tecnica
   examples: |
     - /seleccionar_tecnica{"tecnica": "diafragmatica"}
     - /seleccionar_tecnica{"tecnica": "imaginacion"}
+- intent: seleccionar_imagen
+  examples: |
+    - /seleccionar_imagen{"imagen": "playa"}
+    - /seleccionar_imagen{"imagen": "montana"}
+    - /seleccionar_imagen{"imagen": "prado"}
+    - /seleccionar_imagen{"imagen": "lago"}
 - intent: pedir_video
   examples: |
     - podrías ponerme el video de relajacion
     - ponme el video de relajacion
     - cual era el link del video
     - reproduce el video
+    - enseñame el video
 - intent: pedir_relajacion
   examples: |
     - Me gustaría relajarme un poco
@@ -129,6 +146,13 @@ nlu:
     - me gustaria relajarme un poco
     - me apetece relajarme un poco
     - me apetece relajarme
+    - me apetece relajarme un pococ
+    - me apetece relajarme un pco
+    - Quiero relajarme
+    - me apetece relajarme un
+    - quiero relajrme
+    - pedir relajacion
+    - Me apetece relajarme
 - intent: chitchat/ask_quien_eres
   examples: |
     - ¿quien eres?
@@ -177,6 +201,7 @@ nlu:
   examples: |
     - definicion de la imaginacion tematica
     - que es la imaginacion tematica
+    - definicion de imaginacion tematica
 - intent: chitchat/diafragmatica
   examples: |
     - definicion de la respiración diafragmatica
@@ -186,6 +211,7 @@ nlu:
 - intent: chitchat/emociones
   examples: |
     - que tipo de emociones hay
+    - que tipo de emociones podemos sentir
     - que emociones podemos encontrar
     - definicion de emocion moderada
     - definicion de emociones negativas
@@ -243,6 +269,78 @@ nlu:
     - como puedo organizar mis tareas
     - necesito organizar mis tareas
     - como programo mi dia
+- intent: chitchat/asertivo
+  examples: |
+    - que es el comportamiento asertivo
+    - como puedo reconocer pensamientos asertivos
+    - que son los pensamientos asertivos
+    - cuales son las caracteristicas de un comportamiento asertivo
+- intent: chitchat/inhibido
+  examples: |
+    - que es el comportamiento pasivo
+    - que es el comportamiento inhibido
+    - como puedo reconocer el pensamiento pasivo
+    - como es una persona inhibida
+    - como es una persona pasiva
+    - cuales son las caracteristicas de un comportamiento pasivo
+    - cuales son las caracteristicas de un comportamiento inhibido
+- intent: chitchat/agresivo
+  examples: |
+    - definición de pensamiento agresivo
+    - como es el comportamiento agresivo
+    - como son las personas agresivas
+    - cuales son las caracteristicas de un comportamiento agresivo
+- intent: chitchat/derechos_asertivos
+  examples: |
+    - que son los derechos asertivos
+    - como reconozco los derechos asertivos
+    - defincion de derechos asertivos
+- intent: chitchat/ira
+  examples: |
+    - cual es la relación entre la ira y el estrés
+    - como sobrellevar la ira
+    - que cosas podemos hacer para controlar la ira
+    - que es la ira
+    - como trabajar la ira
+- intent: chitchat/no
+  examples: |
+    - como decir no
+    - aprender a decir que no
+- intent: chitchat/disco_rayado
+  examples: |
+    - en que consiste la tecnica del disco rayado
+    - como funciona el procedimiento del disco rayado
+    - que es el procedimiento del disco rayado
+- intent: chitchat/banco_niebla
+  examples: |
+    - que es el procedimiento del banco de niebla
+    - en que consiste la tecnica del banco de niebla
+    - como funciona el banco de niebla
+- intent: chitchat/cambio_conducta
+  examples: |
+    - como puedo pedir un cambio de conducta
+    - quiero que tenga un cambio de conducta
+    - pasos para pedir un cambio en el comportamiento
+- intent: chitchat/felicidad
+  examples: |
+    - que es la felicidad
+- intent: chitchat/como_feliz
+  examples: |
+    - como ser feliz
+    - estrategias para ser mas feliz
+    - ideas para ser mas feliz
+    - como conseguir la felicidad
+- intent: chitchat/sentido_humor
+  examples: |
+    - favorecer sentido del humor
+    - tener más sentido del humor
+- intent: chitchat/amargada
+  examples: |
+    - estoy amargada
+    - me gusta amargarme
+    - el arte de amargarse la vida
+    - estoy amargada de la vida
+    - soy una total amargada
 - synonym: embarazada
   examples: |
     - encinta
@@ -282,3 +380,5 @@ nlu:
     - que eran
     - que era
     - en que consisten
+    - concepto
+    - recuerdame que es 
