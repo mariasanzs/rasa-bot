@@ -1,7 +1,7 @@
 FROM rasa/rasa:latest
 
-COPY rasa-bot /app
-COPY server.sh /app/server.sh
+COPY ../rasabot /app
+COPY ../server.sh /app/server.sh
 
 USER root
 RUN pip3 install rasa[spacy]
