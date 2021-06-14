@@ -11,7 +11,7 @@ import json
 import time
 from pathlib import Path
 from typing import Any, Text, Dict, List
-from database_connectivity import DataUpdate
+#from database_connectivity import DataUpdate
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.forms import FormAction
@@ -245,13 +245,13 @@ class ActionEndGuided(Action):
 #         dispatcher.utter_message(text=f"So {first_name}, what is your last name?")
 #         return []
 
-class ActionSubmit(Action):
-    def name(self) -> Text:
-        return "action_submit"
+#class ActionSubmit(Action):
+#    def name(self) -> Text:
+#        return "action_submit"
 
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
        #dispatcher.utter_message(text="Vale, me acordaré de que tu nombre es {0} y tus apellidos {1}".format(
        #    tracker.get_slot("nombre"), tracker.get_slot("apellidos")))
-       DataUpdate(tracker.get_slot('nombre'),tracker.get_slot('apellidos'))
-       dispatcher.utter_message("Tus datos han sido guardados. Gracias")
-       return []
+#       DataUpdate(tracker.get_slot('nombre'),tracker.get_slot('apellidos'))
+#       dispatcher.utter_message("Tus datos han sido guardados. Gracias")
+#       return []
