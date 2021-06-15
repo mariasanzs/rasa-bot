@@ -230,6 +230,7 @@ nlu:
 - intent: chitchat/trampas_pensamiento
   examples: |
     - definicion de trampas del pensamiento
+    - que son las trampas del pensamiento
 - intent: chitchat/creencias_irracionales
   examples: |
     - definicion de creencias irracionales
@@ -381,4 +382,4 @@ nlu:
     - que era
     - en que consisten
     - concepto
-    - recuerdame que es 
+    - recuerdame que es

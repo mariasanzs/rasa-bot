@@ -37,6 +37,9 @@ pipeline:
   - name: ResponseSelector
     epochs: 100
     retrieval_intent: chitchat
+  - name: FallbackClassifier
+    threshold: 0.1
+    ambiguity_threshold: 0.05
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
@@ -52,6 +55,11 @@ policies:
 #     constrain_similarities: true
   - name: FormPolicy
   - name: RulePolicy
+    core_fallback_threshold: 0.1
+    core_fallback_action_name: action_default_fallback
+    enable_fallback_prediction: true
+    restrict_rules: true
+    check_for_contradictions: true
   - name: "FallbackPolicy"
     # min confidence needed to accept an NLU prediction
     nlu_threshold: 0.25
