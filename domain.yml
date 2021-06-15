@@ -1,0 +1,292 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- saludar:
+    use_entities: true
+- despedir:
+    use_entities: true
+- afirmar:
+    use_entities: true
+- negar:
+    use_entities: true
+- mood_genial:
+    use_entities: true
+- mood_triste:
+    use_entities: true
+- contacto:
+    use_entities: true
+- agradecer:
+    use_entities: true
+- preguntar:
+    use_entities: true
+- seleccionar_tecnica:
+    use_entities: true
+- chitchat:
+    use_entities: true
+- pedir_consejo:
+    use_entities: true
+- pedir_relajacion:
+    use_entities: true
+- pedir_video:
+    use_entities: true
+- pedir_nombre:
+    use_entities: true
+- pedir_nombres:
+    use_entities: true
+- pedir_feedback:
+    use_entities: true
+- pedir_repeticion:
+    use_entities: true
+- continuar:
+    use_entities: true
+- seleccionar_imagen:
+    use_entities: true
+entities:
+- problema
+- tecnica
+- feedback
+- repeticiones
+- imagen
+slots:
+  problema:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  imagen:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  repeticiones:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: 0
+    auto_fill: true
+    influence_conversation: false
+  feedback:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  tecnica:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  nombre:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  apellidos:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_saludar:
+  - text: Hola! Como te encuentras hoy?
+  - text: Hola! Como estás?
+  - text: Hola amiga! Que tal te encuentras?
+  - text: Me alegro de verte! Como te sientes?
+  utter_animar:
+  - text: Lo siento ..., todo va a salir genial no te preocupes. Puedes pedirme lo que quieras
+  - text: Vaya... tu puedes con esto, no te vengas abajo. Puedes pedirme lo que quieras
+  utter_te_ha_servido:
+  - text: ¿Estás mejor ahora?
+  - text: ¿Te sientes mejor?
+  - text: ¿Te ha venido bien?
+  utter_feedback:
+  - buttons:
+    - payload: '/pedir_feedback{"feedback": "ok"}'
+      title: Si, vamos a seguir
+    - payload: '/pedir_feedback{"feedback": "no"}'
+      title: No, quiero parar
+    text: ¿Todo bien por ahora?
+  utter_continuar:
+  - buttons:
+    - payload: '/continuar{"feedback": "continuar"}'
+      title: Sigamos
+    text: Continuamos cuando estés lista
+  utter_siguiente_paso:
+  - text: ¿Seguimos?
+  - text: ¿Estás lista para seguir?
+  - text: ¿Continuamos?
+  utter_feliz:
+  - text: Me alegro mucho de que estés bien!
+  - text: 'Fantástico, me alegro mucho :) '
+  utter_despedir:
+  - text: Adiós :)
+  - text: Hasta pronto!
+  - text: Adiós!, espero que te haya gustado hablar conmigo
+  utter_responder_email:
+  - text: Perfecto!, {email} apuntado
+  utter_agradecer:
+  - text: Gracias a ti
+  - text: De nada
+  - text: No tienes que agradecermelo, para eso estoy aquí.
+  utter_preguntar:
+  - text: No dudes en preguntarme lo que quieras
+  - text: Puedes hacerme preguntas cuando quieras
+  - text: Si tienes dudas preguntame
+  utter_preguntar_nombre:
+  - text: me podrías decir tu nombre?
+  - text: cual es tu nombre de pila?
+  utter_submit:
+  - text: Vale, muchas gracias
+  utter_video:
+  - attachment:
+      payload:
+        src: https://www.youtube.com/embed/N-5HNQCXyZM
+        title: Técnicas de relajación
+      type: video
+    text: Aquí tienes un vídeo sobre técnicas de relajación
+  utter_recording:
+  - attachment:
+      payload:
+        src: ./muneca.wav
+        title: grabacion
+      type: video
+    text: Aquí tienes una musica para escuchar mientras sigues este paso
+  utter_ready:
+  - text: Perfecto!, ¿Estás preparada?
+  - text: Vale, ¿comenzamos?
+  - text: ¿Empezamos ya?
+  utter_slots_values:
+  - text: Vale, me acordaré de que eres {nombre} {apellidos}.
+  utter_valorar_situacion:
+  - buttons:
+    - payload: '/pedir_consejo{"problema": "miedo"}'
+      title: Tengo miedo por el parto
+    - payload: '/pedir_consejo{"problema": "estres"}'
+      title: Estoy estresada por la situación
+    - payload: '/pedir_consejo{"problema": "incomprension"}'
+      title: No me siento comprendida
+    - payload: '/pedir_consejo{"problema": "otro"}'
+      title: otra
+    text: ¡Y eso?, lo siento mucho... ¿Que situacion se adapta mas a tu problema?
+  utter_elegir_tecnica:
+  - buttons:
+    - payload: '/seleccionar_tecnica{"tecnica": "diafragmatica"}'
+      title: Técnica de respiración diafragmática
+    - payload: '/seleccionar_tecnica{"tecnica": "imaginacion"}'
+      title: Técnica de imaginación temática.
+    text: Genial!, cual quieres hacer?
+  utter_elegir_imagen:
+  - buttons:
+    - payload: '/seleccionar_imagen{"imagen": "playa"}'
+      title: Playa solitaria
+    - payload: '/seleccionar_imagen{"imagen": "montana"}'
+      title: Montañas nevadas
+    - payload: '/seleccionar_imagen{"imagen": "prado"}'
+      title: Prado repleto de flores
+    - payload: '/seleccionar_imagen{"imagen": "lago"}'
+      title: Lago sereno
+    text: Imaginate una escena que te relaje. Puedes elegir alguna de estas.
+  utter_repetir:
+  - buttons:
+    - payload: '/pedir_repeticion{"feedback": "repeticion"}'
+      title: Sí, repetir
+    - payload: '/pedir_repeticion{"feedback": "repeticion2"}'
+      title: No, siguiente paso.
+    text: ¿Notas como se va yendo la tensión? LLevas {repeticiones} veces ¿Repetir?
+  utter_chitchat/ask_quien_eres:
+  - text: Soy un bot, creado por María Sanz para su proyecto fin de grado en Ingeniería informática que da apoyo a terapias para mujeres embarazadas.
+  utter_chitchat/autorregistro:
+  - text: Los autorregistros son una técnica que se usa en las terapias psicológicas y en ellos expresamos nuestros pensamientos, sentimientos, comportamientos o manifestaciones de tal manera que podamos aprender a observarnos de forma objetiva e intentemos modificar aquellas cosas que nos perjudican. A lo largo de las sesiones iremos realizándolos con el objetivo de mejorar.
+  utter_chitchat/duracion_sesion:
+  - text: Normalmente las sesiones duran alrededor de 1 hora y media
+  - text: Las sesiones son de aproximadamente 1 hora y media.
+  utter_chitchat/objetivo_programa:
+  - text: 'En general, lo que se intenta conseguir es tener un mayor control de nuestras respuestas sobre aquellas situaciones o acontecimientos que nos generan estrés, pero más concretamente se pretende aprender es: - Técnicas para desactivar de nuestra rutina - Identificar, debatir y cambiar nuestros saltos irracionales o sesgos de pensamiento. - A discriminar entre conductas asertivas, pasivas y agresivas - A pedir ayuda y a decir no - A pedir cambios de conducta Y muchas más cosas'
+  utter_chitchat/normas_internas:
+  - text: Las normas internas del programa son la confidencialidad de lo que se expone en el grupo, ser puntual, asistir siempre a las sesiones, participar de forma activa y con respeto, y realizar las tareas para casa.
+  utter_chitchat/estres:
+  - text: El estrés nos afecta a todos y necesitamos de él para poder adaptarnos a los cambios constantes que se producen en nuestra vida. Es un estado que experimentamos cuando hay un desajuste entre lo que una situación nos pide y la percepción que tenemos de nuestra capacidad para afrontarla. Lo que nos provoca estrés no es la realidad, sino la forma en la que nuestra mente la interpreta. Ya que una situación estresante depende de cómo la interpretemos, la clave está en contar con unas buenas estrategias para que las situaciones estresantes no nos hagan pasarlo tan mal y así evitar las consecuencias negativas que el estrés tiene en nuestra salud. La superación del estrés es una habilidad que podemos aprender. Y uno de los objetivos de este programa es desarrollar estrategias para entenderlo, identificarlo y aprender habilidades y destrezas para un buen afrontamiento del mismo.
+  utter_chitchat/diafragmatica:
+  - text: La respiración es muy importante a la hora de mantener la calma ya que a través de las respiraciones del estómago podemos reducir el número de inspiraciones por minuto consiguiendo así sentirse más relajado. Practicarla es muy sencillo, solo tienes que decirme que te apetece relajarte y nos pondremos con ello.
+  utter_chitchat/tematica:
+  - image: https://i.pinimg.com/564x/4d/67/e4/4d67e4a2d3554b473c79ec131d0162bb.jpg
+    text: La imaginación temática consiste en unas técnicas que intentan dirigir y focalizar nuestros pensamientos en imágenes agradables y relajantes de tal forma que relajemos también nuestro cuerpo. Un ejemplo puede ser esta imagen.
+  utter_chitchat/emociones:
+  - text: Podemos tener emociones negativas, pero también positivas, por ello no debemos de intentar eliminarlas, sino identificarlas. Podemos tener emociones negativas que sean moderadas, como un simple enfado, u otras muy intensas, estas últimas no nos hacen ningún bien.
+  utter_chitchat/pensamiento_racional:
+  - text: Un pensamiento racional es aquel que tiene lógica y es realista, y que por ello lleva consigo emociones moderadas. Un ejemplo podría ser, "Los problemas en compañía siempre se afrontan mejor"
+  utter_chitchat/pensamiento_irracional:
+  - text: Un pensamiento irracional es aquel que carece de razón, y que se expresan con exigencia o necesidad. Debemos evitarlos porque no nos hacen ningún bien. Ejemplo, "Nunca llegaré a ser alguien importante"
+  utter_chitchat/pensamientos:
+  - text: Debemos de tener claro que nuestros pensamientos o creencias no son hechos, sino interpretaciones de nuestras experiencias. Estos pueden ser racionales o irraciones, si quieres saber un poco mas de cada uno de ellos preguntame.
+  utter_chitchat/trampas_pensamiento:
+  - text: Bien como dice la propia palabra, las "trampas" son pensamientos negativos que incurren en nuestra mente y que nos perjudican. Algunas de estas trampas podrían ser tomar decisiones precipitadas, ser pesimista o los pensamientos extremos (todo o nada)
+  utter_chitchat/creencias_irracionales:
+  - text: Las creencias irracionales se basan en la creencia de deber tener todo (amor, dinero, éxito, confort o justicia) y normalmente se centran o bien en como debo ser, o en como deben ser los demas o como quiero que sea el mundo. Ejemplos de esto es pensar que las personas que no se llevan bien contigo son malas personas, buscar la aprobación de todo el mundo o ser una persona egoísta
+  utter_chitchat/analisis:
+  - text: Cuando detectamos un pensamiento irracional debemos de cuestionarnos a lo que sentimos a través del análisis, identificando cuales son esas creencias erróneas, reflexionando sobre si verdaderamente es realista lo que estamos diciendo y si nos está aportando algo positivo el tener ese pensamiento. Cuando nos enfrentamos a este tipo de problemas también es importante ver las cosas desde otra perspectiva pensando que consejo me daría a mi misma. Así conseguiremos pensamientos alternativos mucho más adaptativo.
+  utter_chitchat/autoinstrucciones:
+  - text: Las autoinstrucciones son esas órdenes que nos hacemos a nostros mismos, y es importante plantearnoslas siempre de manera positiva para que sean muchos más útiles y efectivas, un ejemplo es "Vale, voy a empezar con las tareas"
+  utter_chitchat/experiencia_estres:
+  - text: Las etapas del estrés están divididas en 4 etapas diferentes. Primero nos anticipamos a una circunstancia que nos va a estresar "Seguro que me voy a equivocar", para evitarlo debemos de tener mensajes positivos como "No me sirve de nada estar preocupada", tras esto, debemos de confrontando el problema pensando que es un malestar pasajero "Para mañana todo habrá pasado" , también es importante que en los momentos que más tensas nos sintamos, mantengamos la calma, "Bueno, voy a intentar relajarme". Por último deberemos autorreformarnos, sintiéndonos orgullosas de nuestro esfuerzo "Al final lo conseguí".
+  - text: Podemos dividir estas etapas siguiendo la norma SPIR, "S" de tomar conciencia de las SENSACIONES de estrés que aparecen, "P" tomar PENSAMIENTO de las conversaciones que tenemos con nostros mismos, "I" sustituyendo nuestros pensamientos negativos por autoINSTRUCCIONES positivas, "R" autorREFORZÁNDONOS por nuestro esfuerzo
+  utter_chitchat/administracion_tiempo:
+  - text: Tener demasiadas tareas al mismo tiempo nos puede generar preocupaciones, tensión y presión. Para evitarlo debemos de aprender a distribuir nuestro tiempo delegando responsabilidades, atreviéndose a pedir ayuda si la necesitamos, sabiendo decir NO cuando nos vemos capaces de asimilar una tarea y aprendiendo a organizarnos de forma eficiente en nuestras tareas siendo conscientes de las prioridades de estas.
+  utter_chitchat/organizarme:
+  - text: Es muy fácil! Primero debes ver que tareas tienes que hacer, y una vez las sepas todas ve asigándoles una prioridad empezando por las más importantes. Un consejo que te doy es que utilices calendarios. Un ratito para organizarse siempre viene bien!
+  utter_chitchat/asertivo:
+  - text: Tenemos un comportamiento asertivo cuando expresamos como nos sentimos de forma sincera sin eso implicar que ofendamos o vulneremos los derechos de los demás.
+  utter_chitchat/inhibido:
+  - text: Cuando una persona es pasiva o está inhibida no expresa como se siente ni se defiende ante circunstancias. Ser una persona pasiva nos puede perjudicar y producirnos mucha ansiedad ya que a veces dejamos de pensar en nosotros mismos para preocuparnos por los demás. Siempre debemos de procurar ser personas asertivas, si quieres saber más preguntame como es una persona asertiva.
+  utter_chitchat/agresivo:
+  - text: Cuando una persona se está comportando de forma agresiva, pierde totalmente su respeto por los demás y como pueden sentirse estos. Ser una persona agresiva implica en parte ser una persona sin empatía y este comportamiento puede dañar y generar actitudes de rechazo a los demás. Debemos aspirar a formar parte de un entorno asertivo, si quieres saber más sobre la asertividad preguntame que es el comportamiento asertivo.
+  utter_chitchat/derechos_asertivos:
+  - image: https://i.pinimg.com/originals/4f/85/ea/4f85ea4f8277d5c683805daf27da0d56.jpg
+    text: Los derechos asertivos son aquellos que tenemos por el hecho de ser personas y que todos nos merecemos. Te pongo algunos de ellos.
+  utter_chitchat/ira:
+  - text: El estrés a veces hace que nos irritemos, eso a veces genera que culpemos a los demás de los que nos pasa, seamos injustos y descarguemos nuestros sentimientos de forma dañina en los demás. Para controlar esos sentimientos lo mejor que podemos hacer es aplicar alguna de las técnicas de relajación o autoinstrucciones nada más darnos cuenta de lo que estamos sintiendo. Puedes probar alguna técnica de relajación diciendo algo como 'Me apetece relajarme un poco'.
+  utter_chitchat/no:
+  - text: Decir no es uno de los derechos asertivos y a veces no lo hacemos por miedo a herir u ofender a alguien. Sin embargo debemos de aprender a hacerlo por nuestro propio beneficio personal. La teoría es fácil, simplemente decir 'no', y si se ve apropiado dar una justificación, aunque en la práctica puede ser mas complejo. Puedes conocer algunas procedimientos como el del 'disco rayado' o el del 'banco de niebla' simplemente preguntándome por alguno de ellos.
+  utter_chitchat/disco_rayado:
+  - text: El procedimiento del disco rayado nos ayuda a decir no sin tener que dar una extensa explicación repitiendo tranquila y ciclicamente lo que pensamos siempre desde una perspectiva serena y sin ceder a chantajes o manipulaciones.
+  utter_chitchat/banco_niebla:
+  - text: El procedimiento del banco de niebla nos permite decir no evitando ceder a cualquier tipo de manipulación y haciendo frente a las críticas. Para llevar acabo esta técnica debemos de reconocer la parte de verdad de lo que dice la otra persona, partir de 'principios' o 'hechos' que todo el mundo acepta para razonar tus argumentos e intentar no dar argumentos absolutos, recuerda que todo no es blanco o negro.
+  utter_chitchat/cambio_conducta:
+  - text: Cuando necesitamos pedirle a alguien un cambio de conducta lo mejor que podemos hacer es contar todo de nuestra perspectiva, contando como nos sentimos y explicando lo que queremos cambiar, por qué y a que alternativa, siempre intentando tambien empatizar con la otra persona, siendo agradecido y poniendo de tu parte para que esa persona se sienta motivada al cambio.
+  utter_chitchat/felicidad:
+  - text: La felicidad es algo que busca uno mismo, porque sale de nosotros y depende de nuestra actitud, porque es eso, una actitud. Los factores externos no condicionan tu felicidad.
+  utter_chitchat/como_feliz:
+  - text: Para ser feliz lo más importante es tomarse la vida con humor, saber reirse de uno mismo y de sus problemas ayuda a exteriorizar nuestros sentimientos y verlo todo con más perspectiva y de una forma más positiva. Puedes pedirme formas de ver la vida con humor. ¡Fuera dramas!.
+  utter_chitchat/sentido_humor:
+  - text: Intenta ver el lado bueno de las cosas y sacar alguna risa de aquellos problemas por los que pasamos. Tomarnos las cosas con ironía o quitarle importancia a nuestros problemas nos ayudará a ser más felices y estar de buen humor
+  utter_chitchat/amargada:
+  - text: A veces tenemos actitudes que nos amargan poco a poco la vida, como sobrecargarnos de problemas que no nos corresponden, no saber perdonarnos, darle demasiadas vueltas a las cosas o autocastigarnos evitando momentos que nos pueden hacer feliz.
+actions:
+- action_dar_consejo
+- action_iniciar_relajacion
+- action_relajacion
+- action_diaphragmatic
+- action_guided
+- action_modo
+- utter_slots_values
+- action_submit
+- action_repeticion
+- action_end_diaph
+- action_first_paused
+- action_second_paused
+- action_third_paused
+- action_4_paused
+- action_end_guided
+forms:
+  name_form:
+    apellidos:
+    - type: from_text
+    nombre:
+    - type: from_text
+e2e_actions: []

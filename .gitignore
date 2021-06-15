@@ -3,3 +3,19 @@ venv
 models/*
 # except for .gitkeep, so that the folder itself is included
 !models/.gitkeep
+
+# Files
+.db
+.DS_store
+.google-cookie
+.test_domain.yml
+events.db
+events.db-shm
+events.db-wal
+rasa.db
+rasa.db-shm
+rasa.db-wal
+story_graph.dot
+
+# Rasa files
+endpoints.yml

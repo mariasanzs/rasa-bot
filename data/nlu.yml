@@ -1,0 +1,384 @@
+version: "2.0"
+nlu:
+- intent: saludar
+  examples: |
+    - hola
+    - hey
+    - holi
+    - buenas
+    - buenos días
+    - buenas tardes
+    - buenas noches
+    - holi holita
+    - hol
+    - holi holiwita
+    - holis
+    - HOLA
+    - Hola
+- intent: despedir
+  examples: |
+    - adios!
+    - hasta luego
+    - nos vemos
+    - adios
+    - hasta pronto
+    - adioss
+- intent: afirmar
+  examples: |
+    - yes
+    - y
+    - si
+    - s
+    - vale
+    - ok
+    - me parece bien
+    - correcto
+- intent: negar
+  examples: |
+    - no
+    - n
+    - jamás
+    - no creo
+    - no lo veo
+    - en verdad no
+    - creo que no
+- intent: mood_genial
+  examples: |
+    - perfecto
+    - genial
+    - increible
+    - fantastico
+    - de locos
+    - fenomenal
+    - estoy muy bien
+    - estoy genial
+    - perfectamente
+    - super bien
+    - sorprendentemente bien
+    - de maravilla
+    - muy feliz
+    - mejor que nunca
+    - bienkl
+    - bien
+    - Bien
+- intent: mood_triste
+  examples: |
+    - mal
+    - regular
+    - no muy bien
+    - un poco regu
+    - podria estar mejor la verdad
+    - un poco decepcionada
+    - me encuentro mal
+    - decepcionada
+    - triste
+    - muy triste la verdad
+    - me gustaría estar mejor la verdad
+    - agobiada
+    - estresada
+    - cansada
+    - con ansiedad
+    - deprimida
+    - podria estar mejor
+    - no muy bien la verdad
+    - mu mal
+    - muy mal
+- intent: agradecer
+  examples: |
+    - gracias por preguntar
+    - gracias
+    - muchas gracias
+    - te agradezco que me ayudes
+- intent: preguntar
+  examples: |
+    - puedo hacerte una pregunta?
+    - preguntar?
+    - tengo muchas dudas
+- intent: pedir_nombre
+  examples: |
+    - este es mi nombre
+    - dar nombre
+    - quiero darte mi nombre
+    - te he dicho como me llamo?
+    - queiro darte mi nombre
+- intent: pedir_consejo
+  examples: |
+    - /pedir_consejo{"problema": "miedo"}
+    - /pedir_consejo{"problema": "estres"}
+    - /pedir_consejo{"problema": "incompresion"}
+    - /pedir_consejo{"problema": "otro"}
+- intent: pedir_feedback
+  examples: |
+    - /pedir_feedback{"feedback": "ok"}
+    - /pedir_feedback{"feedback": "no"}
+- intent: continuar
+  examples: |
+    - /continuar{"feedback": "continuar"}
+- intent: pedir_repeticion
+  examples: |
+    - /pedir_repeticion{"feedback": "repeticion"}
+- intent: seleccionar_tecnica
+  examples: |
+    - /seleccionar_tecnica{"tecnica": "diafragmatica"}
+    - /seleccionar_tecnica{"tecnica": "imaginacion"}
+- intent: seleccionar_imagen
+  examples: |
+    - /seleccionar_imagen{"imagen": "playa"}
+    - /seleccionar_imagen{"imagen": "montana"}
+    - /seleccionar_imagen{"imagen": "prado"}
+    - /seleccionar_imagen{"imagen": "lago"}
+- intent: pedir_video
+  examples: |
+    - podrías ponerme el video de relajacion
+    - ponme el video de relajacion
+    - cual era el link del video
+    - reproduce el video
+    - enseñame el video
+- intent: pedir_relajacion
+  examples: |
+    - Me gustaría relajarme un poco
+    - Quiero hacer la tecnica de relajacion
+    - quiero relajarme
+    - Iniciar relajacion
+    - Realizar ejercicio de relajacion
+    - Me gustaria relajarme un poco
+    - quiero relajarme un poco
+    - me gustaria relajarme un poco
+    - me apetece relajarme un poco
+    - me apetece relajarme
+    - me apetece relajarme un pococ
+    - me apetece relajarme un pco
+    - Quiero relajarme
+    - me apetece relajarme un
+    - quiero relajrme
+    - pedir relajacion
+    - Me apetece relajarme
+- intent: chitchat/ask_quien_eres
+  examples: |
+    - ¿quien eres?
+    - ¿eres un bot?
+    - ¿eres real?
+    - ¿eres una maquina?
+    - eres un bot
+    - quien eres
+    - wuien eres
+- intent: chitchat/autorregistro
+  examples: |
+    - ¿En qué consiste en el autorregistro?
+    - ¿Donde puedo hacer mi autorregistro?
+    - ¿Qué es el autorregistro?
+    - Que es autorregistro
+    - ¿Cómo puedo hacer el autorregistro?
+    - que es un autorregistro
+- intent: chitchat/duracion_sesion
+  examples: |
+    - Cuanto dura cada sesión?
+    - Cual es la duracion de las terapias
+    - Cuanto tiempo dura cada clase
+    - Dime la duracion de las sesiones
+    - cuanto dura el progrma
+    - cuanto dura el programa
+    - cuanto dura cada sesion
+- intent: chitchat/objetivo_programa
+  examples: |
+    - Cuáles son los objetivos del programa?
+    - Introduceme el programa
+    - De que va este programa
+    - Que expectativas deberia de tener de estas sesiones
+    - Que objetivos busca el programa?
+    - cuales son los objetivos del programa
+- intent: chitchat/normas_internas
+  examples: |
+    - Dime las normas internas
+    - Cuales son las normas del programa
+    - Que normas internas hay
+    - cuales son las normas internas
+- intent: chitchat/estres
+  examples: |
+    - definicion de estres
+    - que es el estres
+- intent: chitchat/tematica
+  examples: |
+    - definicion de la imaginacion tematica
+    - que es la imaginacion tematica
+    - definicion de imaginacion tematica
+- intent: chitchat/diafragmatica
+  examples: |
+    - definicion de la respiración diafragmatica
+    - que es la respiracion diafragmatica
+    - definicion de respiracion diafragmtica
+    - definición de respiracion diafragmatica
+- intent: chitchat/emociones
+  examples: |
+    - que tipo de emociones hay
+    - que tipo de emociones podemos sentir
+    - que emociones podemos encontrar
+    - definicion de emocion moderada
+    - definicion de emociones negativas
+    - definicion de emociones intensas negativas
+- intent: chitchat/pensamientos
+  examples: |
+    - que tipos de pensamientos hay
+    - como pueden ser los pensamientos
+- intent: chitchat/pensamiento_racional
+  examples: |
+    - definicion de pensamiento racional
+- intent: chitchat/pensamiento_irracional
+  examples: |
+    - definicion de pensamiento irracional
+    - definicion de pensamientos no razonables
+- intent: chitchat/trampas_pensamiento
+  examples: |
+    - definicion de trampas del pensamiento
+- intent: chitchat/creencias_irracionales
+  examples: |
+    - definicion de creencias irracionales
+    - definicion de creencias no razonables
+    - definicion de creencias de necesidad
+    - definicion de creencias de demanda
+- intent: chitchat/analisis
+  examples: |
+    - como debemos de analizar nuestros pensamientos
+    - formas de analizar los pensamientos
+    - en que consiste el análisis de pensamientos
+    - que es el análisis
+    - que es la reestructuración cognitiva
+    - como conseguir la reestructuración cognitiva
+- intent: chitchat/autoinstrucciones
+  examples: |
+    - definición de autoinstrucción
+    - definición de auto-instrucciones
+    - como funciona el entrenamiento de las autoinstrucciones
+    - en que consiste el entrenamiento de las autoinstrucciones
+- intent: chitchat/experiencia_estres
+  examples: |
+    - como es la experiencia del estres
+    - que etapas tiene el estres
+    - de que etapas se compone el estres
+    - como puedo afrontar una situación de estres
+- intent: chitchat/administrar_tiempo
+  examples: |
+    - como puedo administrar mi tiempo
+    - no se como organizar mi tiempo
+    - tengo demasiadas tareas en el mismo tiempo
+    - como distribuyo mi tiempo
+    - como organizo mis tareas al mismo tiempo
+- intent: chitchat/organizarme
+  examples: |
+    - ayudame a organizar mi dia
+    - como puedo organizar mis tareas
+    - necesito organizar mis tareas
+    - como programo mi dia
+- intent: chitchat/asertivo
+  examples: |
+    - que es el comportamiento asertivo
+    - como puedo reconocer pensamientos asertivos
+    - que son los pensamientos asertivos
+    - cuales son las caracteristicas de un comportamiento asertivo
+- intent: chitchat/inhibido
+  examples: |
+    - que es el comportamiento pasivo
+    - que es el comportamiento inhibido
+    - como puedo reconocer el pensamiento pasivo
+    - como es una persona inhibida
+    - como es una persona pasiva
+    - cuales son las caracteristicas de un comportamiento pasivo
+    - cuales son las caracteristicas de un comportamiento inhibido
+- intent: chitchat/agresivo
+  examples: |
+    - definición de pensamiento agresivo
+    - como es el comportamiento agresivo
+    - como son las personas agresivas
+    - cuales son las caracteristicas de un comportamiento agresivo
+- intent: chitchat/derechos_asertivos
+  examples: |
+    - que son los derechos asertivos
+    - como reconozco los derechos asertivos
+    - defincion de derechos asertivos
+- intent: chitchat/ira
+  examples: |
+    - cual es la relación entre la ira y el estrés
+    - como sobrellevar la ira
+    - que cosas podemos hacer para controlar la ira
+    - que es la ira
+    - como trabajar la ira
+- intent: chitchat/no
+  examples: |
+    - como decir no
+    - aprender a decir que no
+- intent: chitchat/disco_rayado
+  examples: |
+    - en que consiste la tecnica del disco rayado
+    - como funciona el procedimiento del disco rayado
+    - que es el procedimiento del disco rayado
+- intent: chitchat/banco_niebla
+  examples: |
+    - que es el procedimiento del banco de niebla
+    - en que consiste la tecnica del banco de niebla
+    - como funciona el banco de niebla
+- intent: chitchat/cambio_conducta
+  examples: |
+    - como puedo pedir un cambio de conducta
+    - quiero que tenga un cambio de conducta
+    - pasos para pedir un cambio en el comportamiento
+- intent: chitchat/felicidad
+  examples: |
+    - que es la felicidad
+- intent: chitchat/como_feliz
+  examples: |
+    - como ser feliz
+    - estrategias para ser mas feliz
+    - ideas para ser mas feliz
+    - como conseguir la felicidad
+- intent: chitchat/sentido_humor
+  examples: |
+    - favorecer sentido del humor
+    - tener más sentido del humor
+- intent: chitchat/amargada
+  examples: |
+    - estoy amargada
+    - me gusta amargarme
+    - el arte de amargarse la vida
+    - estoy amargada de la vida
+    - soy una total amargada
+- synonym: embarazada
+  examples: |
+    - encinta
+    - en cinta
+    - gravida
+    - gestante
+    - gestando
+    - preñada
+    - estado de buena esperanza
+    - esperando un bebé
+    - esperando un hijo
+    - tener un hijo
+    - tener un bebe
+- synonym: COVID-19
+  examples: |
+    - covid
+    - covid 19
+    - corona
+    - coronavirus
+    - SARS-CoV
+    - SARS-CoV-2
+- synonym: relajar
+  examples: |
+    - relajarse
+    - relajacion
+    - tecnica de relajacion
+    - relax
+    - ejercicio de relajacion
+    - tecnica de relax
+    - tecnica de respiracion
+- synonym: definicion de
+  examples: |
+    - que es
+    - en que consiste
+    - que son
+    - explicacion
+    - que eran
+    - que era
+    - en que consisten
+    - concepto
+    - recuerdame que es 
