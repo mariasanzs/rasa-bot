@@ -25,6 +25,14 @@ intents:
     use_entities: true
 - seleccionar_tecnica:
     use_entities: true
+- out_of_scope:
+    use_entities: true
+- pedir_frase_motivadora:
+    use_entities: true
+- mostrar_tristeza:
+    use_entities: true
+- preguntar_que_tal:
+    use_entities: true
 - chitchat:
     use_entities: true
 - pedir_consejo:
@@ -94,62 +102,84 @@ slots:
     influence_conversation: false
 responses:
   utter_saludar:
-  - text: Hola! Como te encuentras hoy?
-  - text: Hola! Como estás?
-  - text: Hola amiga! Que tal te encuentras?
-  - text: Me alegro de verte! Como te sientes?
+  - text: Hola! Como te encuentras hoy 👋🏼?
+  - text: Hola 🙋🏻‍♀️! Como estás ?
+  - text: Hola amiga 👋🏼! Que tal te encuentras?
+  - text: Me alegro de verte 😄! Como te sientes?
   utter_animar:
-  - text: Lo siento ..., todo va a salir genial no te preocupes. Puedes pedirme lo que quieras
-  - text: Vaya... tu puedes con esto, no te vengas abajo. Puedes pedirme lo que quieras
+  - text: Lo siento ... 😞, todo va a salir genial no te preocupes. Puedes pedirme lo que quieras 😊
+  - text: Vaya... tu puedes con esto, no te vengas abajo 💪🏼. Puedes pedirme lo que quieras
+  - text: Tu puedes con todo... no estés triste, ya verás que se arregla 😊
+  - text: Jo... seguro que se puede hacer algo para solucionarlo, ¿Quieres pedirme algo? 😊
+  - text: Lo siento ... puedes pedirme lo que sea para que te sientas mejor 😊
   utter_te_ha_servido:
-  - text: ¿Estás mejor ahora?
-  - text: ¿Te sientes mejor?
-  - text: ¿Te ha venido bien?
+  - text: ¿Estás mejor ahora ✨?
+  - text: ¿Te sientes mejor 🤗?
+  - text: ¿Te ha venido bien 🤗✨?
   utter_feedback:
   - buttons:
     - payload: '/pedir_feedback{"feedback": "ok"}'
-      title: Si, vamos a seguir
+      title: Si, vamos a seguir 👌🏼
     - payload: '/pedir_feedback{"feedback": "no"}'
-      title: No, quiero parar
+      title: No, quiero parar ✋🏼
     text: ¿Todo bien por ahora?
   utter_continuar:
   - buttons:
     - payload: '/continuar{"feedback": "continuar"}'
-      title: Sigamos
+      title: Sigamos ⏭️
     text: Continuamos cuando estés lista
   utter_siguiente_paso:
-  - text: ¿Seguimos?
-  - text: ¿Estás lista para seguir?
-  - text: ¿Continuamos?
+  - text: ¿Seguimos? ⏩
+  - text: ¿Estás lista para seguir? ➡️
+  - text: ¿Continuamos? ⏩
+  - text: ¿Pasamos a lo siguiente? ➡️
+  - text: ¿Lista para continuar? ⏩
   utter_feliz:
-  - text: Me alegro mucho de que estés bien!
-  - text: 'Fantástico, me alegro mucho :) '
+  - text: Me alegro mucho de que estés bien! 😊🎉
+  - text: 'Fantástico, me alegro mucho 🎊😁 '
+  - text: Genial 😊❤️, me alegro por ti!
   utter_despedir:
-  - text: Adiós :)
-  - text: Hasta pronto!
-  - text: Adiós!, espero que te haya gustado hablar conmigo
+  - text: Adiós 😄
+  - text: Hasta pronto! 👋🏼
+  - text: Adiós 👋🏼🙋🏻‍♀️!, espero que te haya gustado hablar conmigo 
   utter_responder_email:
   - text: Perfecto!, {email} apuntado
   utter_agradecer:
-  - text: Gracias a ti
-  - text: De nada
-  - text: No tienes que agradecermelo, para eso estoy aquí.
+  - text: Gracias a ti 😉
+  - text: De nada 🙏🏻😇
+  - text: No tienes que agradecermelo, para eso estoy aquí. 🥰
   utter_preguntar:
-  - text: No dudes en preguntarme lo que quieras
-  - text: Puedes hacerme preguntas cuando quieras
-  - text: Si tienes dudas preguntame
+  - text: No dudes en preguntarme lo que quieras 🤨
+  - text: Puedes hacerme preguntas cuando quieras 🧐
+  - text: Si tienes dudas preguntame 🤔
+  - text: Cualquier duda que tengas, estoy aquí para atenderte 🧐
   utter_preguntar_nombre:
   - text: me podrías decir tu nombre?
   - text: cual es tu nombre de pila?
+  utter_frase_motivadora:
+  - text: 🖋️ "A veces, lo más productivo que puedes hacer es relajarte." – Mark Black
+  - text: 🖋️ "Puedes hacer cualquier cosa, pero no todo." – David Allen
+  - text: 🖋️ "No te preocupes por adelantado por algo que quizá nunca suceda. Disfruta del sol." – Benjamin Franklin
+  - text: 🖋️ "Siempre es una buena idea hacer algo relajante antes de tomar una decisión importante." – Paulo Coelho
+  - text: 🖋️ "Es imposible vivir sin fracasar, a menos que vivas con tanto cuidado que es lo mismo no haber vivido. En ese caso, habrás fracasado de todas formas." – J. K. Rowling
+  - text: 🖋️ "Nada puede darte paz, excepto tú mismo." – Ralph Waldo Emerson
+  - text: 🖋️ "Cada día te presenta una elección, estresarte o relajarte." – Joan Borysenko
+  - text: 🖋️ "Hay que ser conscientes de que lo que nos provoca malestar o ansiedad no son los eventos, sino como vinculamos las emociones a éstos." –  Jonathan García-Allen
+  - text: 🖋️ "La tensión es quien crees que deberías ser. La relajación es quien eres." – Proverbio chino
+  - text: 🖋️ "El que vive en armonía consigo mismo vive en armonía con el universo." – Marco Aurelio.
+  utter_que_tal:
+  - text: Yo estoy genial, con muchas ganas de ayudarte 😉
+  - text: Muy bien! Gracias por preguntar 🥰
+  - text: Estoy muy bien, deseando ayduarte 🥰
   utter_submit:
-  - text: Vale, muchas gracias
+  - text: Vale, muchas gracias 🙏🏻😇
   utter_video:
   - attachment:
       payload:
         src: https://www.youtube.com/embed/N-5HNQCXyZM
         title: Técnicas de relajación
       type: video
-    text: Aquí tienes un vídeo sobre técnicas de relajación
+    text: Aquí tienes un vídeo sobre técnicas de relajación 🧘🏻‍♀️ que seguro que te encantará ☺️
   utter_recording:
   - attachment:
       payload:
@@ -158,115 +188,123 @@ responses:
       type: video
     text: Aquí tienes una musica para escuchar mientras sigues este paso
   utter_ready:
-  - text: Perfecto!, ¿Estás preparada?
-  - text: Vale, ¿comenzamos?
-  - text: ¿Empezamos ya?
+  - text: Perfecto ✨!, ¿Estás preparada?
+  - text: Vale, ¿comenzamos? 🏁
+  - text: ¿Empezamos ya 💕 ? 
   utter_slots_values:
   - text: Vale, me acordaré de que eres {nombre} {apellidos}.
   utter_valorar_situacion:
   - buttons:
     - payload: '/pedir_consejo{"problema": "miedo"}'
-      title: Tengo miedo por el parto
+      title: Tengo miedo por el parto 🤰🏻
     - payload: '/pedir_consejo{"problema": "estres"}'
-      title: Estoy estresada por la situación
+      title: Estoy estresada por la situación 😔
     - payload: '/pedir_consejo{"problema": "incomprension"}'
-      title: No me siento comprendida
+      title: No me siento comprendida 😓
     - payload: '/pedir_consejo{"problema": "otro"}'
       title: otra
     text: ¡Y eso?, lo siento mucho... ¿Que situacion se adapta mas a tu problema?
   utter_elegir_tecnica:
   - buttons:
     - payload: '/seleccionar_tecnica{"tecnica": "diafragmatica"}'
-      title: Técnica de respiración diafragmática
+      title: Técnica de respiración diafragmática 🧘🏻‍♀️
     - payload: '/seleccionar_tecnica{"tecnica": "imaginacion"}'
-      title: Técnica de imaginación temática.
+      title: Técnica de imaginación temática. 🎞️😌
     text: Genial!, cual quieres hacer?
   utter_elegir_imagen:
   - buttons:
     - payload: '/seleccionar_imagen{"imagen": "playa"}'
-      title: Playa solitaria
+      title: Playa solitaria 🏝️
     - payload: '/seleccionar_imagen{"imagen": "montana"}'
-      title: Montañas nevadas
+      title: Montañas verdes 🏔️
     - payload: '/seleccionar_imagen{"imagen": "prado"}'
-      title: Prado repleto de flores
+      title: Prado repleto de flores 🌾🍃
     - payload: '/seleccionar_imagen{"imagen": "lago"}'
-      title: Lago sereno
+      title: Lago sereno 🚣🏻‍♀️
     text: Imaginate una escena que te relaje. Puedes elegir alguna de estas.
   utter_repetir:
   - buttons:
     - payload: '/pedir_repeticion{"feedback": "repeticion"}'
-      title: Sí, repetir
+      title: Sí, repetir 🔁
     - payload: '/pedir_repeticion{"feedback": "repeticion2"}'
-      title: No, siguiente paso.
-    text: ¿Notas como se va yendo la tensión? LLevas {repeticiones} veces ¿Repetir?
+      title: No, terminar. ⏭️
+    text: ¿Notas como se va yendo la tensión? LLevas {repeticiones} veces ¿Quieres repetir?
   utter_chitchat/ask_quien_eres:
-  - text: Soy un bot, creado por María Sanz para su proyecto fin de grado en Ingeniería informática que da apoyo a terapias para mujeres embarazadas.
+  - text: Soy un bot 🤖, creado por María Sanz 👩🏻‍💻 para su proyecto fin de grado en Ingeniería informática que da apoyo a terapias para mujeres embarazadas 🤰🏻.
   utter_chitchat/autorregistro:
-  - text: Los autorregistros son una técnica que se usa en las terapias psicológicas y en ellos expresamos nuestros pensamientos, sentimientos, comportamientos o manifestaciones de tal manera que podamos aprender a observarnos de forma objetiva e intentemos modificar aquellas cosas que nos perjudican. A lo largo de las sesiones iremos realizándolos con el objetivo de mejorar.
+  - image: https://amadag.com/wp-content/uploads/2019/03/autoregistro.jpg
+    text: Los autorregistros son una técnica que se usa en las terapias psicológicas y en ellos expresamos nuestros pensamientos, sentimientos, comportamientos o manifestaciones de tal manera que podamos aprender a observarnos de forma objetiva e intentemos modificar aquellas cosas que nos perjudican. A lo largo de las sesiones iremos realizándolos con el objetivo de mejorar.
   utter_chitchat/duracion_sesion:
-  - text: Normalmente las sesiones duran alrededor de 1 hora y media
-  - text: Las sesiones son de aproximadamente 1 hora y media.
+  - text: Normalmente las sesiones duran alrededor de 1 hora y media 🕛
+  - text: Las sesiones son de aproximadamente 1 hora y media. 🕜
   utter_chitchat/objetivo_programa:
-  - text: 'En general, lo que se intenta conseguir es tener un mayor control de nuestras respuestas sobre aquellas situaciones o acontecimientos que nos generan estrés, pero más concretamente se pretende aprender es: - Técnicas para desactivar de nuestra rutina - Identificar, debatir y cambiar nuestros saltos irracionales o sesgos de pensamiento. - A discriminar entre conductas asertivas, pasivas y agresivas - A pedir ayuda y a decir no - A pedir cambios de conducta Y muchas más cosas'
+  - text: 'En general, lo que se intenta conseguir es tener un mayor control de nuestras respuestas sobre aquellas situaciones o acontecimientos que nos generan estrés, pero más concretamente se pretende aprender es: 1️⃣ Técnicas para desactivar de nuestra rutina. 2️⃣ Identificar, debatir y cambiar nuestros saltos irracionales o sesgos de pensamiento. 3️⃣ A discriminar entre conductas asertivas, pasivas y agresivas 4️⃣ A pedir ayuda y a decir no. 5️⃣ A pedir cambios de conducta Y muchas más cosas.'
   utter_chitchat/normas_internas:
-  - text: Las normas internas del programa son la confidencialidad de lo que se expone en el grupo, ser puntual, asistir siempre a las sesiones, participar de forma activa y con respeto, y realizar las tareas para casa.
+  - image: https://i.pinimg.com/564x/ba/8b/12/ba8b12d39d3506a8a3e42867dcc02df9.jpg
+    text: Las normas internas del programa son las siguientes
   utter_chitchat/estres:
-  - text: El estrés nos afecta a todos y necesitamos de él para poder adaptarnos a los cambios constantes que se producen en nuestra vida. Es un estado que experimentamos cuando hay un desajuste entre lo que una situación nos pide y la percepción que tenemos de nuestra capacidad para afrontarla. Lo que nos provoca estrés no es la realidad, sino la forma en la que nuestra mente la interpreta. Ya que una situación estresante depende de cómo la interpretemos, la clave está en contar con unas buenas estrategias para que las situaciones estresantes no nos hagan pasarlo tan mal y así evitar las consecuencias negativas que el estrés tiene en nuestra salud. La superación del estrés es una habilidad que podemos aprender. Y uno de los objetivos de este programa es desarrollar estrategias para entenderlo, identificarlo y aprender habilidades y destrezas para un buen afrontamiento del mismo.
+  - image: https://i.pinimg.com/564x/20/14/6a/20146a32bbd56621dc9f19a8cc9f239c.jpg
+    text: El estrés nos afecta a todos y necesitamos de él para poder adaptarnos a los cambios constantes que se producen en nuestra vida 🔁 . Es un estado que experimentamos cuando hay un desajuste entre lo que una situación nos pide y la percepción que tenemos de nuestra capacidad para afrontarla 🤷🏻‍♀️ . Lo que nos provoca estrés no es la realidad, sino 〰️la forma en la que nuestra mente la interpreta〰️. Ya que una situación estresante depende de cómo la interpretemos, la clave está en contar con unas buenas estrategias para afrontar estas situciaciones para no pasarlo tan mal 😔 y así evitar las consecuencias negativas que puede tener en nosotros, nuestro entorno y nuestra salud. La superación del estrés es una habilidad que podemos aprender 📚 . Y uno de los objetivos de este programa es desarrollar estrategias para entenderlo, identificarlo y aprender habilidades y destrezas para un buen afrontamiento del mismo 🤙🏼😎.
   utter_chitchat/diafragmatica:
-  - text: La respiración es muy importante a la hora de mantener la calma ya que a través de las respiraciones del estómago podemos reducir el número de inspiraciones por minuto consiguiendo así sentirse más relajado. Practicarla es muy sencillo, solo tienes que decirme que te apetece relajarte y nos pondremos con ello.
+  - image: https://i.pinimg.com/564x/92/29/28/9229283f31e696da3b1c301cd8732027.jpg
+    text: La respiración es muy importante a la hora de mantener la calma 😌 ya que a través de las respiraciones 🫁 del estómago podemos reducir el número de inspiraciones por minuto consiguiendo así sentirse más relajado. 🟡 Practicarla es muy sencillo, solo tienes que decirme que te apetece relajarte y nos pondremos con ello.
   utter_chitchat/tematica:
   - image: https://i.pinimg.com/564x/4d/67/e4/4d67e4a2d3554b473c79ec131d0162bb.jpg
-    text: La imaginación temática consiste en unas técnicas que intentan dirigir y focalizar nuestros pensamientos en imágenes agradables y relajantes de tal forma que relajemos también nuestro cuerpo. Un ejemplo puede ser esta imagen.
+    text: La imaginación temática consiste en unas técnicas que intentan dirigir y focalizar nuestros pensamientos en imágenes agradables y relajantes de tal forma que relajemos también nuestro cuerpo. Un ejemplo puede ser esta imagen 📷.
   utter_chitchat/emociones:
-  - text: Podemos tener emociones negativas, pero también positivas, por ello no debemos de intentar eliminarlas, sino identificarlas. Podemos tener emociones negativas que sean moderadas, como un simple enfado, u otras muy intensas, estas últimas no nos hacen ningún bien.
+  - text: Podemos tener emociones negativas 👎🏼, pero también positivas 👍🏼, por ello no debemos de intentar eliminarlas, sino identificarlas 🔍. Podemos tener emociones negativas que sean moderadas, como un simple enfado 😤, u otras muy intensas, estas últimas no nos hacen ningún bien 🤦🏻‍♀️.
   utter_chitchat/pensamiento_racional:
-  - text: Un pensamiento racional es aquel que tiene lógica y es realista, y que por ello lleva consigo emociones moderadas. Un ejemplo podría ser, "Los problemas en compañía siempre se afrontan mejor"
+  - text: Un pensamiento racional 🧠 es aquel que tiene lógica y es realista, y que por ello lleva consigo emociones moderadas. Un ejemplo podría ser, "Los problemas en compañía siempre se afrontan mejor 👩🏻‍🤝‍👨🏽😊"
   utter_chitchat/pensamiento_irracional:
-  - text: Un pensamiento irracional es aquel que carece de razón, y que se expresan con exigencia o necesidad. Debemos evitarlos porque no nos hacen ningún bien. Ejemplo, "Nunca llegaré a ser alguien importante"
+  - text: Un pensamiento irracional 🧠 es aquel que carece de razón, y que se expresan con exigencia o necesidad. Debemos evitarlos porque no nos hacen ningún bien 🤦🏻‍♀️. Ejemplo, "Nunca llegaré a ser alguien importante 😪😓"
   utter_chitchat/pensamientos:
-  - text: Debemos de tener claro que nuestros pensamientos o creencias no son hechos, sino interpretaciones de nuestras experiencias. Estos pueden ser racionales o irraciones, si quieres saber un poco mas de cada uno de ellos preguntame.
+  - text: Debemos de tener claro que nuestros pensamientos 💭 o creencias no son hechos, sino interpretaciones de nuestras experiencias 🤔. Estos pueden ser racionales o irraciones, si quieres saber un poco mas de cada uno de ellos preguntame ❓❓.
   utter_chitchat/trampas_pensamiento:
-  - text: Bien como dice la propia palabra, las "trampas" son pensamientos negativos que incurren en nuestra mente y que nos perjudican. Algunas de estas trampas podrían ser tomar decisiones precipitadas, ser pesimista o los pensamientos extremos (todo o nada)
+  - text: Bien como dice la propia palabra, las "trampas" 🪤 son pensamientos negativos 👎🏼 que incurren en nuestra mente y que nos perjudican. Algunas de estas trampas podrían ser tomar decisiones precipitadas, ser pesimista o los pensamientos extremos (todo o nada)
   utter_chitchat/creencias_irracionales:
-  - text: Las creencias irracionales se basan en la creencia de deber tener todo (amor, dinero, éxito, confort o justicia) y normalmente se centran o bien en como debo ser, o en como deben ser los demas o como quiero que sea el mundo. Ejemplos de esto es pensar que las personas que no se llevan bien contigo son malas personas, buscar la aprobación de todo el mundo o ser una persona egoísta
+  - text: Las creencias irracionales se basan en la creencia de deber tener todo (amor ❤️, dinero💰, éxito 🏆, confort💆🏻 o justicia⚖️) y normalmente se centran o bien en como debo ser, o en como deben ser los demas o como quiero que sea el mundo 🌍. Ejemplos de esto es pensar que las personas que no se llevan bien contigo son malas personas, buscar la aprobación de todo el mundo o ser una persona egoísta
   utter_chitchat/analisis:
-  - text: Cuando detectamos un pensamiento irracional debemos de cuestionarnos a lo que sentimos a través del análisis, identificando cuales son esas creencias erróneas, reflexionando sobre si verdaderamente es realista lo que estamos diciendo y si nos está aportando algo positivo el tener ese pensamiento. Cuando nos enfrentamos a este tipo de problemas también es importante ver las cosas desde otra perspectiva pensando que consejo me daría a mi misma. Así conseguiremos pensamientos alternativos mucho más adaptativo.
+  - text: Cuando detectamos un pensamiento irracional debemos de cuestionarnos a lo que sentimos a través del análisis, identificando cuales son esas creencias erróneas ❌, reflexionando sobre si verdaderamente es realista lo que estamos diciendo y si nos está aportando algo positivo el tener ese pensamiento 🧐. Cuando nos enfrentamos a este tipo de problemas también es importante ver las cosas desde otra perspectiva pensando que consejo me daría a mi misma 🧍🏻. Así conseguiremos pensamientos alternativos mucho más adaptativo 🧡.
   utter_chitchat/autoinstrucciones:
-  - text: Las autoinstrucciones son esas órdenes que nos hacemos a nostros mismos, y es importante plantearnoslas siempre de manera positiva para que sean muchos más útiles y efectivas, un ejemplo es "Vale, voy a empezar con las tareas"
+  - text: Las autoinstrucciones 👩🏻‍🏫 son esas órdenes que nos hacemos a nostros mismos, y es importante plantearnoslas siempre de manera positiva 👍🏼 para que sean muchos más útiles y efectivas, un ejemplo es "Vale, voy a empezar con las tareas 💪🏼"
   utter_chitchat/experiencia_estres:
-  - text: Las etapas del estrés están divididas en 4 etapas diferentes. Primero nos anticipamos a una circunstancia que nos va a estresar "Seguro que me voy a equivocar", para evitarlo debemos de tener mensajes positivos como "No me sirve de nada estar preocupada", tras esto, debemos de confrontando el problema pensando que es un malestar pasajero "Para mañana todo habrá pasado" , también es importante que en los momentos que más tensas nos sintamos, mantengamos la calma, "Bueno, voy a intentar relajarme". Por último deberemos autorreformarnos, sintiéndonos orgullosas de nuestro esfuerzo "Al final lo conseguí".
-  - text: Podemos dividir estas etapas siguiendo la norma SPIR, "S" de tomar conciencia de las SENSACIONES de estrés que aparecen, "P" tomar PENSAMIENTO de las conversaciones que tenemos con nostros mismos, "I" sustituyendo nuestros pensamientos negativos por autoINSTRUCCIONES positivas, "R" autorREFORZÁNDONOS por nuestro esfuerzo
+  - text: Las etapas del estrés están divididas en 4 etapas diferentes. 1️⃣ Primero nos anticipamos a una circunstancia que nos va a estresar "Seguro que me voy a equivocar", para evitarlo debemos de tener mensajes positivos como "No me sirve de nada estar preocupada 😌", 2️⃣ tras esto, debemos de confrontando el problema pensando que es un malestar pasajero "Para mañana todo habrá pasado" , 3️⃣ también es importante que en los momentos que más tensas nos sintamos, mantengamos la calma, "Bueno, voy a intentar relajarme 🧘🏻‍♀️". 4️⃣ Por último deberemos autorreformarnos, sintiéndonos orgullosas de nuestro esfuerzo 💜 "Al final lo conseguí".
+  - text: Podemos dividir estas etapas siguiendo la norma SPIR, "S"⭐ de tomar conciencia de las SENSACIONES de estrés que aparecen, "P"⭐ tomar PENSAMIENTO de las conversaciones que tenemos con nostros mismos, "I"⭐ sustituyendo nuestros pensamientos negativos por autoINSTRUCCIONES positivas, "R"⭐ autorREFORZÁNDONOS por nuestro esfuerzo
   utter_chitchat/administracion_tiempo:
-  - text: Tener demasiadas tareas al mismo tiempo nos puede generar preocupaciones, tensión y presión. Para evitarlo debemos de aprender a distribuir nuestro tiempo delegando responsabilidades, atreviéndose a pedir ayuda si la necesitamos, sabiendo decir NO cuando nos vemos capaces de asimilar una tarea y aprendiendo a organizarnos de forma eficiente en nuestras tareas siendo conscientes de las prioridades de estas.
+  - text: Tener demasiadas tareas al mismo tiempo ⏰ nos puede generar preocupaciones, tensión y presión. Para evitarlo debemos de aprender a distribuir nuestro tiempo delegando responsabilidades, atreviéndose a pedir ayuda 🆘 si la necesitamos, sabiendo decir NO 🙅🏻 cuando nos vemos capaces de asimilar una tarea y aprendiendo a organizarnos 📋 de forma eficiente en nuestras tareas siendo conscientes de las prioridades de estas.
   utter_chitchat/organizarme:
-  - text: Es muy fácil! Primero debes ver que tareas tienes que hacer, y una vez las sepas todas ve asigándoles una prioridad empezando por las más importantes. Un consejo que te doy es que utilices calendarios. Un ratito para organizarse siempre viene bien!
+  - text: Es muy fácil! Primero debes ver que tareas tienes que hacer 📋, y una vez las sepas todas ve asigándoles una prioridad empezando por las más importantes. Un consejo que te doy es que utilices calendarios 📆. Un ratito para organizarse siempre viene bien 🤗!
   utter_chitchat/asertivo:
-  - text: Tenemos un comportamiento asertivo cuando expresamos como nos sentimos de forma sincera sin eso implicar que ofendamos o vulneremos los derechos de los demás.
+  - text: Tenemos un comportamiento asertivo cuando expresamos como nos sentimos de forma sincera sin eso implicar que ofendamos o vulneremos los derechos de los demás ❤️.
   utter_chitchat/inhibido:
-  - text: Cuando una persona es pasiva o está inhibida no expresa como se siente ni se defiende ante circunstancias. Ser una persona pasiva nos puede perjudicar y producirnos mucha ansiedad ya que a veces dejamos de pensar en nosotros mismos para preocuparnos por los demás. Siempre debemos de procurar ser personas asertivas, si quieres saber más preguntame como es una persona asertiva.
+  - text: Cuando una persona es pasiva o está inhibida no expresa como se siente ni se defiende ante circunstancias ☹️. Ser una persona pasiva nos puede perjudicar y producirnos mucha ansiedad ya que a veces dejamos de pensar en nosotros mismos para preocuparnos por los demás. Siempre debemos de procurar ser personas asertivas, si quieres saber más preguntame como es una persona ✨asertiva✨.
   utter_chitchat/agresivo:
-  - text: Cuando una persona se está comportando de forma agresiva, pierde totalmente su respeto por los demás y como pueden sentirse estos. Ser una persona agresiva implica en parte ser una persona sin empatía y este comportamiento puede dañar y generar actitudes de rechazo a los demás. Debemos aspirar a formar parte de un entorno asertivo, si quieres saber más sobre la asertividad preguntame que es el comportamiento asertivo.
+  - text: Cuando una persona se está comportando de forma agresiva, pierde totalmente su respeto por los demás y como pueden sentirse estos 😠. Ser una persona agresiva implica en parte ser una persona sin empatía y este comportamiento puede dañar y generar actitudes de rechazo a los demás 😔. Debemos aspirar a formar parte de un entorno asertivo, si quieres saber más sobre la ✨asertividad✨ preguntame que es el comportamiento asertivo.
   utter_chitchat/derechos_asertivos:
   - image: https://i.pinimg.com/originals/4f/85/ea/4f85ea4f8277d5c683805daf27da0d56.jpg
     text: Los derechos asertivos son aquellos que tenemos por el hecho de ser personas y que todos nos merecemos. Te pongo algunos de ellos.
   utter_chitchat/ira:
-  - text: El estrés a veces hace que nos irritemos, eso a veces genera que culpemos a los demás de los que nos pasa, seamos injustos y descarguemos nuestros sentimientos de forma dañina en los demás. Para controlar esos sentimientos lo mejor que podemos hacer es aplicar alguna de las técnicas de relajación o autoinstrucciones nada más darnos cuenta de lo que estamos sintiendo. Puedes probar alguna técnica de relajación diciendo algo como 'Me apetece relajarme un poco'.
+  - text: El estrés a veces hace que nos irritemos 😠, eso a veces genera que culpemos a los demás de los que nos pasa, seamos injustos y descarguemos nuestros sentimientos de forma dañina en los demás ☹️. Para controlar esos sentimientos lo mejor que podemos hacer es aplicar alguna de las ✨técnicas de relajación✨ o ✨autoinstrucciones✨ nada más darnos cuenta de lo que estamos sintiendo. Puedes probar alguna técnica de relajación diciendo algo como 'Me apetece relajarme un poco'.
   utter_chitchat/no:
-  - text: Decir no es uno de los derechos asertivos y a veces no lo hacemos por miedo a herir u ofender a alguien. Sin embargo debemos de aprender a hacerlo por nuestro propio beneficio personal. La teoría es fácil, simplemente decir 'no', y si se ve apropiado dar una justificación, aunque en la práctica puede ser mas complejo. Puedes conocer algunas procedimientos como el del 'disco rayado' o el del 'banco de niebla' simplemente preguntándome por alguno de ellos.
+  - image: https://i.pinimg.com/564x/a2/11/87/a21187cce77db3da76334f39cafd9b2b.jpg
+    text: Decir no 🙅🏻 es uno de los derechos asertivos y a veces no lo hacemos por miedo a herir u ofender a alguien. Sin embargo debemos de aprender a hacerlo por nuestro propio beneficio personal. La teoría es fácil, simplemente decir 'no', y si se ve apropiado dar una justificación, aunque en la práctica puede ser mas complejo. Puedes conocer algunas procedimientos como el del 'disco rayado 📀' o el del 'banco de niebla' simplemente preguntándome por alguno de ellos.
   utter_chitchat/disco_rayado:
-  - text: El procedimiento del disco rayado nos ayuda a decir no sin tener que dar una extensa explicación repitiendo tranquila y ciclicamente lo que pensamos siempre desde una perspectiva serena y sin ceder a chantajes o manipulaciones.
+  - text: El procedimiento del disco rayado 📀 nos ayuda a decir no sin tener que dar una extensa explicación repitiendo tranquila y ciclicamente lo que pensamos siempre desde una perspectiva serena y sin ceder a chantajes o manipulaciones.
   utter_chitchat/banco_niebla:
-  - text: El procedimiento del banco de niebla nos permite decir no evitando ceder a cualquier tipo de manipulación y haciendo frente a las críticas. Para llevar acabo esta técnica debemos de reconocer la parte de verdad de lo que dice la otra persona, partir de 'principios' o 'hechos' que todo el mundo acepta para razonar tus argumentos e intentar no dar argumentos absolutos, recuerda que todo no es blanco o negro.
+  - text: El procedimiento del banco de niebla nos permite decir no evitando ceder a cualquier tipo de manipulación y haciendo frente a las críticas. Para llevar acabo esta técnica debemos de reconocer la parte de verdad de lo que dice la otra persona, partir de 'principios' o 'hechos' que todo el mundo acepta para razonar tus argumentos e intentar no dar argumentos absolutos, recuerda que todo no es blanco ⚪ o negro ⚫.
   utter_chitchat/cambio_conducta:
-  - text: Cuando necesitamos pedirle a alguien un cambio de conducta lo mejor que podemos hacer es contar todo de nuestra perspectiva, contando como nos sentimos y explicando lo que queremos cambiar, por qué y a que alternativa, siempre intentando tambien empatizar con la otra persona, siendo agradecido y poniendo de tu parte para que esa persona se sienta motivada al cambio.
+  - text: Cuando necesitamos pedirle a alguien un cambio de conducta lo mejor que podemos hacer es contar todo de nuestra perspectiva, contando como nos sentimos y explicando lo que queremos cambiar 💞, por qué y a que alternativa, siempre intentando tambien empatizar con la otra persona, siendo agradecido y poniendo de tu parte para que esa persona se sienta motivada al cambio.
   utter_chitchat/felicidad:
-  - text: La felicidad es algo que busca uno mismo, porque sale de nosotros y depende de nuestra actitud, porque es eso, una actitud. Los factores externos no condicionan tu felicidad.
+  - text: La felicidad 😀💖 es algo que busca uno mismo, porque sale de nosotros y depende de nuestra actitud, porque es eso, una actitud ⭐. Los factores externos no condicionan tu felicidad 🛤️.
   utter_chitchat/como_feliz:
-  - text: Para ser feliz lo más importante es tomarse la vida con humor, saber reirse de uno mismo y de sus problemas ayuda a exteriorizar nuestros sentimientos y verlo todo con más perspectiva y de una forma más positiva. Puedes pedirme formas de ver la vida con humor. ¡Fuera dramas!.
+  - text: Para ser feliz 😀 lo más importante es tomarse la vida con humor 😛, saber reirse de uno mismo 😅 y de sus problemas ayuda a exteriorizar nuestros sentimientos 💞 y verlo todo con más perspectiva y de una forma más positiva ➕. Puedes pedirme ✨formas de ver la vida con humor✨. ¡Fuera dramas!.
   utter_chitchat/sentido_humor:
-  - text: Intenta ver el lado bueno de las cosas y sacar alguna risa de aquellos problemas por los que pasamos. Tomarnos las cosas con ironía o quitarle importancia a nuestros problemas nos ayudará a ser más felices y estar de buen humor
+  - text: Intenta ver el lado bueno de las cosas y sacar alguna risa de aquellos problemas por los que pasamos 😬. Tomarnos las cosas con ironía o quitarle importancia a nuestros problemas nos ayudará a ser más felices y estar de buen humor 💜💖
   utter_chitchat/amargada:
-  - text: A veces tenemos actitudes que nos amargan poco a poco la vida, como sobrecargarnos de problemas que no nos corresponden, no saber perdonarnos, darle demasiadas vueltas a las cosas o autocastigarnos evitando momentos que nos pueden hacer feliz.
+  - text: A veces tenemos actitudes que nos amargan poco a poco la vida 🥴, como sobrecargarnos de problemas que no nos corresponden 📚, no saber perdonarnos 🙏🏻, darle demasiadas vueltas a las cosas 🌀 o autocastigarnos evitando momentos que nos pueden hacer feliz 🤕.
+  utter_out_of_scope:
+  - text: Upsss... eso se sale un poco de mis conocimientos 🥴
+  - text: Creo que no te entiendo ... 🥴 me lo podrías decir de otra forma?
 actions:
 - action_dar_consejo
 - action_iniciar_relajacion

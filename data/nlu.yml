@@ -15,6 +15,7 @@ nlu:
     - holis
     - HOLA
     - Hola
+    - hello
 - intent: despedir
   examples: |
     - adios!
@@ -26,8 +27,10 @@ nlu:
 - intent: afirmar
   examples: |
     - yes
-    - y
     - si
+    - Si
+    - SI
+    - okay
     - s
     - vale
     - ok
@@ -89,11 +92,16 @@ nlu:
     - gracias
     - muchas gracias
     - te agradezco que me ayudes
+    - thanks
 - intent: preguntar
   examples: |
     - puedo hacerte una pregunta?
     - preguntar?
     - tengo muchas dudas
+    - quiero preguntarte algo
+    - tengo una duda
+    - puedo decirte algo?
+    - resuelveme una duda
 - intent: pedir_nombre
   examples: |
     - este es mi nombre
@@ -134,12 +142,15 @@ nlu:
     - cual era el link del video
     - reproduce el video
     - enseñame el video
+    - quiero ver el video de relajación
+    - ponme el video
 - intent: pedir_relajacion
   examples: |
     - Me gustaría relajarme un poco
     - Quiero hacer la tecnica de relajacion
     - quiero relajarme
     - Iniciar relajacion
+    - iniciar relajación
     - Realizar ejercicio de relajacion
     - Me gustaria relajarme un poco
     - quiero relajarme un poco
@@ -153,6 +164,29 @@ nlu:
     - quiero relajrme
     - pedir relajacion
     - Me apetece relajarme
+    - empezar relajacion
+- intent: pedir_frase_motivadora
+  examples: |
+    - dime una frase motivadora
+    - dime una frase que me motive
+    - quiero motivarme
+    - dime una frase bonita
+- intent: mostrar_tristeza
+  examples: |
+    - estoy triste
+    - que triste estoy
+    - no estoy bien
+    - me encuentro mal
+    - estoy muy triste
+    - que tristeza tengo
+- intent: preguntar_que_tal
+  examples: |
+    - que tal estas
+    - como estas tu
+    - que tal
+    - como estas
+    - tu como te encuentras
+    - y tu?
 - intent: chitchat/ask_quien_eres
   examples: |
     - ¿quien eres?
@@ -162,6 +196,10 @@ nlu:
     - eres un bot
     - quien eres
     - wuien eres
+    - que eres
+    - ¿eres humano?
+    - ¿quien te ha creado?
+    - ¿Como te llamas?
 - intent: chitchat/autorregistro
   examples: |
     - ¿En qué consiste en el autorregistro?
@@ -170,6 +208,8 @@ nlu:
     - Que es autorregistro
     - ¿Cómo puedo hacer el autorregistro?
     - que es un autorregistro
+    - definición de autorregistro
+    - definicion de autorregistro
 - intent: chitchat/duracion_sesion
   examples: |
     - Cuanto dura cada sesión?
@@ -183,10 +223,12 @@ nlu:
   examples: |
     - Cuáles son los objetivos del programa?
     - Introduceme el programa
+    - objetivo del programa
     - De que va este programa
     - Que expectativas deberia de tener de estas sesiones
     - Que objetivos busca el programa?
     - cuales son los objetivos del programa
+    - cual es el objetivo del programa
 - intent: chitchat/normas_internas
   examples: |
     - Dime las normas internas
@@ -196,14 +238,18 @@ nlu:
 - intent: chitchat/estres
   examples: |
     - definicion de estres
+    - dime que es el estres
+    - definición de estres
     - que es el estres
 - intent: chitchat/tematica
   examples: |
     - definicion de la imaginacion tematica
     - que es la imaginacion tematica
+    - explícame la imaginación temática
     - definicion de imaginacion tematica
 - intent: chitchat/diafragmatica
   examples: |
+    - explícame la respiración diafragmática
     - definicion de la respiración diafragmatica
     - que es la respiracion diafragmatica
     - definicion de respiracion diafragmtica
@@ -223,6 +269,8 @@ nlu:
 - intent: chitchat/pensamiento_racional
   examples: |
     - definicion de pensamiento racional
+    - que es un pensamiento racional
+    - dime que es pensamiento racional
 - intent: chitchat/pensamiento_irracional
   examples: |
     - definicion de pensamiento irracional
@@ -324,6 +372,8 @@ nlu:
     - pasos para pedir un cambio en el comportamiento
 - intent: chitchat/felicidad
   examples: |
+    - explícame la felicidad
+    - felicidad
     - que es la felicidad
 - intent: chitchat/como_feliz
   examples: |
@@ -342,6 +392,11 @@ nlu:
     - el arte de amargarse la vida
     - estoy amargada de la vida
     - soy una total amargada
+- intent: out_of_scope
+  examples: |
+    - te gustan los coches
+    - dime el tiempo que hace hoy
+    - quiero comer pizza
 - synonym: embarazada
   examples: |
     - encinta
@@ -372,6 +427,8 @@ nlu:
     - ejercicio de relajacion
     - tecnica de relax
     - tecnica de respiracion
+    - desactivarme
+    - desactivación
 - synonym: definicion de
   examples: |
     - que es

@@ -12,6 +12,11 @@ rules:
   - intent: despedir
   - action: utter_despedir
 
+- rule: Respond to How are you
+  steps:
+  - intent: preguntar_que_tal
+  - action: utter_que_tal
+
 - rule: Be grateful when they thank you
   steps:
   - intent: agradecer
@@ -26,6 +31,28 @@ rules:
   steps:
   - intent: pedir_video
   - action: utter_video
+
+- rule: Out of Scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- rule: end_relax
+  steps:
+  - action: utter_siguiente_paso
+  - intent: negar
+  - action: utter_te_ha_servido
+
+- rule: Motivational Quote
+  steps:
+  - intent: pedir_frase_motivadora
+  - action: utter_frase_motivadora
+
+- rule: Sad
+  steps:
+  - intent: mostrar_tristeza
+  - action: utter_animar
+
 
 - rule: diafragmatica2
   steps:

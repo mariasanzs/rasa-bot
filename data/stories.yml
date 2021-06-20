@@ -107,6 +107,13 @@ stories:
   steps:
   - checkpoint: check_modo
   - action: action_guided
+  #pausa aqui
+  - action: utter_continuar
+  - intent: continuar
+    entities:
+    - feedback: continuar
+  - slot_was_set:
+    - feedback: continuar
   - action: action_first_paused
   - action: utter_siguiente_paso
   - checkpoint: check_tematica2
@@ -128,7 +135,11 @@ stories:
     - imagen: lago
     - imagen: prado
   - action: action_second_paused
+  - action: utter_siguiente_paso
+  - intent: afirmar
   - action: action_third_paused
+  - action: utter_siguiente_paso
+  - intent: afirmar
   - action: action_4_paused
   - action: utter_continuar
   - action: action_end_guided
