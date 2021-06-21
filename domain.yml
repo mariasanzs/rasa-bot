@@ -141,7 +141,7 @@ responses:
   utter_despedir:
   - text: Adiós 😄
   - text: Hasta pronto! 👋🏼
-  - text: Adiós 👋🏼🙋🏻‍♀️!, espero que te haya gustado hablar conmigo 
+  - text: Adiós 👋🏼🙋🏻‍♀️!, espero que te haya gustado hablar conmigo
   utter_responder_email:
   - text: Perfecto!, {email} apuntado
   utter_agradecer:
@@ -190,7 +190,7 @@ responses:
   utter_ready:
   - text: Perfecto ✨!, ¿Estás preparada?
   - text: Vale, ¿comenzamos? 🏁
-  - text: ¿Empezamos ya 💕 ? 
+  - text: ¿Empezamos ya 💕 ?
   utter_slots_values:
   - text: Vale, me acordaré de que eres {nombre} {apellidos}.
   utter_valorar_situacion:

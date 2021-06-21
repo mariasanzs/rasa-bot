@@ -3,7 +3,7 @@
 
 version: "2.0"
 stories:
-- story: Story from Conversation ID 4987756adc07417e8a91228a58691ce1
+- story: happy mood
   steps:
   - intent: saludar
     user: |-
@@ -11,9 +11,210 @@ stories:
   - action: utter_saludar
   - intent: mood_genial
     user: |-
-      bien
+      genial
   - action: utter_feliz
   - action: utter_preguntar
+
+- story: Test - Sad Mood
+  steps:
+  - intent: saludar
+    user: |-
+      hey
+  - action: utter_saludar
+  - intent: mood_triste
+    user: |-
+      muy mal
+  - action: utter_valorar_situacion
+  - intent: pedir_consejo
+    user: |-
+      /pedir_consejo{"problema": "estres"}
+  - slot_was_set:
+    - problema: estres
+  - action: action_dar_consejo
+
+- story: Test - diaphragmatic breathing - stop
+  steps:
+  - intent: pedir_relajacion
+    user: |-
+      me apetece relajarme un poco
+  - action: utter_elegir_tecnica
+  - intent: seleccionar_tecnica
+    user: |-
+      /seleccionar_tecnica{"tecnica": "diafragmatica"}
+  - slot_was_set:
+    - tecnica: diafragmatica
+  - action: utter_ready
+  - intent: afirmar
+    user: |-
+      okay
+  - action: action_iniciar_relajacion
+  - action: utter_feedback
+  - intent: pedir_feedback
+    user: |-
+      /pedir_feedback{"feedback": "no"}
+  - slot_was_set:
+    - feedback: no
+  - action: action_relajacion
+
+- story: Test - guided imagery - stop
+  steps:
+  - intent: pedir_relajacion
+    user: |-
+      iniciar relajación
+  - action: utter_elegir_tecnica
+  - intent: seleccionar_tecnica
+    user: |-
+      /seleccionar_tecnica{"tecnica": "imaginacion"}
+  - slot_was_set:
+    - tecnica: imaginacion
+  - action: utter_ready
+  - intent: negar
+    user: |-
+      no
+  - action: utter_te_ha_servido
+
+- story: Test - guided imagery - correct
+  steps:
+  - intent: pedir_relajacion
+    user: |-
+      quiero relajarme
+  - action: utter_elegir_tecnica
+  - intent: seleccionar_tecnica
+    user: |-
+      /seleccionar_tecnica{"tecnica": "imaginacion"}
+  - slot_was_set:
+    - tecnica: imaginacion
+  - action: utter_ready
+  - intent: afirmar
+    user: |-
+      yes
+  - action: action_iniciar_relajacion
+  - action: utter_feedback
+  - intent: pedir_feedback
+    user: |-
+      /pedir_feedback{"feedback": "ok"}
+  - slot_was_set:
+    - feedback: ok
+  - action: action_relajacion
+  - action: utter_continuar
+  - intent: continuar
+    user: |-
+      /continuar{"feedback": "continuar"}
+  - slot_was_set:
+    - feedback: continuar
+  - action: action_modo
+  - action: action_guided
+  - action: utter_continuar
+  - intent: continuar
+    user: |-
+      /continuar{"feedback": "continuar"}
+  - slot_was_set:
+    - feedback: continuar
+  - action: action_first_paused
+  - action: utter_siguiente_paso
+  - intent: afirmar
+    user: |-
+      si
+  - action: utter_elegir_imagen
+  - intent: seleccionar_imagen
+    user: |-
+      /seleccionar_imagen{"imagen": "playa"}
+  - slot_was_set:
+    - imagen: playa
+  - action: action_second_paused
+  - action: utter_siguiente_paso
+  - intent: afirmar
+    user: |-
+      okay
+  - action: action_third_paused
+  - action: utter_siguiente_paso
+  - intent: afirmar
+    user: |-
+      me parece bien
+  - action: action_4_paused
+  - action: utter_continuar
+  - action: action_end_guided
+  - action: utter_te_ha_servido
+  - intent: afirmar
+    user: |-
+      si
+  - action: action_default_fallback
+
+- story: Test - diaphragmatic breathing correct
+  steps:
+  - intent: pedir_relajacion
+    user: |-
+      Quiero hacer la tecnica de relajacion
+  - action: utter_elegir_tecnica
+  - intent: seleccionar_tecnica
+    user: |-
+      /seleccionar_tecnica{"tecnica": "diafragmatica"}
+  - slot_was_set:
+    - tecnica: diafragmatica
+  - action: utter_ready
+  - intent: afirmar
+    user: |-
+      vale
+  - action: action_iniciar_relajacion
+  - action: utter_feedback
+  - intent: pedir_feedback
+    user: |-
+      /pedir_feedback{"feedback": "ok"}
+  - slot_was_set:
+    - feedback: ok
+  - action: action_relajacion
+  - action: utter_continuar
+  - intent: continuar
+    user: |-
+      /continuar{"feedback": "continuar"}
+  - slot_was_set:
+    - feedback: continuar
+  - action: action_modo
+  - action: action_diaphragmatic
+  - slot_was_set:
+    - repeticiones: 1
+  - action: utter_repetir
+  - intent: pedir_repeticion
+    user: |-
+      /pedir_repeticion{"feedback": "repeticion"}
+  - slot_was_set:
+    - feedback: repeticion
+  - action: action_repeticion
+  - action: action_diaphragmatic
+  - slot_was_set:
+    - repeticiones: 2
+  - action: utter_repetir
+  - intent: pedir_repeticion
+    user: |-
+      /pedir_repeticion{"feedback": "repeticion2"}
+  - slot_was_set:
+    - feedback: repeticion2
+  - action: action_repeticion
+  - action: action_end_diaph
+
+- story: Test- question->answer
+  steps:
+  - intent: pedir_frase_motivadora
+    user: |-
+      dime una frase bonita
+  - action: utter_frase_motivadora
+  - intent: preguntar_que_tal
+    user: |-
+      tu como te encuentras
+  - action: utter_que_tal
   - intent: chitchat/ask_quien_eres
     user: |-
-      quien eres
+      ¿Como te llamas?
+  - action: utter_chitchat
+  - intent: chitchat/estres
+    user: |-
+      dime que es el estres
+  - action: utter_chitchat
+  - intent: chitchat/administrar_tiempo
+    user: |-
+      como puedo administrar mi tiempo
+  - action: utter_chitchat
+  - intent: out_of_scope
+    user: |-
+      te gustan los coches
+  - action: utter_out_of_scope
