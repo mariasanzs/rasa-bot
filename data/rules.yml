@@ -67,13 +67,14 @@ rules:
     - feedback: repeticion2
   - action: action_repeticion
 
-- rule: Activate form
+- rule: Activate Form - Name
   steps:
    - intent: pedir_nombre
+   - action: utter_preguntar_nombre
    - action: name_form
    - active_loop: name_form
 
-- rule: Submit form
+- rule: Submit form - Name
   condition:
   # Condition that form is active.
   - active_loop: name_form
@@ -86,3 +87,23 @@ rules:
   # The actions we want to run when the form is submitted.
   - action: action_submit
   - action: utter_slots_values
+
+- rule: Activate Form - Valorate
+  steps:
+   - intent: valorar_chatbot
+   - action: valorate_form
+   - active_loop: valorate_form
+
+- rule: Submit form - Valorate
+  condition:
+  # Condition that form is active.
+  - active_loop: valorate_form
+  steps:
+  # Form is deactivated
+  - action: valorate_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: action_submit_valoracion
+  - action: action_points_valorate

@@ -109,6 +109,15 @@ nlu:
     - quiero darte mi nombre
     - te he dicho como me llamo?
     - queiro darte mi nombre
+- intent: valorar_chatbot
+  examples: |
+    - encuesta de satisfacción
+    - realizar encuesta de satisfacción
+    - quiero hacer una encuesta de satisfacción
+    - valorar chatbot
+    - quiero valorar a nonabot
+    - valorar el sistema
+    - realizar encuesta
 - intent: pedir_consejo
   examples: |
     - /pedir_consejo{"problema": "miedo"}

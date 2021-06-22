@@ -33,6 +33,8 @@ intents:
     use_entities: true
 - preguntar_que_tal:
     use_entities: true
+- valorar_chatbot:
+    use_entities: true
 - chitchat:
     use_entities: true
 - pedir_consejo:
@@ -59,6 +61,10 @@ entities:
 - feedback
 - repeticiones
 - imagen
+- puntos1
+- puntos2
+- puntos3
+- cambios
 slots:
   problema:
     type: rasa.shared.core.slots.TextSlot
@@ -90,16 +96,31 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: true
-  apellidos:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: true
   requested_slot:
     type: rasa.shared.core.slots.UnfeaturizedSlot
     initial_value: null
     auto_fill: true
     influence_conversation: false
+  puntos1:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  puntos2:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  puntos3:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  cambios:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
 responses:
   utter_saludar:
   - text: Hola! Como te encuentras hoy 👋🏼?
@@ -192,7 +213,17 @@ responses:
   - text: Vale, ¿comenzamos? 🏁
   - text: ¿Empezamos ya 💕 ?
   utter_slots_values:
-  - text: Vale, me acordaré de que eres {nombre} {apellidos}.
+  - text: Vale, me acordaré de que eres {nombre}.
+  utter_ask_puntos1:
+  - text: Del uno al 10, ¿Crees que la información que soy es fiable?
+  utter_ask_puntos2:
+  - text: Del uno al 10, ¿Crees que soy práctica?
+  utter_ask_puntos3:
+  - text: Del uno al 10, ¿Crees que me expreso de una forma correcta? (Amable, cercana, comprensiva ...)
+  utter_ask_cambios:
+  - text: ¿Qué aspectos crees que deberíamos de cambiar?
+  - text: ¿Qué cambiarías tu de NonaBot?
+  - text: ¿Qué crees que tendríamos que añadir o cambiar en próximas actualizaciones?
   utter_valorar_situacion:
   - buttons:
     - payload: '/pedir_consejo{"problema": "miedo"}'
@@ -321,10 +352,19 @@ actions:
 - action_third_paused
 - action_4_paused
 - action_end_guided
+- action_points_valorate
+- action_submit_valoracion
 forms:
   name_form:
-    apellidos:
-    - type: from_text
     nombre:
     - type: from_text
+  valorate_form:
+    puntos1:
+      - type: from_text
+    puntos2:
+      - type: from_text
+    puntos3:
+      - type: from_text
+    cambios:
+      - type: from_text
 e2e_actions: []

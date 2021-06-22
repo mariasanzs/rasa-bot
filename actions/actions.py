@@ -11,7 +11,7 @@ import json
 import time
 from pathlib import Path
 from typing import Any, Text, Dict, List
-#from database_connectivity import DataUpdate
+from database_connectivity import *
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.forms import FormAction
@@ -231,24 +231,84 @@ class ActionEndGuided(Action):
         dispatcher.utter_message(text="Ya has terminado con tu relajación! 😀")
         return []
 
-# class ActionPreguntarApellido(Action):
-#     def name(self) -> Text:
-#         return "action_ask_last_name"
+class ActionPointsValorate(Action):
 
-#     def run(
-#         self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
-#     ) -> List[EventType]:
-#         first_name = tracker.get_slot("first_name")
-#         dispatcher.utter_message(text=f"So {first_name}, what is your last name?")
-#         return []
+    def name(self) -> Text:
+        return "action_points_valorate"
 
-#class ActionSubmit(Action):
-#    def name(self) -> Text:
-#        return "action_submit"
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        puntuacion1 = int(tracker.get_slot('puntos1'))
+        puntuacion2 = int(tracker.get_slot('puntos2'))
+        puntuacion3 = int(tracker.get_slot('puntos3'))
+        
+        dispatcher.utter_message(text="Me has dado una puntuación de ...")
+        points = puntuacion1+puntuacion2+puntuacion3
+        if points == 0:
+            dispatcher.utter_message(text="*️⃣*️⃣*️⃣*️⃣*️⃣") 
+            dispatcher.utter_message(text="Jo, intentaremos mejorar, gracias")
+        elif points <= 6:
+            dispatcher.utter_message(text="⭐*️⃣*️⃣*️⃣*️⃣")
+            dispatcher.utter_message(text="Algo es algo ... seguiremos mejorando")
+        elif points <=12:
+            dispatcher.utter_message(text="⭐⭐*️⃣*️⃣*️⃣")
+            dispatcher.utter_message(text="bueno, muchas gracias por tu valoración")
+        elif points <=18:
+            dispatcher.utter_message(text="⭐⭐⭐*️⃣*️⃣")
+            dispatcher.utter_message(text="No está mal, muchas gracias.")
+        elif points <=24:
+            dispatcher.utter_message(text="⭐⭐⭐⭐*️⃣")
+            dispatcher.utter_message(text="Genial!, muchisimas gracias")
+        else:
+            dispatcher.utter_message(text="⭐⭐⭐⭐⭐")
+            dispatcher.utter_message(text="Guau!, muchisimas gracias, me alegro de que te haya gustado tanto")
+        return []
 
-#    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-       #dispatcher.utter_message(text="Vale, me acordaré de que tu nombre es {0} y tus apellidos {1}".format(
-       #    tracker.get_slot("nombre"), tracker.get_slot("apellidos")))
-#       DataUpdate(tracker.get_slot('nombre'),tracker.get_slot('apellidos'))
-#       dispatcher.utter_message("Tus datos han sido guardados. Gracias")
-#       return []
+class ActionPreguntarApellido(Action):
+     def name(self) -> Text:
+         return "action_ask_last_name"
+     def run(
+         self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
+     ) -> List[EventType]:
+         first_name = tracker.get_slot("first_name")
+         dispatcher.utter_message(text=f"So {first_name}, what is your last name?")
+         return []
+
+
+class ActionSubmit(Action):
+    def name(self) -> Text:
+        return "action_submit"
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+      #dispatcher.utter_message(text="Vale, me acordaré de que tu nombre es {0} y tus apellidos {1}".format(
+      #    tracker.get_slot("nombre"), tracker.get_slot("apellidos")))
+       DataUpdate(tracker.get_slot('nombre'))
+       nombre = tracker.get_slot('nombre')
+       dispatcher.utter_message("Tus datos han sido guardados. Gracias")
+       return []
+
+class ActionSubmitValoracion(Action):
+    def name(self) -> Text:
+        return "action_submit_valoracion"
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+       puntuacion1 = tracker.get_slot('puntos1')
+       puntuacion2 = tracker.get_slot('puntos2')
+       puntuacion3 = tracker.get_slot('puntos3')
+       sugerencias = tracker.get_slot('cambios')
+
+       DataValoracion(puntuacion1,puntuacion2,puntuacion3,sugerencias) 
+       dispatcher.utter_message("Genial! tendremos en cuenta tu opinión")
+       return []
+"""
+class ValorateForm(FormAction):
+    def name(self) -> Text:
+        return "valorate_form"
+    
+    @staticmethod
+    def required_slots(tracker):
+
+        if tracker.get_slot('puntos1') == True:
+            return ["puntos1", "puntos2", "puntos3","cambios"]
+        else:
+            return ["confirm_exercise", "sleep",
+             "diet", "stress", "goal"]
+
+"""
