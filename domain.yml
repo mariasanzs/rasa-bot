@@ -35,6 +35,8 @@ intents:
     use_entities: true
 - valorar_chatbot:
     use_entities: true
+- realizar_quiz:
+    use_entities: true
 - chitchat:
     use_entities: true
 - pedir_consejo:
@@ -51,15 +53,22 @@ intents:
     use_entities: true
 - pedir_repeticion:
     use_entities: true
+- pedir_siguiente:
+    use_entities: true
 - continuar:
     use_entities: true
 - seleccionar_imagen:
+    use_entities: true
+- contar_puntos:
     use_entities: true
 entities:
 - problema
 - tecnica
 - feedback
 - repeticiones
+- puntos_quiz
+- total_quiz
+- n_pregunta
 - imagen
 - puntos1
 - puntos2
@@ -79,6 +88,21 @@ slots:
   repeticiones:
     type: rasa.shared.core.slots.UnfeaturizedSlot
     initial_value: 0
+    auto_fill: true
+    influence_conversation: false
+  puntos_quiz:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: 0
+    auto_fill: true
+    influence_conversation: false
+  total_quiz:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: 0
+    auto_fill: true
+    influence_conversation: false
+  n_pregunta:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: 1
     auto_fill: true
     influence_conversation: false
   feedback:
@@ -260,6 +284,13 @@ responses:
     - payload: '/pedir_repeticion{"feedback": "repeticion2"}'
       title: No, terminar. ⏭️
     text: ¿Notas como se va yendo la tensión? LLevas {repeticiones} veces ¿Quieres repetir?
+  utter_siguiente_pregunta:
+  - buttons:
+    - payload: '/pedir_siguiente{"feedback": "siguiente"}'
+      title: Sí, siguiente. ⏭️
+    - payload: '/pedir_siguiente{"feedback": "parar"}'
+      title: No, parar. 
+    text: Vamos con la pregunta {n_pregunta} ¿Vale?
   utter_chitchat/ask_quien_eres:
   - text: Soy un bot 🤖, creado por María Sanz 👩🏻‍💻 para su proyecto fin de grado en Ingeniería informática que da apoyo a terapias para mujeres embarazadas 🤰🏻.
   utter_chitchat/autorregistro:
@@ -347,6 +378,9 @@ actions:
 - action_submit
 - action_repeticion
 - action_end_diaph
+- action_pasar_pregunta
+- action_ask_question
+- action_end_quiz
 - action_first_paused
 - action_second_paused
 - action_third_paused
@@ -359,12 +393,12 @@ forms:
     nombre:
     - type: from_text
   valorate_form:
-    puntos1:
-      - type: from_text
-    puntos2:
-      - type: from_text
-    puntos3:
-      - type: from_text
     cambios:
-      - type: from_text
+    - type: from_text
+    puntos1:
+    - type: from_text
+    puntos2:
+    - type: from_text
+    puntos3:
+    - type: from_text
 e2e_actions: []

@@ -150,4 +150,44 @@ stories:
   - checkpoint: check_tematica2
   - intent: negar
   - action: utter_te_ha_servido
+
+- story: quiz
+  steps:
+  - intent: realizar_quiz
+  - action: utter_ready
+  - intent: afirmar
+  - action: action_ask_question
+  - intent: contar_puntos
+    entities:
+    - puntos_quiz: "0"
+    - puntos_quiz: "10"
+  - slot_was_set:
+    - puntos_quiz: "0"
+    - puntos_quiz: "10"
+  - action: utter_siguiente_pregunta
+  - intent: pedir_siguiente
+    entities:
+    - feedback: siguiente
+    - feedback: parar
+  - slot_was_set:
+    - feedback: siguiente
+    - feedback: parar
+  - action: action_pasar_pregunta
+
+- story: quiz2
+  steps:
+  - intent: pedir_siguiente
+    entities:
+    - feedback: siguiente
+    - feedback: parar
+  - slot_was_set:
+    - feedback: siguiente
+    - feedback: parar
+  - action: action_pasar_pregunta
+
   
+- story: quiz - reject
+  steps:
+  - intent: realizar_quiz
+  - action: utter_ready
+  - intent: negar

@@ -12,6 +12,7 @@ import time
 from pathlib import Path
 from typing import Any, Text, Dict, List
 from database_connectivity import *
+import numpy as np
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.forms import FormAction
@@ -262,6 +263,64 @@ class ActionPointsValorate(Action):
             dispatcher.utter_message(text="⭐⭐⭐⭐⭐")
             dispatcher.utter_message(text="Guau!, muchisimas gracias, me alegro de que te haya gustado tanto")
         return []
+
+class ActionAskQuestion(Action):
+
+    def name(self) -> Text:
+        return "action_ask_question"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        npregunta = int(tracker.get_slot('n_pregunta'))
+        dispatcher.utter_message(text="Pregunta {0}".format(npregunta))
+        pregunta = np.array(DataSelectPregunta(npregunta))
+        punto = int(pregunta[0][3])
+        button_resp=[
+                {
+                    "title": "{0}".format(pregunta[0][2]),
+                    "payload": "/contar_puntos{'puntos_quiz': '{0}'}".format(punto)
+                },
+                {
+                    "title": "{0}".format(pregunta[0][4]),
+                    "payload": '/contar_puntos{"puntos_quiz": "{0}".format(pregunta[0][5]) }'
+                },
+                {
+                    "title": "{0}".format(pregunta[0][6]),
+                    "payload": '/contar_puntos{"puntos_quiz": "{0}".format(pregunta[0][7]) }'
+                }
+            ]
+
+        dispatcher.utter_message(text="{0}".format(pregunta[0][1]), buttons=button_resp)
+        dispatcher.utter_message(response="utter_siguiente_pregunta")
+        npregunta = npregunta + 1
+        #notas como se va yendo la tensión? LLevas x veces ¿Repetir?
+        return [SlotSet("n_pregunta", npregunta)]
+
+class ActionPasarPregunta(Action):
+
+    def name(self) -> Text:
+        return "action_pasar_pregunta"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        feedback = tracker.get_slot('feedback')
+        puntos = int(tracker.get_slot('puntos_quiz'))
+        puntos_totales = puntos + int(tracker.get_slot('total_quiz'))
+        dispatcher.utter_message(text="puntos totales: {0}".format(puntos_totales))
+        
+        if feedback=='siguiente':
+            accion =  "action_ask_question"
+        if feedback=='parar':
+            accion =  "action_end_quiz"
+        return [SlotSet("total_quiz", puntos_totales), FollowupAction(accion)]
+
+class ActionEndQuiz(Action):
+
+    def name(self) -> Text:
+        return "action_end_quiz"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="Fin del quiz")
+        ##poner slot a 0
+        return [ConversationPaused()]
 
 class ActionPreguntarApellido(Action):
      def name(self) -> Text:
