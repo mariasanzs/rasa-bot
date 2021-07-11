@@ -1,0 +1,466 @@
+[
+  {
+    "text": "holis",
+    "intent": "saludar",
+    "intent_prediction": {
+      "name": "mood_genial",
+      "confidence": 0.1581607162952423
+    }
+  },
+  {
+    "text": "nos vemos",
+    "intent": "despedir",
+    "intent_prediction": {
+      "name": "agradecer",
+      "confidence": 0.1821083426475525
+    }
+  },
+  {
+    "text": "adioss",
+    "intent": "despedir",
+    "intent_prediction": {
+      "name": "mood_genial",
+      "confidence": 0.1581607162952423
+    }
+  },
+  {
+    "text": "me parece bien",
+    "intent": "afirmar",
+    "intent_prediction": {
+      "name": "pedir_relajacion",
+      "confidence": 0.15876342356204987
+    }
+  },
+  {
+    "text": "correcto",
+    "intent": "afirmar",
+    "intent_prediction": {
+      "name": "valorar_chatbot",
+      "confidence": 0.1308469921350479
+    }
+  },
+  {
+    "text": "mejor que nunca",
+    "intent": "mood_genial",
+    "intent_prediction": {
+      "name": "negar",
+      "confidence": 0.18263204395771027
+    }
+  },
+  {
+    "text": "no muy bien",
+    "intent": "mood_triste",
+    "intent_prediction": {
+      "name": "mood_genial",
+      "confidence": 0.19455716013908386
+    }
+  },
+  {
+    "text": "un poco regu",
+    "intent": "mood_triste",
+    "intent_prediction": {
+      "name": "realizar_quiz",
+      "confidence": 0.18833722174167633
+    }
+  },
+  {
+    "text": "podria estar mejor",
+    "intent": "mood_triste",
+    "intent_prediction": {
+      "name": "mood_genial",
+      "confidence": 0.1447254717350006
+    }
+  },
+  {
+    "text": "no muy bien la verdad",
+    "intent": "mood_triste",
+    "intent_prediction": {
+      "name": "negar",
+      "confidence": 0.18583060801029205
+    }
+  },
+  {
+    "text": "te agradezco que me ayudes",
+    "intent": "agradecer",
+    "intent_prediction": {
+      "name": "preguntar_que_tal",
+      "confidence": 0.16048187017440796
+    }
+  },
+  {
+    "text": "preguntar?",
+    "intent": "preguntar",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.24254292249679565
+    }
+  },
+  {
+    "text": "este es mi nombre",
+    "intent": "pedir_nombre",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.18862587213516235
+    }
+  },
+  {
+    "text": "dar nombre",
+    "intent": "pedir_nombre",
+    "intent_prediction": {
+      "name": "valorar_chatbot",
+      "confidence": 0.2968599498271942
+    }
+  },
+  {
+    "text": "quiero darte mi nombre",
+    "intent": "pedir_nombre",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.1810675859451294
+    }
+  },
+  {
+    "text": "te he dicho como me llamo?",
+    "intent": "pedir_nombre",
+    "intent_prediction": {
+      "name": "preguntar_que_tal",
+      "confidence": 0.19199474155902863
+    }
+  },
+  {
+    "text": "quiero valorar a nonabot",
+    "intent": "valorar_chatbot",
+    "intent_prediction": {
+      "name": "realizar_quiz",
+      "confidence": 0.256673663854599
+    }
+  },
+  {
+    "text": "valorar el sistema",
+    "intent": "valorar_chatbot",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.19727888703346252
+    }
+  },
+  {
+    "text": "/pedir_consejo{\"problema\": \"miedo\"}",
+    "intent": "pedir_consejo",
+    "intent_prediction": {
+      "name": "pedir_repeticion",
+      "confidence": 0.1443076729774475
+    }
+  },
+  {
+    "text": "/pedir_consejo{\"problema\": \"estres\"}",
+    "intent": "pedir_consejo",
+    "intent_prediction": {
+      "name": "pedir_frase_motivadora",
+      "confidence": 0.1458050012588501
+    }
+  },
+  {
+    "text": "/pedir_consejo{\"problema\": \"incompresion\"}",
+    "intent": "pedir_consejo",
+    "intent_prediction": {
+      "name": "pedir_repeticion",
+      "confidence": 0.14085599780082703
+    }
+  },
+  {
+    "text": "/pedir_consejo{\"problema\": \"otro\"}",
+    "intent": "pedir_consejo",
+    "intent_prediction": {
+      "name": "pedir_repeticion",
+      "confidence": 0.147001713514328
+    }
+  },
+  {
+    "text": "/pedir_feedback{\"feedback\": \"no\"}",
+    "intent": "pedir_feedback",
+    "intent_prediction": {
+      "name": "pedir_frase_motivadora",
+      "confidence": 0.13620741665363312
+    }
+  },
+  {
+    "text": "/continuar{\"feedback\": \"continuar\"}",
+    "intent": "continuar",
+    "intent_prediction": {
+      "name": "pedir_repeticion",
+      "confidence": 0.14751894772052765
+    }
+  },
+  {
+    "text": "/pedir_siguiente{\"feedback\": \"siguiente\"}",
+    "intent": "pedir_siguiente",
+    "intent_prediction": {
+      "name": "pedir_frase_motivadora",
+      "confidence": 0.14179356396198273
+    }
+  },
+  {
+    "text": "/pedir_siguiente{\"feedback\": \"parar\"}",
+    "intent": "pedir_siguiente",
+    "intent_prediction": {
+      "name": "pedir_repeticion",
+      "confidence": 0.1619439423084259
+    }
+  },
+  {
+    "text": "/seleccionar_tecnica{\"tecnica\": \"diafragmatica\"}",
+    "intent": "seleccionar_tecnica",
+    "intent_prediction": {
+      "name": "pedir_repeticion",
+      "confidence": 0.14085599780082703
+    }
+  },
+  {
+    "text": "/seleccionar_tecnica{\"tecnica\": \"imaginacion\"}",
+    "intent": "seleccionar_tecnica",
+    "intent_prediction": {
+      "name": "pedir_repeticion",
+      "confidence": 0.13869820535182953
+    }
+  },
+  {
+    "text": "/seleccionar_imagen{\"imagen\": \"playa\"}",
+    "intent": "seleccionar_imagen",
+    "intent_prediction": {
+      "name": "pedir_repeticion",
+      "confidence": 0.16567614674568176
+    }
+  },
+  {
+    "text": "/seleccionar_imagen{\"imagen\": \"montana\"}",
+    "intent": "seleccionar_imagen",
+    "intent_prediction": {
+      "name": "pedir_repeticion",
+      "confidence": 0.13811932504177094
+    }
+  },
+  {
+    "text": "/seleccionar_imagen{\"imagen\": \"prado\"}",
+    "intent": "seleccionar_imagen",
+    "intent_prediction": {
+      "name": "pedir_repeticion",
+      "confidence": 0.14434202015399933
+    }
+  },
+  {
+    "text": "/seleccionar_imagen{\"imagen\": \"lago\"}",
+    "intent": "seleccionar_imagen",
+    "intent_prediction": {
+      "name": "pedir_repeticion",
+      "confidence": 0.17765429615974426
+    }
+  },
+  {
+    "text": "/contar_puntos{\"puntos_quiz\": \"0\"}",
+    "intent": "contar_puntos",
+    "intent_prediction": {
+      "name": "pedir_feedback",
+      "confidence": 0.14430078864097595
+    }
+  },
+  {
+    "text": "/contar_puntos{\"puntos_quiz\": \"10\"}",
+    "intent": "contar_puntos",
+    "intent_prediction": {
+      "name": "pedir_repeticion",
+      "confidence": 0.15019281208515167
+    }
+  },
+  {
+    "text": "Quiero hacer la tecnica de relajacion",
+    "intent": "pedir_relajacion",
+    "intent_prediction": {
+      "name": "realizar_quiz",
+      "confidence": 0.15879301726818085
+    }
+  },
+  {
+    "text": "dime una frase que me motive",
+    "intent": "pedir_frase_motivadora",
+    "intent_prediction": {
+      "name": "mostrar_tristeza",
+      "confidence": 0.13035722076892853
+    }
+  },
+  {
+    "text": "quiero motivarme",
+    "intent": "pedir_frase_motivadora",
+    "intent_prediction": {
+      "name": "preguntar",
+      "confidence": 0.1292695701122284
+    }
+  },
+  {
+    "text": "dime una frase bonita",
+    "intent": "pedir_frase_motivadora",
+    "intent_prediction": {
+      "name": "preguntar",
+      "confidence": 0.15361995995044708
+    }
+  },
+  {
+    "text": "no estoy bien",
+    "intent": "mostrar_tristeza",
+    "intent_prediction": {
+      "name": "negar",
+      "confidence": 0.1836170256137848
+    }
+  },
+  {
+    "text": "me encuentro mal",
+    "intent": "mostrar_tristeza",
+    "intent_prediction": {
+      "name": "mood_triste",
+      "confidence": 0.2371930032968521
+    }
+  },
+  {
+    "text": "estoy muy triste",
+    "intent": "mostrar_tristeza",
+    "intent_prediction": {
+      "name": "mood_genial",
+      "confidence": 0.23865783214569092
+    }
+  },
+  {
+    "text": "que tristeza tengo",
+    "intent": "mostrar_tristeza",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.15892010927200317
+    }
+  },
+  {
+    "text": "Introduceme el programa",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "valorar_chatbot",
+      "confidence": 0.17210619151592255
+    }
+  },
+  {
+    "text": "ayudame a organizar mi dia",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.17962682247161865
+    }
+  },
+  {
+    "text": "estar de mejores humos",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "pedir_nombre",
+      "confidence": 0.18099930882453918
+    }
+  },
+  {
+    "text": "estoy amargada",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "mostrar_tristeza",
+      "confidence": 0.18573817610740662
+    }
+  },
+  {
+    "text": "Siento que estoy amargada",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "mostrar_tristeza",
+      "confidence": 0.14354832470417023
+    }
+  },
+  {
+    "text": "me gusta amargarme",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "pedir_relajacion",
+      "confidence": 0.21441107988357544
+    }
+  },
+  {
+    "text": "te gustan los coches",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "pedir_frase_motivadora",
+      "confidence": 0.11853903532028198
+    }
+  },
+  {
+    "text": "dime el tiempo que hace hoy",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.18723666667938232
+    }
+  },
+  {
+    "text": "quiero comer pizza",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "valorar_chatbot",
+      "confidence": 0.20559197664260864
+    }
+  },
+  {
+    "text": "reservar en un restaurante",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "pedir_video",
+      "confidence": 0.13626544177532196
+    }
+  },
+  {
+    "text": "quiero pedir cita",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "valorar_chatbot",
+      "confidence": 0.20378202199935913
+    }
+  },
+  {
+    "text": "cual es tu pelicula favorita",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "preguntar_que_tal",
+      "confidence": 0.15307660400867462
+    }
+  },
+  {
+    "text": "me caes mal",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "mood_triste",
+      "confidence": 0.2915857434272766
+    }
+  },
+  {
+    "text": "no sabes nada",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "negar",
+      "confidence": 0.2848793566226959
+    }
+  },
+  {
+    "text": "dime la hora",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "mood_triste",
+      "confidence": 0.18743468821048737
+    }
+  },
+  {
+    "text": "ponme una canci\u00f3n",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "pedir_frase_motivadora",
+      "confidence": 0.18218831717967987
+    }
+  }
+]

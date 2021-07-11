@@ -1,0 +1,286 @@
+{
+  "chitchat/ira": {
+    "precision": 1.0,
+    "recall": 0.8571428571428571,
+    "f1-score": 0.923076923076923,
+    "support": 7,
+    "confused_with": {
+      "chitchat/autorregistro": 1
+    }
+  },
+  "chitchat/ask_quien_eres": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 12,
+    "confused_with": {}
+  },
+  "chitchat/felicidad": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1-score": 0.6666666666666666,
+    "support": 8,
+    "confused_with": {
+      "chitchat/autorregistro": 1,
+      "chitchat/diafragmatica": 1
+    }
+  },
+  "chitchat/sentido_humor": {
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.9090909090909091,
+    "support": 6,
+    "confused_with": {
+      "chitchat/diafragmatica": 1
+    }
+  },
+  "chitchat/banco_niebla": {
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1-score": 0.888888888888889,
+    "support": 5,
+    "confused_with": {
+      "chitchat/autorregistro": 1
+    }
+  },
+  "chitchat/no": {
+    "precision": 0.75,
+    "recall": 1.0,
+    "f1-score": 0.8571428571428571,
+    "support": 3,
+    "confused_with": {}
+  },
+  "chitchat/pensamiento_irracional": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2,
+    "confused_with": {
+      "chitchat/pensamiento_racional": 1,
+      "chitchat/creencias_irracionales": 1
+    }
+  },
+  "chitchat/experiencia_estres": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4,
+    "confused_with": {}
+  },
+  "chitchat/estres": {
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1-score": 0.888888888888889,
+    "support": 5,
+    "confused_with": {
+      "chitchat/autorregistro": 1
+    }
+  },
+  "chitchat/analisis": {
+    "precision": 0.8571428571428571,
+    "recall": 0.8571428571428571,
+    "f1-score": 0.8571428571428571,
+    "support": 7,
+    "confused_with": {
+      "chitchat/emociones": 1
+    }
+  },
+  "chitchat/emociones": {
+    "precision": 0.75,
+    "recall": 0.8571428571428571,
+    "f1-score": 0.7999999999999999,
+    "support": 7,
+    "confused_with": {
+      "chitchat/pensamiento_racional": 1
+    }
+  },
+  "chitchat/cambio_conducta": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "chitchat/como_feliz": {
+    "precision": 1.0,
+    "recall": 0.8571428571428571,
+    "f1-score": 0.923076923076923,
+    "support": 7,
+    "confused_with": {
+      "chitchat/no": 1
+    }
+  },
+  "chitchat/derechos_asertivos": {
+    "precision": 1.0,
+    "recall": 0.75,
+    "f1-score": 0.8571428571428571,
+    "support": 4,
+    "confused_with": {
+      "chitchat/autorregistro": 1
+    }
+  },
+  "chitchat/inhibido": {
+    "precision": 0.7,
+    "recall": 0.875,
+    "f1-score": 0.7777777777777777,
+    "support": 8,
+    "confused_with": {
+      "chitchat/autorregistro": 1
+    }
+  },
+  "chitchat/administrar_tiempo": {
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.9090909090909091,
+    "support": 6,
+    "confused_with": {
+      "chitchat/autorregistro": 1
+    }
+  },
+  "chitchat/tematica": {
+    "precision": 0.8,
+    "recall": 1.0,
+    "f1-score": 0.888888888888889,
+    "support": 4,
+    "confused_with": {}
+  },
+  "chitchat/asertivo": {
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1-score": 0.75,
+    "support": 4,
+    "confused_with": {
+      "chitchat/inhibido": 1
+    }
+  },
+  "chitchat/trampas_pensamiento": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 3,
+    "confused_with": {
+      "chitchat/agresivo": 1,
+      "chitchat/autorregistro": 1,
+      "chitchat/creencias_irracionales": 1
+    }
+  },
+  "chitchat/pensamiento_racional": {
+    "precision": 0.6,
+    "recall": 1.0,
+    "f1-score": 0.7499999999999999,
+    "support": 3,
+    "confused_with": {}
+  },
+  "chitchat/duracion_sesion": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "chitchat/autoinstrucciones": {
+    "precision": 0.8,
+    "recall": 1.0,
+    "f1-score": 0.888888888888889,
+    "support": 4,
+    "confused_with": {}
+  },
+  "chitchat/pensamientos": {
+    "precision": 1.0,
+    "recall": 0.25,
+    "f1-score": 0.4,
+    "support": 4,
+    "confused_with": {
+      "chitchat/agresivo": 1,
+      "chitchat/analisis": 1
+    }
+  },
+  "chitchat/disco_rayado": {
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.9090909090909091,
+    "support": 6,
+    "confused_with": {
+      "chitchat/diafragmatica": 1
+    }
+  },
+  "chitchat/agresivo": {
+    "precision": 0.6666666666666666,
+    "recall": 0.8,
+    "f1-score": 0.7272727272727272,
+    "support": 5,
+    "confused_with": {
+      "chitchat/inhibido": 1
+    }
+  },
+  "chitchat/creencias_irracionales": {
+    "precision": 0.6666666666666666,
+    "recall": 0.8,
+    "f1-score": 0.7272727272727272,
+    "support": 5,
+    "confused_with": {
+      "chitchat/inhibido": 1
+    }
+  },
+  "chitchat/objetivo_programa": {
+    "precision": 0.8888888888888888,
+    "recall": 1.0,
+    "f1-score": 0.9411764705882353,
+    "support": 8,
+    "confused_with": {}
+  },
+  "chitchat/amargada": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6,
+    "confused_with": {}
+  },
+  "chitchat/normas_internas": {
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1-score": 0.888888888888889,
+    "support": 5,
+    "confused_with": {
+      "chitchat/objetivo_programa": 1
+    }
+  },
+  "chitchat/autorregistro": {
+    "precision": 0.4117647058823529,
+    "recall": 0.875,
+    "f1-score": 0.56,
+    "support": 8,
+    "confused_with": {
+      "chitchat/autoinstrucciones": 1
+    }
+  },
+  "chitchat/organizarme": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4,
+    "confused_with": {}
+  },
+  "chitchat/diafragmatica": {
+    "precision": 0.625,
+    "recall": 0.7142857142857143,
+    "f1-score": 0.6666666666666666,
+    "support": 7,
+    "confused_with": {
+      "chitchat/autorregistro": 2
+    }
+  },
+  "accuracy": 0.8305084745762712,
+  "macro avg": {
+    "precision": 0.8208165557889822,
+    "recall": 0.8013392857142858,
+    "f1-score": 0.7923791445482622,
+    "support": 177
+  },
+  "weighted avg": {
+    "precision": 0.8516773752815627,
+    "recall": 0.8305084745762712,
+    "f1-score": 0.8230820281966841,
+    "support": 177
+  }
+}

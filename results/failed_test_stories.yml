@@ -1,0 +1,188 @@
+version: "2.0"
+stories:
+- story: Test - diaphragmatic breathing - stop (/tmp/tmp7_6lo9r3/f2647336721540a9bd17fc6b3e689e99_test_stories.yml)
+  steps:
+  - intent: pedir_relajacion
+  - action: utter_elegir_tecnica
+  - intent: seleccionar_tecnica
+    entities:
+    - tecnica: diafragmatica
+  - slot_was_set:
+    - tecnica: diafragmatica
+  - slot_was_set:
+    - tecnica: diafragmatica
+  - action: utter_ready
+  - intent: afirmar
+  - action: action_iniciar_relajacion
+  - action: utter_feedback
+  - intent: pedir_feedback
+    entities:
+    - feedback: no
+  - slot_was_set:
+    - feedback: no
+  - slot_was_set:
+    - feedback: no
+  - action: action_relajacion
+  - action: action_listen  # predicted: utter_continuar
+- story: Test - guided imagery - correct (/tmp/tmp7_6lo9r3/f2647336721540a9bd17fc6b3e689e99_test_stories.yml)
+  steps:
+  - intent: pedir_relajacion
+  - action: utter_elegir_tecnica
+  - intent: seleccionar_tecnica
+    entities:
+    - tecnica: imaginacion
+  - slot_was_set:
+    - tecnica: imaginacion
+  - slot_was_set:
+    - tecnica: imaginacion
+  - action: utter_ready
+  - intent: afirmar
+  - action: action_iniciar_relajacion
+  - action: utter_feedback
+  - intent: pedir_feedback
+    entities:
+    - feedback: ok
+  - slot_was_set:
+    - feedback: ok
+  - slot_was_set:
+    - feedback: ok
+  - action: action_relajacion
+  - action: utter_continuar
+  - intent: continuar
+    entities:
+    - feedback: continuar
+  - slot_was_set:
+    - feedback: continuar
+  - slot_was_set:
+    - feedback: continuar
+  - action: action_modo
+  - action: action_guided  # predicted: action_default_fallback
+  - action: utter_continuar
+  - intent: continuar
+    entities:
+    - feedback: continuar
+  - slot_was_set:
+    - feedback: continuar
+  - slot_was_set:
+    - feedback: continuar
+  - action: action_first_paused
+  - action: utter_siguiente_paso
+  - intent: afirmar
+  - action: utter_elegir_imagen
+  - intent: seleccionar_imagen
+    entities:
+    - imagen: playa
+  - slot_was_set:
+    - imagen: playa
+  - slot_was_set:
+    - imagen: playa
+  - action: action_second_paused
+  - action: utter_siguiente_paso
+  - intent: afirmar
+  - action: action_third_paused
+  - action: utter_siguiente_paso
+  - intent: afirmar  # predicted: nlu_fallback: me parece bien
+  - action: action_4_paused
+  - action: utter_continuar
+  - action: action_end_guided
+  - action: utter_te_ha_servido
+  - intent: afirmar
+  - action: action_default_fallback
+- story: Test - diaphragmatic breathing correct (/tmp/tmp7_6lo9r3/f2647336721540a9bd17fc6b3e689e99_test_stories.yml)
+  steps:
+  - intent: pedir_relajacion  # predicted: nlu_fallback: Quiero hacer la tecnica de relajacion
+  - action: utter_elegir_tecnica
+  - intent: seleccionar_tecnica
+    entities:
+    - tecnica: diafragmatica
+  - slot_was_set:
+    - tecnica: diafragmatica
+  - slot_was_set:
+    - tecnica: diafragmatica
+  - action: utter_ready
+  - intent: afirmar
+  - action: action_iniciar_relajacion
+  - action: utter_feedback
+  - intent: pedir_feedback
+    entities:
+    - feedback: ok
+  - slot_was_set:
+    - feedback: ok
+  - slot_was_set:
+    - feedback: ok
+  - action: action_relajacion
+  - action: utter_continuar
+  - intent: continuar
+    entities:
+    - feedback: continuar
+  - slot_was_set:
+    - feedback: continuar
+  - slot_was_set:
+    - feedback: continuar
+  - action: action_modo
+  - action: action_diaphragmatic  # predicted: action_default_fallback
+  - slot_was_set:
+    - repeticiones: 1
+  - action: utter_repetir
+  - intent: pedir_repeticion
+    entities:
+    - feedback: repeticion
+  - slot_was_set:
+    - feedback: repeticion
+  - slot_was_set:
+    - feedback: repeticion
+  - action: action_repeticion
+  - action: action_diaphragmatic  # predicted: action_listen
+  - slot_was_set:
+    - repeticiones: 2
+  - action: utter_repetir
+  - intent: pedir_repeticion
+    entities:
+    - feedback: repeticion2
+  - slot_was_set:
+    - feedback: repeticion2
+  - slot_was_set:
+    - feedback: repeticion2
+  - action: action_repeticion
+  - action: action_end_diaph  # predicted: action_listen
+  - action: action_listen  # predicted: action_default_fallback
+- story: Test- question->answer (/tmp/tmp7_6lo9r3/f2647336721540a9bd17fc6b3e689e99_test_stories.yml)
+  steps:
+  - intent: pedir_frase_motivadora  # predicted: nlu_fallback: dime una frase bonita
+  - action: utter_frase_motivadora
+  - intent: preguntar_que_tal
+  - action: utter_que_tal
+  - intent: chitchat
+  - action: utter_chitchat
+  - intent: chitchat
+  - action: utter_chitchat
+  - intent: chitchat
+  - action: utter_chitchat
+  - intent: out_of_scope  # predicted: nlu_fallback: te gustan los coches
+  - action: utter_out_of_scope
+- story: Test -> Valorate Chatbot (/tmp/tmp7_6lo9r3/f2647336721540a9bd17fc6b3e689e99_test_stories.yml)
+  steps:
+  - intent: valorar_chatbot
+  - action: valorate_form
+  - active_loop: valorate_form
+  - slot_was_set:
+    - requested_slot: puntos1
+  - slot_was_set:
+    - puntos1: '9'
+  - slot_was_set:
+    - requested_slot: puntos2
+  - slot_was_set:
+    - puntos2: '9'
+  - slot_was_set:
+    - requested_slot: puntos3
+  - slot_was_set:
+    - puntos3: '10'
+  - slot_was_set:
+    - requested_slot: cambios
+  - slot_was_set:
+    - cambios: pondria mas preguntas
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit_valoracion
+  - action: action_points_valorate

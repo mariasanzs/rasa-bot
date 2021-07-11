@@ -1,0 +1,242 @@
+[
+  {
+    "text": "definici\u00f3n de autorregistro",
+    "intent_response_key_target": "chitchat/autorregistro",
+    "intent_response_key_prediction": {
+      "name": "chitchat/autoinstrucciones",
+      "confidence": 0.5105686187744141
+    }
+  },
+  {
+    "text": "\u00bfCu\u00e1les son las normas del programa?",
+    "intent_response_key_target": "chitchat/normas_internas",
+    "intent_response_key_prediction": {
+      "name": "chitchat/objetivo_programa",
+      "confidence": 0.3855547308921814
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 es el estr\u00e9s?",
+    "intent_response_key_target": "chitchat/estres",
+    "intent_response_key_prediction": {
+      "name": "chitchat/autorregistro",
+      "confidence": 0.927044153213501
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 es la respiraci\u00f3n diafragm\u00e1tica?",
+    "intent_response_key_target": "chitchat/diafragmatica",
+    "intent_response_key_prediction": {
+      "name": "chitchat/autorregistro",
+      "confidence": 0.31756067276000977
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 es la respiraci\u00f3n abdominal?",
+    "intent_response_key_target": "chitchat/diafragmatica",
+    "intent_response_key_prediction": {
+      "name": "chitchat/autorregistro",
+      "confidence": 0.45133790373802185
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 tipo de emociones podemos sentir?",
+    "intent_response_key_target": "chitchat/emociones",
+    "intent_response_key_prediction": {
+      "name": "chitchat/pensamiento_racional",
+      "confidence": 0.16715890169143677
+    }
+  },
+  {
+    "text": "\u00bfC\u00f3mo pueden ser los pensamientos?",
+    "intent_response_key_target": "chitchat/pensamientos",
+    "intent_response_key_prediction": {
+      "name": "chitchat/agresivo",
+      "confidence": 0.11736436933279037
+    }
+  },
+  {
+    "text": "clasificaci\u00f3n de los pensamientos",
+    "intent_response_key_target": "chitchat/pensamientos",
+    "intent_response_key_prediction": {
+      "name": "chitchat/analisis",
+      "confidence": 0.3109692335128784
+    }
+  },
+  {
+    "text": "como son los pensamientos que tenemos",
+    "intent_response_key_target": "chitchat/pensamientos",
+    "intent_response_key_prediction": {
+      "name": "chitchat/asertivo",
+      "confidence": 0.6014225482940674
+    }
+  },
+  {
+    "text": "definicion de pensamiento irracional",
+    "intent_response_key_target": "chitchat/pensamiento_irracional",
+    "intent_response_key_prediction": {
+      "name": "chitchat/pensamiento_racional",
+      "confidence": 0.2480241358280182
+    }
+  },
+  {
+    "text": "definicion de pensamientos no razonables",
+    "intent_response_key_target": "chitchat/pensamiento_irracional",
+    "intent_response_key_prediction": {
+      "name": "chitchat/creencias_irracionales",
+      "confidence": 0.37132567167282104
+    }
+  },
+  {
+    "text": "definicion de trampas del pensamiento",
+    "intent_response_key_target": "chitchat/trampas_pensamiento",
+    "intent_response_key_prediction": {
+      "name": "chitchat/creencias_irracionales",
+      "confidence": 0.22587664425373077
+    }
+  },
+  {
+    "text": "que son las trampas del pensamiento",
+    "intent_response_key_target": "chitchat/trampas_pensamiento",
+    "intent_response_key_prediction": {
+      "name": "chitchat/agresivo",
+      "confidence": 0.2443007230758667
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 es una trampa del pensamiento?",
+    "intent_response_key_target": "chitchat/trampas_pensamiento",
+    "intent_response_key_prediction": {
+      "name": "chitchat/autorregistro",
+      "confidence": 0.33080247044563293
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 era una creencia de demanda?",
+    "intent_response_key_target": "chitchat/creencias_irracionales",
+    "intent_response_key_prediction": {
+      "name": "chitchat/inhibido",
+      "confidence": 0.19566473364830017
+    }
+  },
+  {
+    "text": "Qu\u00e9 formas hay de analizar nuestros pensamientos",
+    "intent_response_key_target": "chitchat/analisis",
+    "intent_response_key_prediction": {
+      "name": "chitchat/emociones",
+      "confidence": 0.45754215121269226
+    }
+  },
+  {
+    "text": "\u00bfC\u00f3mo puedo distribuir mis tareas?.",
+    "intent_response_key_target": "chitchat/administrar_tiempo",
+    "intent_response_key_prediction": {
+      "name": "chitchat/autorregistro",
+      "confidence": 0.665372908115387
+    }
+  },
+  {
+    "text": "que es el comportamiento asertivo",
+    "intent_response_key_target": "chitchat/asertivo",
+    "intent_response_key_prediction": {
+      "name": "chitchat/inhibido",
+      "confidence": 0.4286074936389923
+    }
+  },
+  {
+    "text": "\u00bfC\u00f3mo es una persona inhibida?",
+    "intent_response_key_target": "chitchat/inhibido",
+    "intent_response_key_prediction": {
+      "name": "chitchat/autorregistro",
+      "confidence": 0.3919697403907776
+    }
+  },
+  {
+    "text": "cuales son las caracteristicas de un comportamiento agresivo",
+    "intent_response_key_target": "chitchat/agresivo",
+    "intent_response_key_prediction": {
+      "name": "chitchat/inhibido",
+      "confidence": 0.3958302140235901
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 son los derechos asertivos?",
+    "intent_response_key_target": "chitchat/derechos_asertivos",
+    "intent_response_key_prediction": {
+      "name": "chitchat/autorregistro",
+      "confidence": 0.20299218595027924
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 podemos hacer para controlar la ira?",
+    "intent_response_key_target": "chitchat/ira",
+    "intent_response_key_prediction": {
+      "name": "chitchat/autorregistro",
+      "confidence": 0.2799151539802551
+    }
+  },
+  {
+    "text": "Expl\u00edcame como funciona la t\u00e9cnica de disco rayado",
+    "intent_response_key_target": "chitchat/disco_rayado",
+    "intent_response_key_prediction": {
+      "name": "chitchat/diafragmatica",
+      "confidence": 0.2348022758960724
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 es el procedimiento del banco de niebla?",
+    "intent_response_key_target": "chitchat/banco_niebla",
+    "intent_response_key_prediction": {
+      "name": "chitchat/autorregistro",
+      "confidence": 0.4393186867237091
+    }
+  },
+  {
+    "text": "\u00bfQu\u00e9 es la felicidad?",
+    "intent_response_key_target": "chitchat/felicidad",
+    "intent_response_key_prediction": {
+      "name": "chitchat/autorregistro",
+      "confidence": 0.47177523374557495
+    }
+  },
+  {
+    "text": "Qu\u00e9 piensas de la felicidad",
+    "intent_response_key_target": "chitchat/felicidad",
+    "intent_response_key_prediction": {
+      "name": "chitchat/diafragmatica",
+      "confidence": 0.2981475293636322
+    }
+  },
+  {
+    "text": "hablame sobre la felicidad",
+    "intent_response_key_target": "chitchat/felicidad",
+    "intent_response_key_prediction": {
+      "name": "chitchat/tematica",
+      "confidence": 0.4438517987728119
+    }
+  },
+  {
+    "text": "que me puedes decir de la felicidad",
+    "intent_response_key_target": "chitchat/felicidad",
+    "intent_response_key_prediction": {
+      "name": "chitchat/emociones",
+      "confidence": 0.2252410501241684
+    }
+  },
+  {
+    "text": "Cu\u00e9ntame como puedo ser m\u00e1s feliz",
+    "intent_response_key_target": "chitchat/como_feliz",
+    "intent_response_key_prediction": {
+      "name": "chitchat/no",
+      "confidence": 0.2844606339931488
+    }
+  },
+  {
+    "text": "estar de mejores humos",
+    "intent_response_key_target": "chitchat/sentido_humor",
+    "intent_response_key_prediction": {
+      "name": "chitchat/diafragmatica",
+      "confidence": 0.36095741391181946
+    }
+  }
+]

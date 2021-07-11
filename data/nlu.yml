@@ -223,13 +223,14 @@ nlu:
     - eres un bot
     - quien eres
     - wuien eres
+    - ¿Quién eres?
     - que eres
     - ¿eres humano?
     - ¿quien te ha creado?
     - ¿Como te llamas?
 - intent: chitchat/autorregistro
   examples: |
-    - ¿En qué consiste en el autorregistro?
+    - ¿En qué consiste el autorregistro?
     - ¿Donde puedo hacer mi autorregistro?
     - ¿Qué es el autorregistro?
     - Que es autorregistro
@@ -258,6 +259,7 @@ nlu:
     - cual es el objetivo del programa
 - intent: chitchat/normas_internas
   examples: |
+    - ¿Cuáles son las normas del programa?
     - Dime las normas internas
     - Cuales son las normas del programa
     - Que normas internas hay
@@ -268,6 +270,7 @@ nlu:
     - dime que es el estres
     - definición de estres
     - que es el estres
+    - ¿Qué es el estrés?
 - intent: chitchat/tematica
   examples: |
     - definicion de la imaginacion tematica
@@ -281,6 +284,8 @@ nlu:
     - que es la respiracion diafragmatica
     - definicion de respiracion diafragmtica
     - definición de respiracion diafragmatica
+    - ¿Qué es la respiración diafragmática?
+    - ¿Qué es la respiración abdominal?
 - intent: chitchat/emociones
   examples: |
     - que tipo de emociones hay
@@ -289,15 +294,18 @@ nlu:
     - definicion de emocion moderada
     - definicion de emociones negativas
     - definicion de emociones intensas negativas
+    - ¿Qué tipo de emociones podemos sentir?
 - intent: chitchat/pensamientos
   examples: |
     - que tipos de pensamientos hay
-    - como pueden ser los pensamientos
+    - ¿Cómo pueden ser los pensamientos?
+    - clasificación de los pensamientos
+    - como son los pensamientos que tenemos
 - intent: chitchat/pensamiento_racional
   examples: |
     - definicion de pensamiento racional
     - que es un pensamiento racional
-    - dime que es pensamiento racional
+    - dime que es un pensamiento racional
 - intent: chitchat/pensamiento_irracional
   examples: |
     - definicion de pensamiento irracional
@@ -306,18 +314,21 @@ nlu:
   examples: |
     - definicion de trampas del pensamiento
     - que son las trampas del pensamiento
+    - ¿Qué es una trampa del pensamiento?
 - intent: chitchat/creencias_irracionales
   examples: |
     - definicion de creencias irracionales
     - definicion de creencias no razonables
     - definicion de creencias de necesidad
     - definicion de creencias de demanda
+    - ¿Qué era una creencia de demanda?
 - intent: chitchat/analisis
   examples: |
     - como debemos de analizar nuestros pensamientos
     - formas de analizar los pensamientos
     - en que consiste el análisis de pensamientos
     - que es el análisis
+    - Qué formas hay de analizar nuestros pensamientos
     - que es la reestructuración cognitiva
     - como conseguir la reestructuración cognitiva
 - intent: chitchat/autoinstrucciones
@@ -339,6 +350,7 @@ nlu:
     - tengo demasiadas tareas en el mismo tiempo
     - como distribuyo mi tiempo
     - como organizo mis tareas al mismo tiempo
+    - ¿Cómo puedo distribuir mis tareas?.
 - intent: chitchat/organizarme
   examples: |
     - ayudame a organizar mi dia
@@ -358,6 +370,7 @@ nlu:
     - como puedo reconocer el pensamiento pasivo
     - como es una persona inhibida
     - como es una persona pasiva
+    - ¿Cómo es una persona inhibida?
     - cuales son las caracteristicas de un comportamiento pasivo
     - cuales son las caracteristicas de un comportamiento inhibido
 - intent: chitchat/agresivo
@@ -365,30 +378,40 @@ nlu:
     - definición de pensamiento agresivo
     - como es el comportamiento agresivo
     - como son las personas agresivas
+    - ¿Cuáles son las características de una persona agresiva?
     - cuales son las caracteristicas de un comportamiento agresivo
 - intent: chitchat/derechos_asertivos
   examples: |
     - que son los derechos asertivos
     - como reconozco los derechos asertivos
     - defincion de derechos asertivos
+    - ¿Qué son los derechos asertivos?
 - intent: chitchat/ira
   examples: |
     - cual es la relación entre la ira y el estrés
     - como sobrellevar la ira
+    - como puedo controlar la ira
     - que cosas podemos hacer para controlar la ira
     - que es la ira
+    - ¿Qué podemos hacer para controlar la ira?
     - como trabajar la ira
 - intent: chitchat/no
   examples: |
+    - ¿Cómo aprender a decir que no?
     - como decir no
     - aprender a decir que no
 - intent: chitchat/disco_rayado
   examples: |
+    - como es la técnica del disco rayado
+    - como es el disco rayado
+    - Explícame como funciona la técnica de disco rayado
     - en que consiste la tecnica del disco rayado
     - como funciona el procedimiento del disco rayado
     - que es el procedimiento del disco rayado
 - intent: chitchat/banco_niebla
   examples: |
+    - ¿Qué es el procedimiento del banco de niebla?
+    - Explícame cómo funciona la técnica del banco de niebla
     - que es el procedimiento del banco de niebla
     - en que consiste la tecnica del banco de niebla
     - como funciona el banco de niebla
@@ -402,19 +425,32 @@ nlu:
     - explícame la felicidad
     - felicidad
     - que es la felicidad
+    - ¿Qué es la felicidad?
+    - Qué piensas de la felicidad
+    - hablame sobre la felicidad
+    - cuentame cosas sobre la felicidad
+    - que me puedes decir de la felicidad
 - intent: chitchat/como_feliz
   examples: |
     - como ser feliz
     - estrategias para ser mas feliz
     - ideas para ser mas feliz
     - como conseguir la felicidad
+    - Cuéntame como puedo ser más feliz
+    - Dime que puedo hacer para ser feliz
+    - enseñame a ser feliz
 - intent: chitchat/sentido_humor
   examples: |
     - favorecer sentido del humor
     - tener más sentido del humor
+    - Dime maneras de tener más sentido del humor
+    - Háblame del sentido del humor
+    - como tener más sentido del humor
+    - estar de mejores humos
 - intent: chitchat/amargada
   examples: |
     - estoy amargada
+    - Siento que estoy amargada
     - me gusta amargarme
     - el arte de amargarse la vida
     - estoy amargada de la vida
@@ -428,6 +464,10 @@ nlu:
     - reservar en un restaurante
     - quiero pedir cita
     - cual es tu pelicula favorita
+    - me caes mal
+    - no sabes nada
+    - dime la hora
+    - ponme una canción
 - synonym: embarazada
   examples: |
     - encinta

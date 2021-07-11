@@ -218,3 +218,50 @@ stories:
     user: |-
       te gustan los coches
   - action: utter_out_of_scope
+
+- story: Test -> Valorate Chatbot
+  steps:
+  - intent: valorar_chatbot
+    user: |-
+      realizar encuesta
+  - action: valorate_form
+  - active_loop: valorate_form
+  - slot_was_set:
+    - requested_slot: puntos1
+  - intent: nlu_fallback
+    user: |-
+      9
+  - action: valorate_form
+  - slot_was_set:
+    - puntos1: '9'
+  - slot_was_set:
+    - requested_slot: puntos2
+  - intent: nlu_fallback
+    user: |-
+      9
+  - action: valorate_form
+  - slot_was_set:
+    - puntos2: '9'
+  - slot_was_set:
+    - requested_slot: puntos3
+  - intent: pedir_consejo
+    user: |-
+      10
+  - action: valorate_form
+  - slot_was_set:
+    - puntos3: '10'
+  - slot_was_set:
+    - requested_slot: cambios
+  - intent: nlu_fallback
+    user: |-
+      pondria mas preguntas
+  - action: valorate_form
+  - slot_was_set:
+    - cambios: pondria mas preguntas
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit_valoracion
+  - action: action_points_valorate
+
+

@@ -8,9 +8,9 @@ body {
 
 .widget {
   display: none;
-  width: 350px;
+  width: 500px;
   right: 15px;
-  height: 500px;
+  height: 560px;
   bottom: 5%;
   position: fixed;
   background: #fff;
@@ -35,7 +35,7 @@ body {
 
 .chats {
   /* display: none; */
-  height: 385px;
+  height: 440px;
   padding: 2px;
   border-radius: 1px;
   overflow-y: scroll;
@@ -74,7 +74,7 @@ div.chats::-webkit-scrollbar {
   margin-left: 0.5em;
   padding: 10px;
   border-radius: 1.5em;
-  max-width: 60%;
+  max-width: 85%;
   min-width: 25%;
   font-size: 13px;
   word-wrap: break-word;

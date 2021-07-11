@@ -103,7 +103,7 @@ class ActionModo(Action):
             accion =  "action_guided"
         return [FollowupAction(accion)]
 
-class ActionDiafragmatic(Action):
+class ActionDiaphragmatic(Action):
 
     def name(self) -> Text:
         return "action_diaphragmatic"
@@ -277,15 +277,15 @@ class ActionAskQuestion(Action):
         button_resp=[
                 {
                     "title": "{0}".format(pregunta[0][2]),
-                    "payload": "/contar_puntos{'puntos_quiz': '{0}'}".format(punto)
+                    "payload": '/contar_puntos{{"puntos_quiz": "{0}"}}'.format(pregunta[0][3])
                 },
                 {
                     "title": "{0}".format(pregunta[0][4]),
-                    "payload": '/contar_puntos{"puntos_quiz": "{0}".format(pregunta[0][5]) }'
+                    "payload": '/contar_puntos{{"puntos_quiz": "{0}"}}'.format(pregunta[0][5])
                 },
                 {
                     "title": "{0}".format(pregunta[0][6]),
-                    "payload": '/contar_puntos{"puntos_quiz": "{0}".format(pregunta[0][7]) }'
+                    "payload": '/contar_puntos{{"puntos_quiz": "{0}"}}'.format(pregunta[0][7])
                 }
             ]
 
@@ -305,11 +305,10 @@ class ActionPasarPregunta(Action):
         puntos = int(tracker.get_slot('puntos_quiz'))
         puntos_totales = puntos + int(tracker.get_slot('total_quiz'))
         dispatcher.utter_message(text="puntos totales: {0}".format(puntos_totales))
-        
+        if int(tracker.get_slot('n_pregunta')) == 11 or feedback=='parar':
+            accion = "action_end_quiz"
         if feedback=='siguiente':
             accion =  "action_ask_question"
-        if feedback=='parar':
-            accion =  "action_end_quiz"
         return [SlotSet("total_quiz", puntos_totales), FollowupAction(accion)]
 
 class ActionEndQuiz(Action):
@@ -319,7 +318,11 @@ class ActionEndQuiz(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(text="Fin del quiz")
-        ##poner slot a 0
+        if int(tracker.get_slot('n_pregunta')) == 11:
+            puntos_totales = tracker.get_slot('total_quiz')
+            dispatcher.utter_message(text="enhorabuena, has completado el quiz con {0} puntos sobre 100").format(puntos_totales)
+        else:
+            dispatcher.utter_message(text="Vaya...!, has terminado el quiz, puedes repetirlo cuando quieras")
         return [ConversationPaused()]
 
 class ActionPreguntarApellido(Action):
