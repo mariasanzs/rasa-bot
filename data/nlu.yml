@@ -126,6 +126,7 @@ nlu:
     - realizar concurso
     - hacer un quiz
     - hacer un test
+    - quiero jugar a un juego
     - hacer una prueba
     - quiero revisar mis conocimientos
 - intent: pedir_consejo
@@ -203,6 +204,7 @@ nlu:
     - estoy triste
     - que triste estoy
     - no estoy bien
+    - estoy muy triste
     - me encuentro mal
     - estoy muy triste
     - que tristeza tengo

@@ -83,9 +83,14 @@ class ActionRelajacion(Action):
             if diaphragmatic_breathing:
                 dispatcher.utter_message(text="Concentrate en tu respiración durante unos minutos... ⌛ Intentando hacerlo de una forma 〰️lenta y suave〰️ ")
                 dispatcher.utter_message(text="Mantente así durante unos minutos ⏱️")
+                msg = { "type": "video", "payload": { "title": "Video de música relajante", "src": "https://www.youtube.com/embed/EiG27OLPG3E" } }
+                dispatcher.utter_message(text="Puedes ver mientras este vídeo",attachment=msg)
+
             if guided_imagery:
                 dispatcher.utter_message(text="Acomódate en tu asiento 😌🪑")
                 dispatcher.utter_message(text="Cierra los ojos lentamente 😌 y mantente así durante un minuto 1️⃣⏱️")
+                msg = { "type": "video", "payload": { "title": "1 minuto de música relajante", "src": "https://www.youtube.com/embed/CCW0P73qtt8" } }
+                dispatcher.utter_message(text="Puedes ver resproducir mientras tanto este vídeo de un minuto",attachment=msg)
             return []
 
 class ActionModo(Action):
@@ -153,6 +158,8 @@ class ActionGuided(Action):
         dispatcher.utter_message(text="Ve relajándote poco a poco ... 🧘🏻‍♀️")
         dispatcher.utter_message(text="Ve aflojando tus músculos poco a poco, de las piernas 🦵🏼, los brazos 🙆🏻, el cuello...")
         dispatcher.utter_message(text="Estaremos así durante 1️⃣ minuto..")
+        msg = { "type": "video", "payload": { "title": "1 minuto de relajación", "src": "https://www.youtube.com/embed/-FKe4vQ4dME" } }
+        dispatcher.utter_message(text="Puedes ver resproducir mientras tanto este vídeo de un minuto",attachment=msg)
         return []
 
 class ActionFirstPaused(Action):
@@ -202,7 +209,6 @@ class ActionThirdPaused(Action):
         return "action_third_paused"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        time.sleep(10)
         dispatcher.utter_message(text="¿Qué palabras se vienen a tu mente cuando piensas en esta escena? 🤔")
         dispatcher.utter_message(text="Deja que se repitan como un eco")
         dispatcher.utter_message(text="Sumérgete poco a poco en esas palabras y deja que se desarrollen 💭")
@@ -225,7 +231,6 @@ class ActionEndGuided(Action):
         return "action_end_guided"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        time.sleep(5)
         dispatcher.utter_message(text="Suavemente, deja de concentrarte en tu escena 🙂")
         dispatcher.utter_message(text="Haz una inspiración profunda")
         dispatcher.utter_message(text="Ve recuperando la compostura con movimientos ligeros 🧎🏻‍♀️")
@@ -271,7 +276,7 @@ class ActionAskQuestion(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         npregunta = int(tracker.get_slot('n_pregunta'))
-        dispatcher.utter_message(text="Pregunta {0}".format(npregunta))
+        dispatcher.utter_message(text="🔶 Pregunta {0} 🔶".format(npregunta))
         pregunta = np.array(DataSelectPregunta(npregunta))
         punto = int(pregunta[0][3])
         button_resp=[
@@ -304,10 +309,10 @@ class ActionPasarPregunta(Action):
         feedback = tracker.get_slot('feedback')
         puntos = int(tracker.get_slot('puntos_quiz'))
         puntos_totales = puntos + int(tracker.get_slot('total_quiz'))
-        dispatcher.utter_message(text="puntos totales: {0}".format(puntos_totales))
+        dispatcher.utter_message(text="Por ahora llevas acumulados {0} puntos".format(puntos_totales))
         if int(tracker.get_slot('n_pregunta')) == 11 or feedback=='parar':
             accion = "action_end_quiz"
-        if feedback=='siguiente':
+        else:
             accion =  "action_ask_question"
         return [SlotSet("total_quiz", puntos_totales), FollowupAction(accion)]
 
@@ -320,9 +325,27 @@ class ActionEndQuiz(Action):
         dispatcher.utter_message(text="Fin del quiz")
         if int(tracker.get_slot('n_pregunta')) == 11:
             puntos_totales = tracker.get_slot('total_quiz')
-            dispatcher.utter_message(text="enhorabuena, has completado el quiz con {0} puntos sobre 100").format(puntos_totales)
+            dispatcher.utter_message(text="Genial, has completado el quiz con {0} puntos sobre 100".format(puntos_totales))
+            if puntos_totales == 0:
+                dispatcher.utter_message(text="*️⃣*️⃣*️⃣*️⃣*️⃣") 
+                dispatcher.utter_message(text="Bueno... es una mala nota, pero no pasa nada, lo importante es mejorar")
+            elif puntos_totales <= 20:
+                dispatcher.utter_message(text="⭐*️⃣*️⃣*️⃣*️⃣")
+                dispatcher.utter_message(text="Verás que la próxima vez sale mejor")
+            elif puntos_totales <=40:
+                dispatcher.utter_message(text="⭐⭐*️⃣*️⃣*️⃣")
+                dispatcher.utter_message(text="Bueno... conseguir {0} puntos es casi aprobar".format(puntos_totales))
+            elif puntos_totales <=65:
+                dispatcher.utter_message(text="⭐⭐⭐*️⃣*️⃣")
+                dispatcher.utter_message(text="La verdad es que conseguir {0} puntos está fenomenal, sigue así".format(puntos_totales))
+            elif puntos_totales <=90:
+                dispatcher.utter_message(text="⭐⭐⭐⭐*️⃣")
+                dispatcher.utter_message(text="Genial!, has sacado una nota increíble")
+            else:
+                dispatcher.utter_message(text="⭐⭐⭐⭐⭐")
+                dispatcher.utter_message(text="Guau!, Lo has hecho MUY MUY bien, se nota que lo tienes controlado")
         else:
-            dispatcher.utter_message(text="Vaya...!, has terminado el quiz, puedes repetirlo cuando quieras")
+                dispatcher.utter_message(text="Vaya...!, has terminado el quiz, puedes repetirlo cuando quieras")
         return [ConversationPaused()]
 
 class ActionPreguntarApellido(Action):

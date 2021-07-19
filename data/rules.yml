@@ -21,6 +21,11 @@ rules:
   steps:
   - intent: agradecer
   - action: utter_agradecer
+
+- rule: Offer FAQs
+  steps:
+  - intent: preguntar
+  - action: utter_preguntar
   
 - rule: Respond to chitchat
   steps:

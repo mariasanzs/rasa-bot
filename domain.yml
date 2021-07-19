@@ -290,7 +290,7 @@ responses:
       title: Sí, siguiente. ⏭️
     - payload: '/pedir_siguiente{"feedback": "parar"}'
       title: No, parar.
-    text: Vamos con la pregunta {n_pregunta} ¿Vale?
+    text: Vamos a continuar con el cuestionario ¿Vale?
   utter_chitchat/ask_quien_eres:
   - text: Soy un bot 🤖, creado por María Sanz 👩🏻‍💻 para su proyecto fin de grado en Ingeniería informática que da apoyo a terapias para mujeres embarazadas 🤰🏻.
   utter_chitchat/autorregistro:
